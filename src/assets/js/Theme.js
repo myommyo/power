@@ -1,16 +1,29 @@
-// const size = {
-//   tablet: "640px",
-//   laptop: "1200px",
-//   desktop: "1800px",
-// };
- 
-const theme = {
-  mainColor: "#6ABD8C",
-  mainColorLight: "#CCDFB0",
-  backgroundColor: "#F6F9F0",
-  darkGray: "#595959",
-  lightGray: "#939292",
-  superLightGray: "#F1F2F5",
+import { createTheme } from '@mui/material/styles/';
+
+const Colors = {
+  primary : '#3f8cff',
+  secondary : '#000000',
+  danger : '#ff0000'
 };
- 
+
+const theme = createTheme({
+  palette : {
+    primary : {
+      main: Colors.primary
+    },
+    secondary : {
+      main: Colors.secondary
+    }
+  },
+  components : {
+    MuiButton: {
+      defaultProps : {
+        disableRipple : true,
+        disableElevation : true
+      }
+    } 
+  }
+});
+
+
 export default theme;
