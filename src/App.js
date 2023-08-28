@@ -8,7 +8,7 @@ const ButtonMedium = styled.button`
 function App() {
   return (
 
-    <ButtonMedium>Medium</ButtonMedium>
+    <ButtonMedium>네에에</ButtonMedium>
   );
 }
 
