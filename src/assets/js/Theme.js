@@ -1,8 +1,8 @@
-const size = {
-  // tablet: "640px",
-  // laptop: "1200px",
-  // desktop: "1800px",
-};
+// const size = {
+//   tablet: "640px",
+//   laptop: "1200px",
+//   desktop: "1800px",
+// };
  
 const theme = {
   mainColor: "#6ABD8C",

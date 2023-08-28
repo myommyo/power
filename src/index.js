@@ -1,14 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { ThemeProvider } from "styled-components";
+import theme from "./assets/js/Theme";
+import GlobalStyle from "./assets/js/GlobalStyles";
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
     <App />
-  </React.StrictMode>
+  </ThemeProvider>,
+  document.getElementById("root"),
 );
 
 // If you want to start measuring performance in your app, pass a function

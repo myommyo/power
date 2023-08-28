@@ -1,15 +1,18 @@
-import logo from './logo.svg';
 import styled from 'styled-components';
+import GlobalStyle from 'styled-components';
 import './App.css';
+import InputText from './components/Inputs';
+import Button from './components/Buttons';
 
-const ButtonMedium = styled.button`
-  background-color: blue;
-`;
 function App() {
   return (
-
-    <ButtonMedium>네에에</ButtonMedium>
-  );
+    <div>
+    <GlobalStyle />
+    <InputText />
+    <Button>asdf</Button>
+    <Button primary>primary</Button>
+        </div>
+      );
 }
 
 export default App;
