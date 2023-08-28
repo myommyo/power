@@ -1,33 +1,27 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import styled, { css } from 'styled-components';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-}));
+const StyledButton = styled.button`
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid lightgray;
 
-export default function ContainedButtons() {
-  const classes = useStyles();
+  color: ${(props) => props.color || 'gray'};
+  background: ${(props) => props.background || 'white'};
 
-  return (
-    <div className={classes.root}>
-      <Button variant="contained">Default</Button>
-      <Button variant="contained" color="primary">
-        Primary
-      </Button>
-      <Button variant="contained" color="secondary">
-        Secondary
-      </Button>
-      <Button variant="contained" disabled>
-        Disabled
-      </Button>
-      <Button variant="contained" color="primary" href="#contained-buttons">
-        Link
-      </Button>
-    </div>
-  );
+  ${(props) =>
+    props.primary &&
+    css`
+    color: white;
+    background: navy;
+    border-color: navy;
+  `}
+`;
+
+function Button({ children, ...props }) {
+  return <StyledButton {...props}>{children}</StyledButton>;
 }
+
+export default Button;
