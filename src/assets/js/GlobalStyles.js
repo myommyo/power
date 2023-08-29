@@ -9,6 +9,8 @@ const GlobalStyles = createGlobalStyle`
     }
     *{
         box-sizing: border-box;
+        font-family: 'Pretendard', sans-serif !important;
+
     }
     html, body, div, span, h1, h2, h3, h4, h5, h6, p, 
     a, dl, dt, dd, ol, ul, li, form, label, table{
@@ -17,10 +19,13 @@ const GlobalStyles = createGlobalStyle`
         border: 0;
         font-size: 14px;
         vertical-align: baseline;
+
     }
     body{
         line-height: 1;
-        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Pretendard', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
     ol, ul{
         list-style: none;
