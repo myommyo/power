@@ -6,7 +6,6 @@ import theme from "./assets/js/Theme";
 import GlobalStyle from "./assets/js/GlobalStyles";
 import reportWebVitals from './reportWebVitals';
 
-
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <GlobalStyle />
