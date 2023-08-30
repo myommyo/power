@@ -9,7 +9,6 @@ import grey from "@mui/material/colors/grey";
 
 const theme = (mode) =>
   createTheme({
-    spacing: 4,
     palette: {
       mode: 'light',
       primary: {
@@ -17,7 +16,7 @@ const theme = (mode) =>
       },
       secondary: {
         light: red[500],
-        main: '#3e8cff',
+        main: '#d9d9d9',
         dark: red[900],
         contrastText: '#202844'
       },
@@ -35,7 +34,7 @@ const theme = (mode) =>
         contrastText: grey[800]
       },
       info: {
-        main: '#c8cbd3'
+        main: lightBlue[500]
       },
       text: {
         primary: grey[900],
@@ -70,43 +69,39 @@ const theme = (mode) =>
           outlined: {
             color:'#000'
           },
-       
-        root: ({ ownerState }) => {
-          switch (ownerState.variant) {
-            case "contained":
-              return {
-                "&.Mui-disabled": {
-                  background: "#e9eaf2",
-                  color: "#c8cbd3"
-                }
-              };
-            case "outlined":
-              return {
-                "&.Mui-disabled": {
-                  background: "#fff",
-                  color: "#c8cbd3",
-                  borderColor: "#c8cbd3"
-                }
-              };
-            default:
-            return;
-          }
+         
+            root: ({ ownerState }) => {
+              switch (ownerState.variant) {
+                case "contained":
+                  return {
+                    "&.Mui-disabled": {
+                      background: "#f3f3f3",
+                      color: "red"
+                    }
+                  };
+                case "outlined":
+                  return {
+                    "&.Mui-disabled": {
+                      background: "#e9e9e9",
+                      color: "#c7c7c7",
+                      borderColor: "#e4e4e4"
+                    }
+                  };
+                default:
+                  return;
+              }
             
         },
       },
         variants: [
           {
-            props: { size: "icon" },
+            props: { variant: "test" },
             style: {
-              borderRadius : '8px',
+              color: 'red',
+              fontSize: 80,
+              fontWeight: 800,
+              textShadow: "2px 2px black"
             }
-            // props: { variant: "test" },
-            // style: {
-            //   color: 'red',
-            //   fontSize: 80,
-            //   fontWeight: 800,
-            //   textShadow: "2px 2px black"
-            // }
           }
         ],
         defaultProps: {
@@ -117,12 +112,350 @@ const theme = (mode) =>
             textTransform: 'none',
             fontSize: '15px', 
             height: '40px',
-            // borderRadius: '8px',
+            borderRadius: '8px',
             textAlign: "center"
           },
         }
       }
     }
   });
+  
 
-export default theme;
+
+export const defaultTheme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#202844'
+    },
+    secondary: {
+      light: red[500],
+      main: '#d9d9d9',
+      dark: red[900],
+      contrastText: '#202844'
+    },
+    error: {
+      light: red[400],
+      main: red[500],
+      dark: red[300],
+      contrastText: grey[800]
+    },
+    success: {
+      main: green[500]
+    },
+    warning: {
+      main: yellow[500],
+      contrastText: grey[800]
+    },
+    info: {
+      main: lightBlue[500]
+    },
+    text: {
+      primary: grey[900],
+      secondary: grey[700],
+      disabled: grey[500]
+    },
+    action: {
+      active: red[200],
+      activeOpacity: 1,
+      disabled: grey[700],
+      disabledBackground: grey[200],
+      hover: red[100],
+      hoverOpacity: 0.7,
+      focus: red[600],
+      focusOpacity: 1,
+      selected: red[300],
+      selectedOpacity: 1
+    },
+    background: {
+      default: '#f5f6fa',
+      paper: '#fff'
+    },
+    common: {
+      black: grey[900],
+      white: grey[200]
+    },
+    tonalOffset: 0.2
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        outlined: {
+          color:'#000'
+        },
+       
+          root: ({ ownerState }) => {
+            switch (ownerState.variant) {
+              case "contained":
+                return {
+                  "&.Mui-disabled": {
+                    background: "#f3f3f3",
+                    color: "red"
+                  }
+                };
+              case "outlined":
+                return {
+                  "&.Mui-disabled": {
+                    background: "#e9e9e9",
+                    color: "#c7c7c7",
+                    borderColor: "#e4e4e4"
+                  }
+                };
+              default:
+                return;
+            }
+          
+      },
+    },
+      variants: [
+        {
+          props: { variant: "test" },
+          style: {
+            color: 'red',
+            fontSize: 80,
+            fontWeight: 800,
+            textShadow: "2px 2px black"
+          }
+        }
+      ],
+      defaultProps: {
+        disableRipple : true,
+        disableElevation: true,
+        style: {
+          boxShadow: 'none',
+          textTransform: 'none',
+          fontSize: '15px', 
+          height: '40px',
+          borderRadius: '8px',
+          textAlign: "center"
+        },
+      }
+    }
+  }
+});
+  
+export const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#202844'
+    },
+    secondary: {
+      light: red[500],
+      main: '#d9d9d9',
+      dark: red[900],
+      contrastText: '#202844'
+    },
+    error: {
+      light: red[400],
+      main: red[500],
+      dark: red[300],
+      contrastText: grey[800]
+    },
+    success: {
+      main: green[500]
+    },
+    warning: {
+      main: yellow[500],
+      contrastText: grey[800]
+    },
+    info: {
+      main: lightBlue[500]
+    },
+    text: {
+      primary: grey[900],
+      secondary: grey[700],
+      disabled: grey[500]
+    },
+    action: {
+      active: red[200],
+      activeOpacity: 1,
+      disabled: grey[700],
+      disabledBackground: grey[200],
+      hover: red[100],
+      hoverOpacity: 0.7,
+      focus: red[600],
+      focusOpacity: 1,
+      selected: red[300],
+      selectedOpacity: 1
+    },
+    background: {
+      default: '#000000',
+      paper: '#fff'
+    },
+    common: {
+      black: grey[900],
+      white: grey[200]
+    },
+    tonalOffset: 0.2
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        outlined: {
+          color:'#000'
+        },
+       
+          root: ({ ownerState }) => {
+            switch (ownerState.variant) {
+              case "contained":
+                return {
+                  "&.Mui-disabled": {
+                    background: "#f3f3f3",
+                    color: "red"
+                  }
+                };
+              case "outlined":
+                return {
+                  "&.Mui-disabled": {
+                    background: "#e9e9e9",
+                    color: "#c7c7c7",
+                    borderColor: "#e4e4e4"
+                  }
+                };
+              default:
+                return;
+            }
+          
+      },
+    },
+      variants: [
+        {
+          props: { variant: "test" },
+          style: {
+            color: 'red',
+            fontSize: 80,
+            fontWeight: 800,
+            textShadow: "2px 2px black"
+          }
+        }
+      ],
+      defaultProps: {
+        disableRipple : true,
+        disableElevation: true,
+        style: {
+          boxShadow: 'none',
+          textTransform: 'none',
+          fontSize: '15px', 
+          height: '40px',
+          borderRadius: '8px',
+          textAlign: "center"
+        },
+      }
+    }
+  }
+});
+
+export const blueTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#202844'
+    },
+    secondary: {
+      light: red[500],
+      main: '#d9d9d9',
+      dark: red[900],
+      contrastText: '#202844'
+    },
+    error: {
+      light: red[400],
+      main: red[500],
+      dark: red[300],
+      contrastText: grey[800]
+    },
+    success: {
+      main: green[500]
+    },
+    warning: {
+      main: yellow[500],
+      contrastText: grey[800]
+    },
+    info: {
+      main: lightBlue[500]
+    },
+    text: {
+      primary: grey[900],
+      secondary: grey[700],
+      disabled: grey[500]
+    },
+    action: {
+      active: red[200],
+      activeOpacity: 1,
+      disabled: grey[700],
+      disabledBackground: grey[200],
+      hover: red[100],
+      hoverOpacity: 0.7,
+      focus: red[600],
+      focusOpacity: 1,
+      selected: red[300],
+      selectedOpacity: 1
+    },
+    background: {
+      default: '#0000ff',
+      paper: '#fff'
+    },
+    common: {
+      black: grey[900],
+      white: grey[200]
+    },
+    tonalOffset: 0.2
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        outlined: {
+          color:'#000'
+        },
+       
+          root: ({ ownerState }) => {
+            switch (ownerState.variant) {
+              case "contained":
+                return {
+                  "&.Mui-disabled": {
+                    background: "#f3f3f3",
+                    color: "red"
+                  }
+                };
+              case "outlined":
+                return {
+                  "&.Mui-disabled": {
+                    background: "#e9e9e9",
+                    color: "#c7c7c7",
+                    borderColor: "#e4e4e4"
+                  }
+                };
+              default:
+                return;
+            }
+          
+      },
+    },
+      variants: [
+        {
+          props: { variant: "test" },
+          style: {
+            color: 'red',
+            fontSize: 80,
+            fontWeight: 800,
+            textShadow: "2px 2px black"
+          }
+        }
+      ],
+      defaultProps: {
+        disableRipple : true,
+        disableElevation: true,
+        style: {
+          boxShadow: 'none',
+          textTransform: 'none',
+          fontSize: '15px', 
+          height: '40px',
+          borderRadius: '8px',
+          textAlign: "center"
+        },
+      }
+    }
+  }
+});
+
+
+export default defaultTheme;
