@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
@@ -11,12 +12,26 @@ import Stack from '@mui/material/Stack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Buttons from './components/Buttons';
 
+//페이지 추가
+import Home from './pages/Home';
+import Sub01 from './pages/Sub01';
+
 export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main">
-        <CssBaseline />
+      <CssBaseline />
+      <BrowserRouter>
+        <div className="App">          
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sub01" element={<Sub01 />} />
+          </Routes>
+        </div>
+      </BrowserRouter>    
+
+
+      <Container component="main">        
         <Grid container >
           <Buttons />
         <Button color="primary" variant="contained" size='icon' startIcon={<DeleteIcon />}>
