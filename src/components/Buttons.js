@@ -1,13 +1,39 @@
 import React from 'react';
-import {Button, Container } from '@mui/material';
+import {Button, Container, Grid, Stack } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 export const Buttons = () => {
   return (
     <Container>
-      <Button variant="contained">Button</Button>
-      <Button color='secondary' variant="outlined">Button</Button>
-      <Button variant="contained" disabled>Disabled</Button>
+        <Grid container >
+        <Button color="primary" variant="contained" size='icon' startIcon={<DeleteIcon />}>
+          Primary contained with icon
+        </Button>
+        <Button color="primary" variant="outlined" size='icon'>
+          Primary outlined
+        </Button>
+        <Button color="info" variant="outlined" size='icon'>
+          Outlined
+        </Button>
+        <Button color="primary" variant="contained" size='icon' disabled>
+          disabled contained
+        </Button>
+        <Button color="primary" variant="outlined" size='icon' disabled>
+          disabled outlined
+        </Button>
+        </Grid>
+
+        <Stack direction="row" spacing={2} sx={{ m : 4}}>
+            <Button color="primary" variant="contained" size='small'>
+              Primary contained
+            </Button>
+        
+            <Button color="primary" variant="outlined" size='small'>
+              Primary contained
+            </Button>
+         
+        </Stack>
     </Container>
   )
 }

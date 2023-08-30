@@ -1,16 +1,33 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Box, Paper, Stack } from '@mui/material';
 
+import Header from '../components/Header';
+import SideBar from '../components/SideBar';
+import ButtonTitle from '../components/ButtonTitle';
+import DataTable from '../components/DataTable';
+import SearchBox from '../components/SearchBox';
+
+import './Sub01.css';
 
 export default function Sub01() {
   return(
     <>
-    <div>
-      <Link to={'/'}>Home</Link>
-      <Link to={'/sub01'}>Sub01</Link>
-    </div>   
+    <Header />
+    
+    <Stack direction="row">
+      <SideBar />
+      <Box sx={{ p : 12, width: '100%', }}>
+        <ButtonTitle />
+        <Paper sx={{ mt : 5 }}>
+          <SearchBox />
+        </Paper>
 
-    <div>sub01 페이지 입니다.</div>
+        <Paper sx={{ mt:10 , p:8 }}>
+          <DataTable />
+        </Paper>
+      </Box>
+      
+    </Stack>
     </>    
   );
 }

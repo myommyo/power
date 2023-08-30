@@ -3,9 +3,9 @@ import { Box, Stack } from '@mui/material/';
 
 const Header = () => {
   return (
-    <Stack>
-    <Box>Header 헤헤헤</Box>
-    </Stack>
+    <>
+    <div class="header">Header</div>
+    </>  
   )
 }
 

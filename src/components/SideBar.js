@@ -1,12 +1,19 @@
 import React from "react";
 import Box from '@mui/material/Box';
-import SideBarList from './SideBarList';
+import { Link } from 'react-router-dom';
+
 
 const SideBar = () => {
   return (
-    <Box>
-      <SideBarList />    
-    </Box>
+    <>
+      <div class="sideBar">
+        <div>
+          <Link to={'/'}>Home</Link> <br />
+          <Link to={'/sub01'}>Sub01</Link>
+        </div>  
+      </div>
+    </>    
+
   )
 }
 
