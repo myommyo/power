@@ -3,15 +3,13 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
 import theme from './assets/js/Theme';
-import TaskAltSharpIcon from '@mui/icons-material/TaskAltSharp';
-import SettingsBackupRestoreOutlinedIcon from '@mui/icons-material/SettingsBackupRestoreOutlined';
-import EditNoteSharpIcon from '@mui/icons-material/EditNoteSharp';
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
+import Stack from '@mui/material/Stack';
 
+import DeleteIcon from '@mui/icons-material/Delete';
+import Buttons from './components/Buttons';
 
 export default function App() {
 
@@ -19,26 +17,35 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <Container component="main">
         <CssBaseline />
-        <Grid container>
-        <Button color="primary" variant="contained" size="medium">
-          Primary contained
+        <Grid container >
+          <Buttons />
+        <Button color="primary" variant="contained" size='icon' startIcon={<DeleteIcon />}>
+          Primary contained with icon
         </Button>
-        <Button color="primary" variant="outlined" size="medium">
+        <Button color="primary" variant="outlined" size='icon'>
           Primary outlined
         </Button>
-        <Button color="secondary" size="medium" variant="outlined">
-          Secondary Outlined
+        <Button color="info" variant="outlined" size='icon'>
+          Outlined
         </Button>
-        <Button color="primary" variant="contained" disabled>
+        <Button color="primary" variant="contained" size='icon' disabled>
           disabled contained
         </Button>
-          <Grid item><Button color="secondary" variant='contained' startIcon={<TaskAltSharpIcon />}>일괄등록</Button></Grid>
-          <Grid item><Button color="secondary" variant='outlined' startIcon={<SettingsBackupRestoreOutlinedIcon />}>초기화</Button></Grid>
-          <Grid item><Button color="secondary" variant='outlined' startIcon={<EditNoteSharpIcon />}>신규</Button></Grid>
-          <Grid item><Button color="secondary" variant='outlined' startIcon={<RemoveRedEyeOutlinedIcon />}>조회</Button></Grid>
-          <Grid item><Button color="secondary" variant='outlined' startIcon={<InsertDriveFileOutlinedIcon />}>엑셀</Button></Grid>
-          
+        <Button color="primary" variant="outlined" size='icon' disabled>
+          disabled outlined
+        </Button>
         </Grid>
+
+        <Stack direction="row" spacing={2} sx={{ m : 4}}>
+            <Button color="primary" variant="contained" size='small'>
+              Primary contained
+            </Button>
+        
+            <Button color="primary" variant="outlined" size='small'>
+              Primary contained
+            </Button>
+         
+        </Stack>
       </Container>
     </ThemeProvider>
   );

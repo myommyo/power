@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Container } from '@mui/material';
 
 
-export const MuiButton = () => {
+export const Buttons = () => {
   return (
     <Container>
       <Button variant="contained">Button</Button>
@@ -35,4 +35,4 @@ export const MuiButton = () => {
 //   return <StyledButton {...props}>{children}</StyledButton>;
 // }
 
-export default Button;
+export default Buttons;

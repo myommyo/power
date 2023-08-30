@@ -9,6 +9,7 @@ import grey from "@mui/material/colors/grey";
 
 const theme = (mode) =>
   createTheme({
+    spacing: 4,
     palette: {
       mode: 'light',
       primary: {
@@ -16,7 +17,7 @@ const theme = (mode) =>
       },
       secondary: {
         light: red[500],
-        main: '#d9d9d9',
+        main: '#3e8cff',
         dark: red[900],
         contrastText: '#202844'
       },
@@ -34,7 +35,7 @@ const theme = (mode) =>
         contrastText: grey[800]
       },
       info: {
-        main: lightBlue[500]
+        main: '#c8cbd3'
       },
       text: {
         primary: grey[900],
@@ -69,39 +70,43 @@ const theme = (mode) =>
           outlined: {
             color:'#000'
           },
-         
-            root: ({ ownerState }) => {
-              switch (ownerState.variant) {
-                case "contained":
-                  return {
-                    "&.Mui-disabled": {
-                      background: "#f3f3f3",
-                      color: "red"
-                    }
-                  };
-                case "outlined":
-                  return {
-                    "&.Mui-disabled": {
-                      background: "#e9e9e9",
-                      color: "#c7c7c7",
-                      borderColor: "#e4e4e4"
-                    }
-                  };
-                default:
-                  return;
-              }
+       
+        root: ({ ownerState }) => {
+          switch (ownerState.variant) {
+            case "contained":
+              return {
+                "&.Mui-disabled": {
+                  background: "#e9eaf2",
+                  color: "#c8cbd3"
+                }
+              };
+            case "outlined":
+              return {
+                "&.Mui-disabled": {
+                  background: "#fff",
+                  color: "#c8cbd3",
+                  borderColor: "#c8cbd3"
+                }
+              };
+            default:
+            return;
+          }
             
         },
       },
         variants: [
           {
-            props: { variant: "test" },
+            props: { size: "icon" },
             style: {
-              color: 'red',
-              fontSize: 80,
-              fontWeight: 800,
-              textShadow: "2px 2px black"
+              borderRadius : '8px',
             }
+            // props: { variant: "test" },
+            // style: {
+            //   color: 'red',
+            //   fontSize: 80,
+            //   fontWeight: 800,
+            //   textShadow: "2px 2px black"
+            // }
           }
         ],
         defaultProps: {
@@ -112,7 +117,7 @@ const theme = (mode) =>
             textTransform: 'none',
             fontSize: '15px', 
             height: '40px',
-            borderRadius: '8px',
+            // borderRadius: '8px',
             textAlign: "center"
           },
         }
