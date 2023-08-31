@@ -6,6 +6,8 @@ import green from "@mui/material/colors/green";
 import grey from "@mui/material/colors/grey";
 import lightBlue from "@mui/material/colors/lightBlue";
 
+import '../../App.css';
+
 export const theme = (mode) =>
   createTheme({
     spacing: 4,
@@ -47,7 +49,7 @@ export const theme = (mode) =>
         activeOpacity: 1,
         disabled: grey[700],
         disabledBackground: grey[200],
-        hover: red[100],
+        hover: '#eff2fa',
         hoverOpacity: 0.7,
         focus: red[600],
         focusOpacity: 1,
@@ -59,6 +61,7 @@ export const theme = (mode) =>
         paper: '#fff'
       },
       common: {
+        main: '#fff',
         black: grey[900],
         white: grey[200]
       },
@@ -144,32 +147,30 @@ export const theme = (mode) =>
       },
       MuiSelect : {
         styleOverrides: {          
-          defaultProps: {            
-            
+          defaultProps: {
             disableElevation: true,
             style: {
               boxShadow: 'none',
-              textTransform: 'none',              
-              
-              // borderRadius: '8px',
+              textTransform: 'none', 
               textAlign: "center",
-              fontWeight: 700,
+              fontWeight: 700,              
             },
           }
         },
       },
     },
-
-
     
-    typography: {
+    typography: {      
+      // fontFamily : {
+      //   fontFamily : {fontPre},
+      // },
       sectionTitle: {
         fontSize: '28px',
-        fontWeight : 900  
+        fontWeight : 700  
       },
       searchLabel: {
         fontSize: '14px',
-        fontWeight : 900 
+        fontWeight : 700 
       },
       subtitle1: {
         fontSize: 12,
@@ -286,7 +287,8 @@ export const defaultTheme = createTheme({
           fontSize: '15px', 
           height: '40px',
           borderRadius: '8px',
-          textAlign: "center"
+          textAlign: "center",
+          fontWeight: '500',
         },
       }
     }

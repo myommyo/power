@@ -7,16 +7,22 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+
+function createData(projectCode, projectName, projectType, projectPM, projectDateS, projectDateE ) {
+  return { projectCode, projectName, projectType, projectPM, projectDateS, projectDateE };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9)
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
+  createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
 ];
 
 
@@ -27,32 +33,46 @@ export default function BasicTable() {
         sx={{
           minWidth: 650,
           "& .MuiTableRow-root:hover": {
-            backgroundColor: "secondary.main",            
+            backgroundColor: "secondary.main",                        
+          },
+          "& .MuiTableRow-root:hover td": {
+            color : '#fff'
+          },
+          "& .MuiTableRow-root:hover th": {
+            color : '#fff'
           }
         }}
       >
-        <TableHead sx={{backgroundColor:'secondary.light', color: '#fff',}}>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+        <TableHead>
+          <TableRow
+           sx={{
+            "& th": {
+              backgroundColor:'secondary.light', 
+              color: '#fff',              
+            }
+          }}
+          >
+            <TableCell align="center">프로젝트 코드</TableCell>
+            <TableCell align="center">프로젝트명</TableCell>
+            <TableCell align="center">프로젝트 타입</TableCell>
+            <TableCell align="center">프로젝트 담당자</TableCell>
+            <TableCell align="center">시작일자</TableCell>
+            <TableCell align="center">종료일자</TableCell>
+            <TableCell align="center">프로젝트 코드</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
+            <TableRow key={row.projectCode} >
+              <TableCell component="th" scope="row" align="center">
+                {row.projectCode}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="left">{row.projectName}</TableCell>
+              <TableCell align="center">{row.projectType}</TableCell>
+              <TableCell align="center">{row.projectPM}</TableCell>
+              <TableCell align="center">{row.projectDateS}</TableCell>
+              <TableCell align="center">{row.projectDateS}</TableCell>
+              <TableCell align="center">{row.projectDateS}</TableCell>
             </TableRow>
           ))}
         </TableBody>

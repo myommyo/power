@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Box, Paper, Stack, TextField} from '@mui/material';
+import { Box, Pagination, Paper, Stack, TextField} from '@mui/material';
 
 import Header from '../components/Header';
 import SideBar from '../components/SideBar';
 import ButtonTitle from '../components/ButtonTitle';
 import Table from '../components/Table';
 import SearchBox from '../components/SearchBox';
+import Paginations from '../components/Paginations';
 
 import styled from '@emotion/styled';
 
@@ -41,6 +42,7 @@ export default function Sub01() {
 
         <Paper sx={{ mt:10 , p:8 }}>
           <Table />
+          <Paginations />
         </Paper>
       </Box>
       
