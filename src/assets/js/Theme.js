@@ -6,7 +6,7 @@ import green from "@mui/material/colors/green";
 import grey from "@mui/material/colors/grey";
 import lightBlue from "@mui/material/colors/lightBlue";
 
-const theme = (mode) =>
+export const theme = (mode) =>
   createTheme({
     spacing: 4,
     palette: {
@@ -137,12 +137,31 @@ const theme = (mode) =>
       MuiInputBase : {
         defaultProps: {
           style: {
-           
+            paddingLeft : 16,    
+            height: 40,
           },
         }
       },
-
+      MuiSelect : {
+        styleOverrides: {          
+          defaultProps: {            
+            
+            disableElevation: true,
+            style: {
+              boxShadow: 'none',
+              textTransform: 'none',              
+              
+              // borderRadius: '8px',
+              textAlign: "center",
+              fontWeight: 700,
+            },
+          }
+        },
+      },
     },
+
+
+    
     typography: {
       sectionTitle: {
         fontSize: '28px',

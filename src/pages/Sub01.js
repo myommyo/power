@@ -14,16 +14,11 @@ import './Sub01.css';
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
 })({
-  // width: '100%',
-  "& .MuiInputBase-root": {
-    paddingLeft : 16,
-    
-    height: 40,
-    border: '1px solid #e5e5e5',
-
-  },
   "& .Mui-focused": {
     borderColor : '#3f8cff'
+  },
+  "& .MuiInputBase-input:before": {
+    display: 'none',
   },
 
 });
@@ -35,12 +30,13 @@ export default function Sub01() {
     
     <Stack direction="row">
       <SideBar />
-      <Box sx={{ p : 12, width: '100%', }}>
-        <ButtonTitle />
+      <Box sx={{ p : 12, width: '100%', mt : 20}}>
+        <div>
+          <ButtonTitle />
+        </div>
         <Paper sx={{ mt : 5 }}>
           <SearchBox />
-          <StyledTextField variant="standard" placeholder="dmdmdmdm" fullWidth />
-
+          {/* <StyledTextField variant="standard" placeholder="dmdmdmdm" fullWidth /> */}
         </Paper>
 
         <Paper sx={{ mt:10 , p:8 }}>

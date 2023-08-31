@@ -55,3 +55,40 @@
 .sideBar img {
   width: 100%;
 }
+.sideBar .imgD {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  right: -22px;
+  top: 18px;
+}
+
+.css-1dospef-MuiInputBase-root-MuiInput-root:before,
+.css-1dospef-MuiInputBase-root-MuiInput-root:after {
+  display: none;
+}
+
+.css-70jqto-MuiButtonBase-root-MuiIconButton-root:hover,
+.css-1io2xlw-MuiButtonBase-root-MuiButton-root:hover {
+  background-color: transparent !important;
+  border-color: #202844 !important;
+}
+
+.css-kd7p3a-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+  padding: 0 !important;  
+}
+
+
+.MuiSelect-icon {
+  color: #000 !important;
+}
+
+
+.MuiOutlinedInput-notchedOutline {
+  border-width: 1px !important;
+  border-color: #e5e5e5 !important;
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #202844 !important;
+}
