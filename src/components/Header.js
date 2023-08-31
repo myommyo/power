@@ -1,10 +1,16 @@
 import React from "react";
-import { Box, Stack } from '@mui/material/';
+
+import imgA from '../assets/images/temp_breadcrum.png';
+import imgB from '../assets/images/temp_util.png';
+
 
 const Header = () => {
   return (
     <>
-    <div class="header">Header</div>
+    <div class="header">
+      <div className="imgA"><img src={imgA} alt="" /></div>
+      <div className="imgB"><img src={imgB} alt="" /></div>
+    </div>
     </>  
   )
 }
