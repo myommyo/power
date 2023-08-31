@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Pagination, Paper, Stack, TextField} from '@mui/material';
+import { Box, Paper, Stack} from '@mui/material';
 
 import Header from '../components/Header';
 import SideBar from '../components/SideBar';
@@ -8,21 +8,8 @@ import Table from '../components/Table';
 import SearchBox from '../components/SearchBox';
 import Paginations from '../components/Paginations';
 
-import styled from '@emotion/styled';
-
 import './Sub01.css';
 
-const StyledTextField = styled(TextField, {
-  name: "StyledTextField",
-})({
-  "& .Mui-focused": {
-    borderColor : '#3f8cff'
-  },
-  "& .MuiInputBase-input:before": {
-    display: 'none',
-  },
-
-});
 
 export default function Sub01() {
   return(
@@ -37,7 +24,6 @@ export default function Sub01() {
         </div>
         <Paper sx={{ mt : 5 }}>
           <SearchBox />
-          {/* <StyledTextField variant="standard" placeholder="dmdmdmdm" fullWidth /> */}
         </Paper>
 
         <Paper sx={{ mt:10 , p:8 }}>

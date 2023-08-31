@@ -7,6 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+import styled from "@emotion/styled";
 
 function createData(projectCode, projectName, projectType, projectPM, projectDateS, projectDateE ) {
   return { projectCode, projectName, projectType, projectPM, projectDateS, projectDateE };
@@ -25,6 +26,17 @@ const rows = [
   createData("2223", '프로젝트코드', '유지보수', '프로젝트 담당자', '2023-08-30', '2023-08-30'),
 ];
 
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(even)': {
+    backgroundColor: theme.palette.action.hover,
+    borderColor : theme.palette.action.hover
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
 
 export default function BasicTable() {
   return (
@@ -63,7 +75,7 @@ export default function BasicTable() {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.projectCode} >
+            <StyledTableRow key={row.projectCode} >
               <TableCell component="th" scope="row" align="center">
                 {row.projectCode}
               </TableCell>
@@ -73,7 +85,7 @@ export default function BasicTable() {
               <TableCell align="center">{row.projectDateS}</TableCell>
               <TableCell align="center">{row.projectDateS}</TableCell>
               <TableCell align="center">{row.projectDateS}</TableCell>
-            </TableRow>
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>

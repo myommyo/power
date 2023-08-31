@@ -1,6 +1,5 @@
 import React from "react";
 import { Stack, Button, Typography } from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
 import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined';
 import ReplayOutlinedIcon from '@mui/icons-material/ReplayOutlined';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';

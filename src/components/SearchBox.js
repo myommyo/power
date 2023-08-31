@@ -14,6 +14,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 import CachedOutlinedIcon from '@mui/icons-material/CachedOutlined';
 import SearchIcon from '@mui/icons-material/Search';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const ariaLabel = { 'aria-label': 'description' };
 
@@ -108,6 +109,14 @@ const SearchBox = () => {
                     onChange={handleChange}
                     displayEmpty                      
                     variant="outlined"
+                    IconComponent={KeyboardArrowDownIcon}
+                    MenuProps={{
+                      sx: {
+                        "&& .Mui-selected": {
+                          backgroundColor: 'action.hover'
+                        }
+                      }
+                    }}
                   >
                     <MenuItem value="">
                       <em>전체</em>
@@ -140,7 +149,7 @@ const SearchBox = () => {
           </Grid>
         </Item>
       </Grid>
-      <Grid item xs={4}>
+      {/* <Grid item xs={4}>
         <Item sx={{ pl : 20 , pt : 4 }}>
           <Grid container alignItems="center">
             <Grid item xs={4} >
@@ -149,15 +158,15 @@ const SearchBox = () => {
             <Grid item xs={8}>
               <Item>
                 <Stack direction="row">
-                {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker />
-                </LocalizationProvider> */}
+                </LocalizationProvider>
                 </Stack>
               </Item>
             </Grid>
           </Grid>
         </Item>
-      </Grid>
+      </Grid> */}
     </Grid>
 
     
