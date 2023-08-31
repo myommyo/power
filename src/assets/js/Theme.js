@@ -15,7 +15,7 @@ export const theme = (mode) =>
         main: '#202844'
       },
       secondary: {
-        light: red[500],
+        light: '#a5b4cb',
         main: '#3e8cff',
         dark: red[900],
         contrastText: '#202844'

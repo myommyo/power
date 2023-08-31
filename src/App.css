@@ -92,3 +92,6 @@
 .Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: #202844 !important;
 }
+
+.MuiTableRow-hover td {  
+}

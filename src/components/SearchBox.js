@@ -8,6 +8,9 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 import CachedOutlinedIcon from '@mui/icons-material/CachedOutlined';
 import SearchIcon from '@mui/icons-material/Search';
@@ -51,7 +54,7 @@ const SearchBox = () => {
     <CssBaseline />
     <Grid container alignItems='center' sx={{m : 0 , p : 6}} >
       <Grid item xs={4}>
-      <Item>
+        <Item>
           <Grid container alignItems="center">
             <Grid item xs={4} sx={{ flexShrink: 0 }}>
               <Item ><Typography variant="searchLabel">프로젝트명</Typography></Item>
@@ -120,9 +123,40 @@ const SearchBox = () => {
             </Grid>
           </Grid>
         </Item>
+      </Grid>      
+      <Grid item xs={4} sx={{pt:4}}>
+       <Item>
+          <Grid container alignItems="center">
+            <Grid item xs={4} sx={{ flexShrink: 0 }}>
+              <Item ><Typography variant="searchLabel">프로젝트 담당자</Typography></Item>
+            </Grid>
+            <Grid item xs={8}>
+              <Item>
+                <Stack direction="row">
+                  <StyledTextField variant="standard" placeholder="프로젝트 담당자" fullWidth />
+                </Stack>
+              </Item>
+            </Grid>
+          </Grid>
+        </Item>
       </Grid>
-      <Grid item xs={3}>
-        <Item>xs=3</Item>
+      <Grid item xs={4}>
+        <Item sx={{ pl : 20 , pt : 4 }}>
+          <Grid container alignItems="center">
+            <Grid item xs={4} >
+              <Item><Typography variant="searchLabel">운영반영기간</Typography></Item>
+            </Grid>
+            <Grid item xs={8}>
+              <Item>
+                <Stack direction="row">
+                {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DatePicker />
+                </LocalizationProvider> */}
+                </Stack>
+              </Item>
+            </Grid>
+          </Grid>
+        </Item>
       </Grid>
     </Grid>
 
