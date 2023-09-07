@@ -23,12 +23,9 @@ const CalendarRangComp = () => {
   // 타겟 element 토글
   const refOne = useRef(null)
 
-  //input 박스에 현재 날짜 설정
   useEffect(()=>{
     document.addEventListener("keydown", hideOnEscape, true)
     document.addEventListener("click", hideOnClickOutside, true)
-  
-  
   },[])
   
   //esc 키보드 누를때 달력 닫기
