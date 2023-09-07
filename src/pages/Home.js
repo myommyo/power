@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import "./Home.css";
 import ResponsiveGridLayout from "../components/layoutGrid";
+import DateRange from "../components/DateRangePicker";
 
 export default function Home() {
   return (
@@ -16,9 +17,11 @@ export default function Home() {
           <div>
             <Link to={"/"}>Home</Link>
             <Link to={"/sub01"}>Sub01</Link>
+            <Link to={"/sub05"}>Sub05</Link>
           </div>
 
           <div>Home 페이지 입니다.</div>
+          <DateRange />
           <Paper sx={{ mt: 5 }}>
             <ResponsiveGridLayout />
           </Paper>
