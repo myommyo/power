@@ -16,7 +16,6 @@ export default function Home() {
           <div>
             <Link to={"/"}>Home</Link>
             <Link to={"/sub01"}>Sub01</Link>
-            <Link to={"/sub05"}>Sub05</Link>
           </div>
 
           <div>Home 페이지 입니다.</div>
