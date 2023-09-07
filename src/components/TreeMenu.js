@@ -1,6 +1,6 @@
 import React from "react";
 import { DiCss3, DiJavascript, DiNpm } from "react-icons/di";
-import { FaList, FaRegFolder, FaRegFolderOpen } from "react-icons/fa";
+import { FaList } from "react-icons/fa";
 import { FaRegSquarePlus, FaRegSquareMinus } from "react-icons/fa6";
 
 import TreeView, { flattenTree } from "react-accessible-treeview";
@@ -31,21 +31,23 @@ const data = flattenTree(folder);
 
 function TreeMenu() {
   return (
-    <div>
-      <div className="directory">
-        <TreeView
-          data={data}
-          aria-label="directory tree"
-          nodeRenderer={({ element, isBranch, isExpanded, getNodeProps, level }) => (
-            <div {...getNodeProps()} style={{ paddingLeft: 24 * (level - 1) }}>
-              {isBranch ? <FolderIcon isOpen={isExpanded} /> : <FileIcon filename={element.name} />}
+    <>
+      <div>
+        <div className="directory">
+          <TreeView
+            data={data}
+            aria-label="directory tree"
+            nodeRenderer={({ element, isBranch, isExpanded, getNodeProps, level }) => (
+              <div {...getNodeProps()} style={{ paddingLeft: 24 * (level - 1) }}>
+                {isBranch ? <FolderIcon isOpen={isExpanded} /> : <FileIcon filename={element.name} />}
 
-              {element.name}
-            </div>
-          )}
-        />
+                {element.name}
+              </div>
+            )}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

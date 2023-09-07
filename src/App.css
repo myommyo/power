@@ -152,6 +152,10 @@
   padding: 0 !important;
 }
 
+.MuiSelect-select {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
 .MuiSelect-icon {
   color: #000 !important;
 }
@@ -194,10 +198,16 @@
   color: #000;
 }
 
-.MuiPaginationItem-previousNext {
+.MuiPaginationItem-previousNext,
+.MuiPaginationItem-firstLast {
   border: none !important;
 }
-
+.MuiPaginationItem-root.Mui-selected {
+  background-color: transparent !important;
+  border: 1px solid #202844 !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+}
 .tableView {
   width: 100%;
   box-sizing: border-box;
