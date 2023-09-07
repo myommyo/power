@@ -137,9 +137,9 @@
   top: 18px;
 }
 
-.css-1dospef-MuiInputBase-root-MuiInput-root:before,
-.css-1dospef-MuiInputBase-root-MuiInput-root:after {
-  display: none;
+.MuiInput-root:before,
+.MuiInput-root:after {
+  display: none !important;
 }
 
 .css-70jqto-MuiButtonBase-root-MuiIconButton-root:hover,
@@ -196,4 +196,86 @@
 
 .MuiPaginationItem-previousNext {
   border: none !important;
+}
+
+.tableView {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tableView tr:first-child th,
+.tableView tr:first-child td {
+  border-top: 1px solid #202844;
+}
+.tableView th {
+  text-align: left;
+  font-size: 14px;
+  color: #000;
+  font-weight: 700;
+  vertical-align: middle;
+  background-color: #f5f6fa;
+  border-bottom: 1px solid #e8e9ec;
+}
+.tableView th > div {
+  box-sizing: border-box;
+  padding-left: 12px;
+}
+.tableView th > div.required::after {
+  display: inline-block;
+  content: "*";
+  color: #3f8cff;
+  padding: 2px 0 0 2px;
+}
+.tableView td {
+  border-bottom: 1px solid #e8e9ec;
+}
+.tableView td > div {
+  padding: 12px 0 12px 12px;
+}
+
+.directory {
+  user-select: none;
+}
+
+.directory .tree,
+.directory .tree-node,
+.directory .tree-node-group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.directory .tree-branch-wrapper,
+.directory .tree-node__leaf {
+  outline: none;
+  outline: none;
+}
+
+.directory .tree-node {
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.directory .tree-node:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.directory .tree .tree-node--focused {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.directory .tree .tree-node--selected {
+  color: #3f8cff;
+  font-weight: 700;
+}
+
+.directory .tree-node__branch {
+  display: block;
+}
+
+.directory .icon {
+  vertical-align: middle;
+  padding-right: 5px;
 }

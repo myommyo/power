@@ -121,7 +121,7 @@ export const theme = (mode) =>
             height: "40px",
             // borderRadius: '8px',
             textAlign: "center",
-            fontWeight: 700,
+            fontWeight: 500,
           },
         },
       },
@@ -139,7 +139,9 @@ export const theme = (mode) =>
         defaultProps: {
           style: {
             paddingLeft: 16,
-            height: 40,
+            minHeight: 40,
+            border: "1px solid #e5e5e5",
+            borderRadius: "4px",
           },
         },
       },
@@ -171,7 +173,8 @@ export const theme = (mode) =>
         fontWeight: 700,
       },
       subtitle1: {
-        fontSize: 12,
+        fontSize: "20px",
+        fontWeight: 700,
       },
       body1: {
         fontWeight: 500,

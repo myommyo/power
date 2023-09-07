@@ -1,24 +1,30 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import { TextField } from "@mui/material";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
+const StyledTextField = styled(TextField, {
+  name: "StyledTextField",
+})({
+  "& .MuiInputBase-root": {
+    paddingLeft: 16,
+    height: 40,
+    border: "1px solid #e5e5e5",
+    borderRadius: "4px",
   },
-}));
+  "& .Mui-focused": {
+    borderColor: "#202844",
+  },
+  "& .Mui-disabled": {
+    borderColor: "#202844",
+  },
+});
 
 export default function Inputs() {
-  const classes = useStyles();
-
   return (
-    <form className={classes.root} noValidate autoComplete="off">
-      <Input defaultValue="Hello world" inputProps={{ 'aria-label': 'description' }} />
-      <Input placeholder="Placeholder" inputProps={{ 'aria-label': 'description' }} />
-      <Input defaultValue="Disabled" disabled inputProps={{ 'aria-label': 'description' }} />
-      <Input defaultValue="Error" error inputProps={{ 'aria-label': 'description' }} />
-    </form>
+    <>
+      <StyledTextField variant="standard" placeholder="메뉴아이콘" required="true" />
+
+      <StyledTextField disabled variant="standard" placeholder="메뉴레벨" required="true" />
+    </>
   );
 }
