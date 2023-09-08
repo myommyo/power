@@ -10,6 +10,7 @@ import theme from "./assets/js/Theme";
 import Home from "./pages/Home";
 import Sub01 from "./pages/Sub01";
 import Sub05 from "./pages/Sub05";
+import Sub06 from "./pages/Sub06";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/sub01" element={<Sub01 />} />
             <Route path="/sub05" element={<Sub05 />} />
+            <Route path="/sub06" element={<Sub06 />} />
           </Routes>
         </div>
       </BrowserRouter>
