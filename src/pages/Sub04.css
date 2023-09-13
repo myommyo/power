@@ -1,0 +1,18 @@
+.react-calendar{width:100% !important;margin-top:100px;}
+.react-calendar__tile{height:92px;text-align: right !important;}
+.react-calendar__tile .dotList{text-align: left !important;}
+.dot{position: relative;font-size:12px;line-height: 15px;padding-left:10px;text-align: left;}
+.dot + .dot{margin-top:2px;}
+.dot.c01{color:#000;}
+.dot.c02{color:#1d90ff;}
+.dot.c03{color:#ff0000;}
+.dot::before{content:'';position: absolute;left:0;top:50%;margin-top:-3px;width:6px;height:6px;border-radius: 50%;}
+.dot.c01::before{background-color: #000;}
+.dot.c02::before{background-color: #1d90ff;}
+.dot.c03::before{background-color: #ff0000;}
+
+.react-calendar__month-view__days__day--weekend{color:#3e8cff;}
+.react-calendar__month-view__days__day--weekend + .react-calendar__month-view__days__day--weekend{color:#ff0000;}
+.react-calendar__tile--active{background: #fff;}
+.react-calendar__tile:enabled:hover, 
+.react-calendar__tile:enabled:focus{background: #fff;}
