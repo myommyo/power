@@ -12,10 +12,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import { DateRange } from "react-date-range";
-import { Calendar } from "react-date-range"; // 얘가 캘린더 라이브러리
-import ko from "date-fns/locale/ko"; // 날짜 포맷 라이브러리 (한국어 기능을 임포트)
-import moment from "moment"; // 날짜 포맷 라이브러리
+
+import DateRange from "./DateRangePicker";
 
 import { useState } from "react";
 
@@ -177,7 +175,7 @@ const SearchBox = () => {
               <Grid item xs={8}>
                 <Item>
                   <Stack direction="row" alignItems="center">
-                    {/* <DateRange editableDateInputs={true} onChange={(item) => setState([item.selection])} moveRangeOnFirstSelection={false} ranges={state} /> */}
+                    <DateRange />
                   </Stack>
                 </Item>
               </Grid>

@@ -289,3 +289,64 @@
   vertical-align: middle;
   padding-right: 5px;
 }
+
+/* DateRange 상단 숭김 */
+.calendarWrap > div {
+  position: absolute;
+  z-index: 1;
+  margin-top: 50px;
+}
+.calendarWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+.calendarWrap .inputBox {
+  position: relative;
+  width: 100%;
+  padding-left: 16px;
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  outline: none;
+}
+.calendarWrap .inputBox:focus,
+.calendarWrap .inputBox:active {
+  border-color: #202844;
+}
+.calendarWrap .inputBox:after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.rdrCalendarWrapper {
+  border: 1px solid #202844;
+  border-radius: 12px;
+}
+.rdrInRange {
+  color: #eff2fa !important;
+}
+.rdrDayNumber span {
+  font-size: 13px;
+  color: #202844;
+}
+.rdrStartEdge,
+.rdrEndEdge {
+  border-radius: 12px;
+  background-color: #202844 !important;
+}
+.rdrStartEdge .rdrDayNumber > span {
+  color: #fff !important;
+}
+.rdrDateDisplayWrapper {
+  display: none;
+}
+.rdrCalendarWrapper:not(.rdrDateRangeWrapper) .rdrDayHovered .rdrDayNumber:after {
+  border: none 0 !important;
+}
