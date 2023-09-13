@@ -1,64 +1,84 @@
-import React from 'react';
-import {Button, Container, Grid, Stack } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
+import styled, { css } from "styled-components";
 
+const variStyles = css`
+  ${(props) =>
+    props.variant === "text" &&
+    css`
+      min-width: 120px;
+      border-radius: 4px;
+    `}
+  ${(props) =>
+    props.variant === "etc" &&
+    css`
+      min-width: auto;
+      font-size: 14px;
+      border-radius: 4px;
+      padding: 0 12px;
+    `}
+`;
 
-export const Buttons = () => {
+const StyledButton = styled.button`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+  height: 40px;
+
+  border: 1px solid #202844;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+
+  color: ${(p) => p.color || "#fff"};
+  background: ${(p) => p.background || "#202844"};
+
+  & > svg {
+    margin-right: 4px;
+  }
+  ${(p) =>
+    p.primary &&
+    css`
+      color: #fff;
+      background: #202844;
+      border-color: #202844;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:disabled {
+        color: #c8cbd3;
+        background: #e9eaf2;
+        border-color: #e9eaf2;
+        pointer-events: none;
+      }
+    `}
+
+  ${(p) =>
+    p.outlined &&
+    css`
+      color: #202844;
+      background: #fff;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:disabled {
+        color: #c8cbd3;
+        border-color: #c8cbd3;
+        pointer-events: none;
+      }
+    `}
+
+  //스타일정의
+  ${variStyles}
+`;
+
+function Button({ children, variant, ...props }) {
   return (
-    <Container>
-        <Grid container >
-        <Button color="primary" variant="contained" size='icon' startIcon={<DeleteIcon />}>
-          Primary contained with icon
-        </Button>
-        <Button color="primary" variant="outlined" size='icon'>
-          Primary outlined
-        </Button>
-        <Button color="info" variant="outlined" size='icon'>
-          Outlined
-        </Button>
-        <Button color="primary" variant="contained" size='icon' disabled>
-          disabled contained
-        </Button>
-        <Button color="primary" variant="outlined" size='icon' disabled>
-          disabled outlined
-        </Button>
-        </Grid>
-
-        <Stack direction="row" spacing={2} sx={{ m : 4}}>
-            <Button color="primary" variant="contained" size='small'>
-              Primary contained
-            </Button>
-        
-            <Button color="primary" variant="outlined" size='small'>
-              Primary contained
-            </Button>
-         
-        </Stack>
-    </Container>
-  )
+    <StyledButton variant={variant} {...props}>
+      {children}
+    </StyledButton>
+  );
 }
 
-// const StyledButton = styled.button`
-//   padding: 6px 12px;
-//   border-radius: 8px;
-//   font-size: 1rem;
-//   line-height: 1.5;
-//   border: 1px solid lightgray;
-
-//   color: ${(props) => props.color || 'gray'};
-//   background: ${(props) => props.background || 'white'};
-
-//   ${(props) =>
-//     props.primary &&
-//     css`
-//     color: white;
-//     background: navy;
-//     border-color: navy;
-//   `}
-// `;
-
-// function Button({ children, ...props }) {
-//   return <StyledButton {...props}>{children}</StyledButton>;
-// }
-
-export default Buttons;
+export default Button;

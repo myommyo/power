@@ -1,8 +1,10 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import { Box, Paper, Stack, Typography, TextField, Button } from "@mui/material";
-import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+
+import Buttons from "../components/Buttons";
+import { FiCheckSquare } from "react-icons/fi";
+import { RiDeleteBin7Line } from "react-icons/ri";
 
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
@@ -11,8 +13,14 @@ import TreeMenu from "../components/TreeMenu";
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
 })({
+  "& .MuiInputBase-root": {
+    paddingLeft: 16,
+    height: 40,
+    border: "1px solid #e5e5e5",
+    borderRadius: "4px",
+  },
   "& .Mui-focused": {
-    borderColor: "#202844",
+    borderColor: "#202844 !important",
   },
   "& .Mui-disabled": {
     backgroundColor: "#f8f8f8",
@@ -60,15 +68,18 @@ export default function Sub05() {
                 <Stack direction="row" justifyContent="space-between" alignItems="flex-end" sx={{ mb: 4 }}>
                   <Typography variant="subtitle1">메뉴정보</Typography>
                   <Stack direction="row" spacing={2}>
-                    <Button color="primary" variant="contained" size="icon" startIcon={<CreateOutlinedIcon />}>
-                      하위메뉴 추가
-                    </Button>
-                    <Button color="primary" variant="outlined" size="icon" startIcon={<CreateOutlinedIcon />}>
+                    <Buttons primary>
+                      <FiCheckSquare />
+                      하위메뉴추가
+                    </Buttons>
+                    <Buttons outlined>
+                      <FiCheckSquare />
                       수정
-                    </Button>
-                    <Button color="primary" variant="outlined" size="icon" startIcon={<DeleteOutlineOutlinedIcon />}>
+                    </Buttons>
+                    <Buttons outlined>
+                      <RiDeleteBin7Line />
                       삭제
-                    </Button>
+                    </Buttons>
                   </Stack>
                 </Stack>
                 <table className="tableView">

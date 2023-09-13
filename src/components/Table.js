@@ -10,6 +10,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import UseSwitchesBasic from "../components/Switch";
 
 import styled from "@emotion/styled";
 
@@ -143,6 +144,9 @@ export default function BasicTable() {
                   <TableCell align="center">{row.projectDateS}</TableCell>
                   <TableCell align="center">{row.projectDateS}</TableCell>
                   <TableCell align="center">{row.projectDateS}</TableCell>
+                  <TableCell align="center">
+                    <UseSwitchesBasic />
+                  </TableCell>
                 </StyledTableRow>
               ))}
             </TableBody>

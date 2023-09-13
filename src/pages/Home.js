@@ -14,12 +14,14 @@ export default function Home() {
       <Stack direction="row">
         <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
-          <div>
+          <Stack>
             <Link to={"/"}>Home</Link>
+            <Link to={"/Sample"}>Sample</Link>
             <Link to={"/sub01"}>Sub01</Link>
+            <Link to={"/sub04"}>Sub04</Link>
             <Link to={"/sub05"}>Sub05</Link>
             <Link to={"/sub06"}>Sub06</Link>
-          </div>
+          </Stack>
 
           <div>Home 페이지 입니다.</div>
           <DateRange />

@@ -13,6 +13,12 @@ import Paginations from "../components/Paginations";
 import UseSwitchesBasic from "../components/Switch";
 import StarsRating from "../components/StarRating";
 
+import Buttons from "../components/Buttons";
+import { FiCheckSquare } from "react-icons/fi";
+import { BsPencilSquare, BsEye } from "react-icons/bs";
+import { PiArrowCounterClockwiseBold } from "react-icons/pi";
+import { IoDocumentOutline } from "react-icons/io5";
+
 export default function Sub06() {
   return (
     <>
@@ -26,18 +32,22 @@ export default function Sub06() {
               <Typography variant="sectionTitle">커뮤니티관리</Typography>
             </div>
             <Stack direction="row" spacing={2}>
-              <Button color="primary" variant="outlined" size="icon" startIcon={<ReplayOutlinedIcon />}>
+              <Buttons outlined>
+                <PiArrowCounterClockwiseBold />
                 초기화
-              </Button>
-              <Button color="primary" variant="outlined" size="icon" startIcon={<CreateOutlinedIcon />}>
+              </Buttons>
+              <Buttons outlined>
+                <BsPencilSquare />
                 신규
-              </Button>
-              <Button color="primary" variant="outlined" size="icon" startIcon={<RemoveRedEyeOutlinedIcon />}>
+              </Buttons>
+              <Buttons outlined>
+                <BsEye />
                 조회
-              </Button>
-              <Button color="primary" variant="outlined" size="icon" startIcon={<InsertDriveFileOutlinedIcon />}>
+              </Buttons>
+              <Buttons outlined>
+                <IoDocumentOutline />
                 엑셀
-              </Button>
+              </Buttons>
             </Stack>
           </Stack>
 

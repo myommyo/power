@@ -33,7 +33,7 @@ const StyledTextField = styled(TextField, {
     borderRadius: "4px",
   },
   "& .Mui-focused": {
-    borderColor: "#202844",
+    borderColor: "#202844 !important",
   },
 });
 

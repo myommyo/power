@@ -23,7 +23,6 @@ export default function Inputs() {
   return (
     <>
       <StyledTextField variant="standard" placeholder="메뉴아이콘" required="true" />
-
       <StyledTextField disabled variant="standard" placeholder="메뉴레벨" required="true" />
     </>
   );

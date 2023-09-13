@@ -7,6 +7,7 @@ import "./App.css";
 import theme from "./assets/js/Theme";
 
 //페이지 추가
+import Sample from "./pages/Sample";
 import Home from "./pages/Home";
 import Sub01 from "./pages/Sub01";
 import Sub04 from "./pages/Sub04";
@@ -21,6 +22,7 @@ export default function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/Sample" element={<Sample />} />
             <Route path="/sub01" element={<Sub01 />} />
             <Route path="/sub04" element={<Sub04 />} />
             <Route path="/sub05" element={<Sub05 />} />

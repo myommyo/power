@@ -1,10 +1,11 @@
 import React from "react";
 import { Stack, Button, Typography } from "@mui/material";
-import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
-import ReplayOutlinedIcon from "@mui/icons-material/ReplayOutlined";
-import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
-import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
+
+import Buttons from "../components/Buttons";
+import { FiCheckSquare } from "react-icons/fi";
+import { BsPencilSquare, BsEye } from "react-icons/bs";
+import { PiArrowCounterClockwiseBold } from "react-icons/pi";
+import { IoDocumentOutline } from "react-icons/io5";
 
 const ButtonTitle = () => {
   return (
@@ -14,21 +15,26 @@ const ButtonTitle = () => {
           <Typography variant="sectionTitle">RPA 변경관리(관리자)</Typography>
         </div>
         <Stack direction="row" spacing={2}>
-          <Button color="primary" variant="contained" size="icon" startIcon={<DoneOutlinedIcon />}>
+          <Buttons primary>
+            <FiCheckSquare />
             일괄등록
-          </Button>
-          <Button color="primary" variant="outlined" size="icon" startIcon={<ReplayOutlinedIcon />}>
+          </Buttons>
+          <Buttons outlined>
+            <PiArrowCounterClockwiseBold />
             초기화
-          </Button>
-          <Button color="primary" variant="outlined" size="icon" startIcon={<CreateOutlinedIcon />}>
+          </Buttons>
+          <Buttons outlined>
+            <BsPencilSquare />
             신규
-          </Button>
-          <Button color="primary" variant="outlined" size="icon" startIcon={<RemoveRedEyeOutlinedIcon />}>
+          </Buttons>
+          <Buttons outlined>
+            <BsEye />
             조회
-          </Button>
-          <Button color="primary" variant="outlined" size="icon" startIcon={<InsertDriveFileOutlinedIcon />}>
+          </Buttons>
+          <Buttons outlined>
+            <IoDocumentOutline />
             엑셀
-          </Button>
+          </Buttons>
         </Stack>
       </Stack>
     </>
