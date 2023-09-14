@@ -5,10 +5,12 @@ import { Select, MenuItem } from "@mui/material";
 import imgB from "../assets/images/temp_util.png";
 import BreadCrums from "../components/BreadCrums";
 
-const Appbar = ({handleChange, selectedThemeName, themeArray }) => {
+const Appbar = ({setOpen, handleChange, selectedThemeName, themeArray }) => {
   console.log(themeArray);
   return (
     <>
+      {/* <AppBar className={(setOpen ? 'sideClose' : 'sideOpen')}> */}
+
       <AppBar>
         <div class="header">
           <BreadCrums />

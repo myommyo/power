@@ -4,9 +4,10 @@ import imgC from '../assets/images/temp_nav.png';
 import imgD from '../assets/images/btn_toggle.png';
 
 
-const SideBar = () => {
+const SideBar = ({setOpen}) => {
   return (
     <>
+      {/* <div className={"sideBar " + (setOpen ? 'sideClose' : 'sideOpen')}> */}
       <div className="sideBar">
         <img src={imgC} alt="" />
         <div className="imgD">
