@@ -8,34 +8,9 @@ import { styled } from "@mui/material/styles";
 import { TextField } from "@mui/material";
 import Buttons from "../components/Buttons";
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  "& .MuiBadge-badge": {
-    backgroundColor: "#44b700",
-    color: "#44b700",
-    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-    "&::after": {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      borderRadius: "50%",
-      animation: "ripple 1.2s infinite ease-in-out",
-      border: "1px solid currentColor",
-      content: '""',
-    },
-  },
-  "@keyframes ripple": {
-    "0%": {
-      transform: "scale(.8)",
-      opacity: 1,
-    },
-    "100%": {
-      transform: "scale(2.4)",
-      opacity: 0,
-    },
-  },
-}));
+//images
+import NoProfile from "../assets/images/no_profile.png";
+import IcoCamera from "../assets/images/ico_camera.png";
 
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
@@ -62,10 +37,9 @@ const StyledTextField = styled(TextField, {
   },
 });
 
-const SmallAvatar = styled(Avatar)(({ theme }) => ({
-  width: 22,
-  height: 22,
-  border: `2px solid ${theme.palette.background.paper}`,
+const SmallAvatar = styled(Avatar)(() => ({
+  width: 36,
+  height: 36,
 }));
 
 export default function Sub09() {
@@ -74,20 +48,26 @@ export default function Sub09() {
       <Stack direction="row">
         <SideBar />
         <Box sx={{ p: 12, width: "760px", mt: 20, mx: "auto" }}>
-          <Box sx={{ pb: 3 }}>
+          <Box>
             <Typography variant="sectionTitle">프로필 설정</Typography>
           </Box>
 
-          <Paper sx={{ mt: 3, px: 8, pb: 8 }}>
-            <Stack direction="row" spacing={2}>
-              <StyledBadge overlap="circular" anchorOrigin={{ vertical: "bottom", horizontal: "right" }} variant="dot">
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-              </StyledBadge>
-              <Badge overlap="circular" anchorOrigin={{ vertical: "bottom", horizontal: "right" }} badgeContent={<SmallAvatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />}>
-                <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+          <Paper sx={{ mt: 3, px: 8, pb: 8, pt: 16 }}>
+            <Stack direction="row" justifyContent="center">
+              <Badge overlap="circular" anchorOrigin={{ vertical: "bottom", horizontal: "right" }} badgeContent={<SmallAvatar alt="" src={IcoCamera} />}>
+                <Avatar alt="" src={NoProfile} sx={{ width: 128, height: 128, background: "#d9d9d9" }} />
               </Badge>
             </Stack>
-            <Grid container spacing={6}>
+            <Stack justifyContent="center" alignItems="center">
+              <Box sx={{ mt: 4 }}>
+                <Typography sx={{ fontSize: "18px", fontWeight: "700" }}>김파워</Typography>
+              </Box>
+              <Box>
+                <Typography>구매팀 팀장</Typography>
+              </Box>
+            </Stack>
+
+            <Grid container spacing={6} sx={{ mt: 0 }}>
               <Grid item xs={6}>
                 <Box sx={{ mb: 2 }}>
                   <Typography variant="searchLabel">아이디</Typography>
