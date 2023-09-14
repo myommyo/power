@@ -14,6 +14,7 @@ const variStyles = css`
       font-size: 14px;
       border-radius: 4px;
       padding: 0 12px;
+      flex-shrink: 0;
     `}
 `;
 

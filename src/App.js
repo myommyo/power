@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
@@ -19,6 +19,7 @@ import Sub01 from "./pages/Sub01";
 import Sub04 from "./pages/Sub04";
 import Sub05 from "./pages/Sub05";
 import Sub06 from "./pages/Sub06";
+import Sub09 from "./pages/Sub09";
 
 const themeArray = [
   {
@@ -35,18 +36,12 @@ const themeArray = [
   },
 ];
 export default function App() {
-  const [selectedThemeName, setSelectedThemeName] = useState(
-    Cookies.get("selectedThemeName") || "Default"
-  );
-  const [selectedTheme, setSelectedTheme] = useState(
-    themeArray.find((theme) => theme.name === selectedThemeName).themeName
-  );
+  const [selectedThemeName, setSelectedThemeName] = useState(Cookies.get("selectedThemeName") || "Default");
+  const [selectedTheme, setSelectedTheme] = useState(themeArray.find((theme) => theme.name === selectedThemeName).themeName);
   const handleChange = (event) => {
     const newThemeName = event.target.value;
     setSelectedThemeName(newThemeName);
-    setSelectedTheme(
-      themeArray.find((theme) => theme.name === newThemeName).themeName
-    );
+    setSelectedTheme(themeArray.find((theme) => theme.name === newThemeName).themeName);
     Cookies.set("selectedThemeName", newThemeName, {
       expires: 365,
       sameSite: "None",
@@ -55,14 +50,8 @@ export default function App() {
   };
   return (
     <ThemeProvider theme={selectedTheme}>
-      <Appbar 
-        setSelectedTheme={setSelectedTheme}
-        handleChange={handleChange}
-        selectedTheme={selectedTheme}
-        selectedThemeName={selectedThemeName}
-        themeArray={themeArray}
-      />
-      <CssBaseline />      
+      <Appbar setSelectedTheme={setSelectedTheme} handleChange={handleChange} selectedTheme={selectedTheme} selectedThemeName={selectedThemeName} themeArray={themeArray} />
+      <CssBaseline />
       <BrowserRouter>
         <div className="App">
           <Routes>
@@ -72,6 +61,7 @@ export default function App() {
             <Route path="/sub04" element={<Sub04 />} />
             <Route path="/sub05" element={<Sub05 />} />
             <Route path="/sub06" element={<Sub06 />} />
+            <Route path="/sub09" element={<Sub09 />} />
           </Routes>
         </div>
       </BrowserRouter>

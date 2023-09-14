@@ -6,6 +6,7 @@ import green from "@mui/material/colors/green";
 import lightBlue from "@mui/material/colors/lightBlue";
 import "../App.css";
 const baseTheme = createTheme({
+  spacing: 4,
   palette: {
     mode: "light",
     primary: {
@@ -65,23 +66,23 @@ const baseTheme = createTheme({
       styleOverrides: {
         outlined: {
           color: "#000",
+          backgroundColor: "#fff",
         },
-
         root: ({ ownerState }) => {
           switch (ownerState.variant) {
             case "contained":
               return {
                 "&.Mui-disabled": {
-                  background: "#f3f3f3",
-                  color: "red",
+                  background: "#e9eaf2",
+                  color: "#c8cbd3",
                 },
               };
             case "outlined":
               return {
                 "&.Mui-disabled": {
-                  background: "#e9e9e9",
-                  color: "#c7c7c7",
-                  borderColor: "#e4e4e4",
+                  background: "#fff",
+                  color: "#c8cbd3",
+                  borderColor: "#c8cbd3",
                 },
               };
             default:
@@ -91,13 +92,17 @@ const baseTheme = createTheme({
       },
       variants: [
         {
-          props: { variant: "test" },
+          props: { size: "icon" },
           style: {
-            color: "red",
-            fontSize: 80,
-            fontWeight: 800,
-            textShadow: "2px 2px black",
+            borderRadius: "8px",
           },
+          // props: { variant: "test" },
+          // style: {
+          //   color: 'red',
+          //   fontSize: 80,
+          //   fontWeight: 800,
+          //   textShadow: "2px 2px black"
+          // }
         },
       ],
       defaultProps: {
@@ -108,11 +113,64 @@ const baseTheme = createTheme({
           textTransform: "none",
           fontSize: "15px",
           height: "40px",
-          borderRadius: "8px",
+          // borderRadius: '8px',
           textAlign: "center",
-          fontWeight: "500",
+          fontWeight: 500,
         },
       },
+    },
+    MuiPaper: {
+      defaultProps: {
+        elevation: 0,
+        style: {
+          boxShadow: "none",
+          textTransform: "none",
+          borderRadius: "12px",
+        },
+      },
+    },
+    MuiInputBase: {
+      defaultProps: {
+        style: {
+          paddingLeft: 16,
+          minHeight: 40,
+          border: "1px solid #e5e5e5",
+          borderRadius: "4px",
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        defaultProps: {
+          disableElevation: true,
+          style: {
+            boxShadow: "none",
+            textTransform: "none",
+            textAlign: "center",
+            fontWeight: 700,
+          },
+        },
+      },
+    },
+  },
+  typography: {
+    // fontFamily : {
+    //   fontFamily : {fontPre},
+    // },
+    sectionTitle: {
+      fontSize: "28px",
+      fontWeight: 700,
+    },
+    searchLabel: {
+      fontSize: "14px",
+      fontWeight: 700,
+    },
+    subtitle1: {
+      fontSize: "20px",
+      fontWeight: 700,
+    },
+    body1: {
+      fontWeight: 500,
     },
   },
 });
