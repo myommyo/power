@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Box, Paper, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
-import SideBar from "../components/SideBar";
+
 import "./Home.css";
 import ResponsiveGridLayout from "../components/layoutGrid";
 import DateRange from "../components/DateRangePicker";
@@ -11,7 +10,6 @@ export default function Home() {
   return (
     <>
       <Stack direction="row">
-        <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
           <Stack>
             <Link to={"/"}>Home</Link>

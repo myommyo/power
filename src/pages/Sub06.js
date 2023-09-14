@@ -5,8 +5,6 @@ import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 
-import Header from "../components/Header";
-import SideBar from "../components/SideBar";
 import Table from "../components/Table";
 import SearchBox from "../components/SearchBox";
 import Paginations from "../components/Paginations";
@@ -14,7 +12,7 @@ import UseSwitchesBasic from "../components/Switch";
 import StarsRating from "../components/StarRating";
 
 import Buttons from "../components/Buttons";
-import { FiCheckSquare } from "react-icons/fi";
+
 import { BsPencilSquare, BsEye } from "react-icons/bs";
 import { PiArrowCounterClockwiseBold } from "react-icons/pi";
 import { IoDocumentOutline } from "react-icons/io5";
@@ -23,7 +21,6 @@ export default function Sub06() {
   return (
     <>
       <Stack direction="row">
-        <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
           <Stack direction="row" justifyContent="space-between" alignItems="center">
             <div>

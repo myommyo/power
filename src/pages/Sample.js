@@ -1,9 +1,6 @@
 import * as React from "react";
 import { Box, Paper, Stack } from "@mui/material";
 
-import Header from "../components/Header";
-import SideBar from "../components/SideBar";
-
 import Buttons from "../components/Buttons";
 import { FiCheckSquare } from "react-icons/fi";
 import { BsPencilSquare, BsEye } from "react-icons/bs";
@@ -14,7 +11,6 @@ export default function Sample() {
   return (
     <>
       <Stack direction="row">
-        <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
           <Box>
             <Buttons primary>Primary</Buttons>

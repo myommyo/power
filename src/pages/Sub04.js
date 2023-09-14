@@ -1,11 +1,7 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import { Box, Paper, Stack, Typography, TextField, Button } from "@mui/material";
-import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
-import Header from "../components/Header";
-import SideBar from "../components/SideBar";
 import Calendar from "../components/Calendar";
 
 import SearchBox from "../components/SearchBox";
@@ -19,7 +15,6 @@ export default function Sub04() {
   return (
     <>
       <Stack direction="row">
-        <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
           <Stack direction="row" justifyContent="space-between" alignItems="center">
             <div>

@@ -76,6 +76,9 @@
   font-weight: 400;
 }
 
+.App {
+  width: 100%;
+}
 /* layout */
 .header {
   position: fixed;
@@ -351,11 +354,12 @@
   border: none 0 !important;
 }
 
-
-
-
-
-
-
-
-.btnSide{width:40px;height:40px;background: red;z-index: 99999;position: absolute;top:10px;left:240px;}
+.btnSide {
+  width: 40px;
+  height: 40px;
+  background: red;
+  z-index: 99999;
+  position: absolute;
+  top: 10px;
+  left: 240px;
+}

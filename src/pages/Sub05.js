@@ -6,8 +6,6 @@ import Buttons from "../components/Buttons";
 import { FiCheckSquare } from "react-icons/fi";
 import { RiDeleteBin7Line } from "react-icons/ri";
 
-import Header from "../components/Header";
-import SideBar from "../components/SideBar";
 import TreeMenu from "../components/TreeMenu";
 
 const StyledTextField = styled(TextField, {
@@ -39,7 +37,6 @@ export default function Sub05() {
   return (
     <>
       <Stack direction="row">
-        <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
           <Typography variant="sectionTitle">메뉴구성관리</Typography>
           <Stack direction="row" justifyContent="space-between" spacing={6} sx={{ mt: 4, flex: "1 1 auto" }}>

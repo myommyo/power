@@ -3,7 +3,6 @@ import { Box, Paper, Stack, Typography, Grid } from "@mui/material";
 import Badge from "@mui/material/Badge";
 import Avatar from "@mui/material/Avatar";
 
-import SideBar from "../components/SideBar";
 import { styled } from "@mui/material/styles";
 import { TextField } from "@mui/material";
 import Buttons from "../components/Buttons";
@@ -46,7 +45,6 @@ export default function Sub09() {
   return (
     <>
       <Stack direction="row">
-        <SideBar />
         <Box sx={{ p: 12, width: "760px", mt: 20, mx: "auto" }}>
           <Box>
             <Typography variant="sectionTitle">프로필 설정</Typography>

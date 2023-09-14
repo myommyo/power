@@ -3,7 +3,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { styled, useTheme, ThemeProvider } from "@mui/material/styles";
 import Cookies from "js-cookie";
-
+import { Stack } from "@mui/material";
 import SideBar from "./components/SideBar";
 
 import AppBar from "./components/Header";
@@ -23,26 +23,6 @@ import Sub05 from "./pages/Sub05";
 import Sub06 from "./pages/Sub06";
 import Sub09 from "./pages/Sub09";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const themeArray = [
   {
     name: "Default",
@@ -58,7 +38,6 @@ const themeArray = [
   },
 ];
 export default function App() {
-
   const [open, setOpen] = React.useState(false);
 
   const [selectedThemeName, setSelectedThemeName] = useState(Cookies.get("selectedThemeName") || "Default");
@@ -74,41 +53,40 @@ export default function App() {
     });
   };
 
-
-  const toggleHdSd = () => {    
-    if(open){
+  const toggleHdSd = () => {
+    if (open) {
       setOpen(false);
-    } else{
+    } else {
       setOpen(true);
-    }    
-  };  
-
+    }
+  };
 
   return (
     <ThemeProvider theme={selectedTheme}>
-      <div className={(open ? 'sideClose' : 'sideOpen')}>
-
+      <div className={open ? "sideClose" : "sideOpen"}>
         {/* <AppBar setOpen={open} setSelectedTheme={setSelectedTheme} handleChange={handleChange} selectedTheme={selectedTheme} selectedThemeName={selectedThemeName} themeArray={themeArray} />
         <div className={"btnSide" + (open ? ' sideClose' : ' sideOpen')} onClick={toggleHdSd}></div>
         <SideBar setOpen={open} /> */}
 
         <AppBar setSelectedTheme={setSelectedTheme} handleChange={handleChange} selectedTheme={selectedTheme} selectedThemeName={selectedThemeName} themeArray={themeArray} />
         <div className="btnSide" onClick={toggleHdSd}></div>
-        <SideBar />
-        <CssBaseline />
-        <BrowserRouter component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <div className="App">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/Sample" element={<Sample />} />
-              <Route path="/sub01" element={<Sub01 />} />
-              <Route path="/sub04" element={<Sub04 />} />
-              <Route path="/sub05" element={<Sub05 />} />
-              <Route path="/sub06" element={<Sub06 />} />
-              <Route path="/sub09" element={<Sub09 />} />
-            </Routes>
-          </div>
-        </BrowserRouter>
+        <Stack direction="row">
+          <SideBar />
+          <CssBaseline />
+          <BrowserRouter component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <div className="App">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/Sample" element={<Sample />} />
+                <Route path="/sub01" element={<Sub01 />} />
+                <Route path="/sub04" element={<Sub04 />} />
+                <Route path="/sub05" element={<Sub05 />} />
+                <Route path="/sub06" element={<Sub06 />} />
+                <Route path="/sub09" element={<Sub09 />} />
+              </Routes>
+            </div>
+          </BrowserRouter>
+        </Stack>
       </div>
     </ThemeProvider>
   );
