@@ -92,7 +92,8 @@
   height: 80px;
   width: 100%;
   background-color: #fff;
-  z-index: 9;
+  z-index: 1;
+  transition: all 0.2s;
 }
 
 .header img {
@@ -108,47 +109,99 @@
   height: 36px;
   margin-right: 48px;
 }
+.btnSide {
+  width: 46px;
+  height: 46px;
+  z-index: 99999;
+  position: fixed;
+  top: 17px;
+  left: 257px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: url(../src/assets/images/btn_toggle.png) no-repeat center;
+  background-size: 100%;
+}
+
+/* SideBar 접힘 */
+.sideClose .sideBar,
+.sideClose .sideBar .sideBarFixed {
+  width: 104px;
+}
+.sideClose .btnSide {
+  left: 81px;
+}
+.sideClose .header {
+  padding-left: 104px;
+}
+.sideClose .MuiAccordionSummary-content > span,
+.sideClose .MuiCollapse-root {
+  display: none;
+  transition: none;
+}
+.sideClose .MuiAccordion-root {
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sideClose .MuiAccordionSummary-content::before {
+  margin-right: 0;
+}
+.sideClose .sideBar .logo > h1 {
+  width: 32px;
+  background: url(../src/assets/images/logo_small.png) no-repeat center;
+  background-size: 32px;
+}
+/* SideBar */
 .sideBar {
   flex-shrink: 0;
   width: 280px;
-  background-color: #202844;
   min-height: 100vh;
   height: 100%;
-  color: #fff;
   position: relative;
-  z-index: 9;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  transition: all 0.2s;
 }
-.sideBar::after {
-  display: block;
-  content: "";
+
+.sideBar .sideBarFixed {
   width: 280px;
-  height: 100%;
-  background-color: #202844;
   position: fixed;
   left: 0;
-  top: 100vh;
-  z-index: 8;
+  top: 0;
+  bottom: 0;
+  transition: all 0.2s;
 }
-.sideBar img {
+.sideBar .logo {
+  box-sizing: border-box;
   width: 100%;
+  height: 104px;
+  padding: 24px 0 0 36px;
+  background-color: #202844;
 }
-.sideBar .imgD {
-  width: 46px;
-  height: 46px;
+.sideBar .logo > h1 {
+  font: 0/0 a;
+  width: 134px;
+  height: 32px;
+  background: url(../src/assets/images/logo.png) no-repeat center;
+  background-size: 134px;
+}
+.sideBar .sideBarInner {
+  box-sizing: border-box;
   position: absolute;
-  right: -22px;
-  top: 18px;
+  left: 0;
+  top: 104px;
+  bottom: 0;
+  width: 100%;
+  overflow-y: auto;
+  background-color: #202844;
+  padding: 0 24px;
 }
 
 .MuiInput-root:before,
 .MuiInput-root:after {
   display: none !important;
-}
-
-.css-70jqto-MuiButtonBase-root-MuiIconButton-root:hover,
-.css-1io2xlw-MuiButtonBase-root-MuiButton-root:hover {
-  background-color: transparent !important;
-  border-color: #202844 !important;
 }
 
 .css-kd7p3a-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
@@ -354,12 +407,138 @@
   border: none 0 !important;
 }
 
-.btnSide {
-  width: 40px;
-  height: 40px;
+.MuiAccordion-root {
+  box-sizing: border-box;
+  background-color: transparent !important;
+}
+
+.Mui-expanded {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  color: #fff !important;
+}
+.MuiAccordion-gutters {
+  margin-top: 8px;
+}
+.MuiAccordion-root.Mui-expanded {
+  margin: 16px 0;
+}
+.MuiAccordionSummary-root {
+  padding: 0 16px !important;
+}
+.MuiAccordionSummary-root.Mui-expanded {
+  background-color: transparent !important;
+  color: #fff;
+}
+.MuiCollapse-root {
+  padding: 0 16px;
+}
+
+.MuiAccordionSummary-content {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.56);
+}
+.MuiAccordionSummary-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.MuiAccordionSummary-content > span {
+  font-size: 16px;
+}
+.MuiAccordionSummary-content::before {
+  display: block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
   background: red;
-  z-index: 99999;
-  position: absolute;
-  top: 10px;
-  left: 240px;
+  flex-shrink: 0;
+}
+.sideBarList01 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-1-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList01 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_1_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList02 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-2-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList03 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_3_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList03 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-3-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList04 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_4_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList04 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-4-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList05 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_5_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList05 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-5-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList06 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_6_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList06 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-6-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList02 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_2_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList07 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-7-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList07 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_7_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList08 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-8-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList08 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_8_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList09 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-9-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList09 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_9_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList10 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-10-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList10 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_10_light_active.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList11 .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico-11-light.png) no-repeat center;
+  background-size: 24px;
+}
+.sideBarList11 .MuiAccordionSummary-root.Mui-expanded .MuiAccordionSummary-content::before {
+  background: url(../src/assets/images/ico_11_light_active.png) no-repeat center;
+  background-size: 24px;
 }

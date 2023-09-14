@@ -179,6 +179,11 @@ export const theme = (mode) =>
       body1: {
         fontWeight: 500,
       },
+      sideBarHeader: {
+        color: "rgba(255,255,255,0.56)",
+        fonSizd: "16px",
+        fontWeight: "500",
+      },
     },
   });
 
