@@ -37,8 +37,8 @@ const CalendarRangComp = () => {
 
   // 타겟이 달력부분이 아닐때 달력 닫기
   const hideOnClickOutside = (e) => {
-    console.log(refOne.current)
-    console.log(e.target)
+    // console.log(refOne.current)
+    // console.log(e.target)
     if( refOne.current && !refOne.current.contains(e.target) ) {
       setOpen(false)
     }

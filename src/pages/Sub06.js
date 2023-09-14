@@ -22,8 +22,6 @@ import { IoDocumentOutline } from "react-icons/io5";
 export default function Sub06() {
   return (
     <>
-      <Header />
-
       <Stack direction="row">
         <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>

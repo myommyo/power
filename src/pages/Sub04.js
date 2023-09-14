@@ -18,7 +18,6 @@ import "./Sub04.css";
 export default function Sub04() {
   return (
     <>
-      <Header />
       <Stack direction="row">
         <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>

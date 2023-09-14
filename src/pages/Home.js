@@ -10,7 +10,6 @@ import DateRange from "../components/DateRangePicker";
 export default function Home() {
   return (
     <>
-      <Header />
       <Stack direction="row">
         <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>

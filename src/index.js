@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { ThemeProvider } from "styled-components";
-import theme from "./assets/js/Theme";
 import GlobalStyle from "./assets/js/GlobalStyles";
 import reportWebVitals from './reportWebVitals';
 import 'react-grid-layout/css/styles.css'
@@ -10,10 +8,10 @@ import 'react-resizable/css/styles.css'
 
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <React.StrictMode>
     <GlobalStyle />
     <App />
-  </ThemeProvider>,
+  </React.StrictMode>,
   document.getElementById("root"),
 );
 

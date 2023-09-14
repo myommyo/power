@@ -38,7 +38,6 @@ const StyledTextField = styled(TextField, {
 export default function Sub05() {
   return (
     <>
-      <Header />
       <Stack direction="row">
         <SideBar />
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
