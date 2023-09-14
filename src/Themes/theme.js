@@ -13,13 +13,13 @@ const baseTheme = createTheme({
       main: "#202844",
     },
     secondary: {
-      light: red[500],
-      main: "#d9d9d9",
+      light: "#a5b4cb",
+      main: "#3e8cff",
       dark: red[900],
       contrastText: "#202844",
     },
     error: {
-      light: red[400],
+      light: "#202844",
       main: red[500],
       dark: red[300],
       contrastText: grey[800],
@@ -32,10 +32,11 @@ const baseTheme = createTheme({
       contrastText: grey[800],
     },
     info: {
-      main: lightBlue[500],
+      main: "#c8cbd3",
     },
     text: {
-      primary: grey[900],
+      main: "#000",
+      primary: "#000",
       secondary: grey[700],
       disabled: grey[500],
     },
@@ -44,7 +45,7 @@ const baseTheme = createTheme({
       activeOpacity: 1,
       disabled: grey[700],
       disabledBackground: grey[200],
-      hover: red[100],
+      hover: "#eff2fa",
       hoverOpacity: 0.7,
       focus: red[600],
       focusOpacity: 1,
@@ -56,6 +57,7 @@ const baseTheme = createTheme({
       paper: "#fff",
     },
     common: {
+      main: "#fff",
       black: grey[900],
       white: grey[200],
     },
