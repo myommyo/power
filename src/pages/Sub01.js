@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Box, Paper, Stack } from "@mui/material";
 
-import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import ButtonTitle from "../components/ButtonTitle";
 import Table from "../components/Table";

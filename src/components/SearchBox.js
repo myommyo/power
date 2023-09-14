@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { Stack, Typography, Grid, Paper, IconButton, TextField, Box } from "@mui/material";
+import { Stack, Typography, Grid, IconButton, TextField, Box } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import MenuItem from "@mui/material/MenuItem";
@@ -14,18 +14,6 @@ import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 
 import DateRange from "./DateRangePicker";
-
-import { useState } from "react";
-
-const ariaLabel = { "aria-label": "description" };
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(0),
-  backgroundColor: "#fff",
-  color: theme.palette.text.primary,
-}));
 
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
@@ -48,70 +36,62 @@ const SearchBox = () => {
     setAge(event.target.value);
   };
 
-  const [state, setState] = useState([
-    {
-      startDate: new Date(),
-      endDate: null,
-      key: "selection",
-    },
-  ]);
-
   return (
     <>
       <CssBaseline />
       <Grid container alignItems="center" sx={{ m: 0, p: 6 }}>
         <Grid item xs={4}>
-          <Item>
+          <Box>
             <Grid container alignItems="center">
               <Grid item xs={4} sx={{ flexShrink: 0 }}>
-                <Item>
+                <Box>
                   <Typography variant="searchLabel">프로젝트명</Typography>
-                </Item>
+                </Box>
               </Grid>
               <Grid item xs={8}>
-                <Item>
+                <Box>
                   <Stack direction="row">
                     <StyledTextField variant="standard" placeholder="프로젝트명" fullWidth />
                     <IconButton aria-label="Refresh" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid #e5e5e5" }}>
                       <CachedOutlinedIcon fontSize="inherit" />
                     </IconButton>
                   </Stack>
-                </Item>
+                </Box>
               </Grid>
             </Grid>
-          </Item>
+          </Box>
         </Grid>
         <Grid item xs={4}>
-          <Item sx={{ pl: 20 }}>
+          <Box sx={{ pl: 20 }}>
             <Grid container alignItems="center">
               <Grid item xs={4}>
-                <Item>
+                <Box>
                   <Typography variant="searchLabel">프로젝트 타입</Typography>
-                </Item>
+                </Box>
               </Grid>
               <Grid item xs={8}>
-                <Item>
+                <Box>
                   <Stack direction="row">
                     <StyledTextField variant="standard" placeholder="전체" fullWidth />
                     <IconButton aria-label="찾기" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid #e5e5e5" }}>
                       <SearchIcon fontSize="inherit" />
                     </IconButton>
                   </Stack>
-                </Item>
+                </Box>
               </Grid>
             </Grid>
-          </Item>
+          </Box>
         </Grid>
         <Grid item xs={4}>
-          <Item sx={{ pl: 20 }}>
+          <Box sx={{ pl: 20 }}>
             <Grid container alignItems="center">
               <Grid item xs={4}>
-                <Item>
+                <Box>
                   <Typography variant="searchLabel">제품 모델명</Typography>
-                </Item>
+                </Box>
               </Grid>
               <Grid item xs={8}>
-                <Item>
+                <Box>
                   <Stack direction="row">
                     <FormControl fullWidth>
                       <Select
@@ -141,46 +121,46 @@ const SearchBox = () => {
                       </Select>
                     </FormControl>
                   </Stack>
-                </Item>
+                </Box>
               </Grid>
             </Grid>
-          </Item>
+          </Box>
         </Grid>
         <Grid item xs={4} sx={{ pt: 4 }}>
-          <Item>
+          <Box>
             <Grid container alignItems="center">
               <Grid item xs={4} sx={{ flexShrink: 0 }}>
-                <Item>
+                <Box>
                   <Typography variant="searchLabel">프로젝트 담당자</Typography>
-                </Item>
+                </Box>
               </Grid>
               <Grid item xs={8}>
-                <Item>
+                <Box>
                   <Stack direction="row">
                     <StyledTextField variant="standard" placeholder="프로젝트 담당자" fullWidth />
                   </Stack>
-                </Item>
+                </Box>
               </Grid>
             </Grid>
-          </Item>
+          </Box>
         </Grid>
         <Grid item xs={4}>
-          <Item sx={{ pl: 20, pt: 4 }}>
+          <Box sx={{ pl: 20, pt: 4 }}>
             <Grid container alignItems="center">
               <Grid item xs={4}>
-                <Item>
+                <Box>
                   <Typography variant="searchLabel">운영반영기간</Typography>
-                </Item>
+                </Box>
               </Grid>
               <Grid item xs={8}>
-                <Item>
+                <Box>
                   <Stack direction="row" alignItems="center">
                     <DateRange />
                   </Stack>
-                </Item>
+                </Box>
               </Grid>
             </Grid>
-          </Item>
+          </Box>
         </Grid>
       </Grid>
     </>
