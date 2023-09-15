@@ -1,25 +1,35 @@
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import DialogTitle from '@mui/material/DialogTitle';
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import DialogTitle from "@mui/material/DialogTitle";
+import Typography from "@mui/material/Typography";
 
-function DialogPop({title, popTest, isOpen, closeDialog, children }) {
+function DialogPop({ title, popTest, isOpen, closeDialog, children }) {
   return (
-    <Dialog open={isOpen} onClose={closeDialog}>
-      <DialogTitle>{title}</DialogTitle>
+    <Dialog maxWidth="lg" open={isOpen} onClose={closeDialog}>
+      <DialogTitle>
+        <Typography variant="popTitle">{title}</Typography>
+      </DialogTitle>
       <IconButton
         aria-label="close"
         onClick={closeDialog}
+        disableRipple
         sx={{
-          position: 'absolute',
-          right: 8,
-          top: 8,
-          color: (theme) => theme.palette.grey[500],
+          position: "absolute",
+          right: 32,
+          top: 34,
+          width: "28px",
+          height: "28px",
+          color: (theme) => theme.palette.grey[900],
         }}
       >
-        <CloseIcon />
+        <CloseIcon
+          sx={{
+            fontSize: "30px",
+          }}
+        />
       </IconButton>
       {children}
     </Dialog>

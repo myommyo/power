@@ -6,6 +6,7 @@ const variStyles = css`
     css`
       min-width: 120px;
       border-radius: 4px;
+      border-color: #d9d9d9;
     `}
   ${(props) =>
     props.variant === "etc" &&

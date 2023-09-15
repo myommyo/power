@@ -7,15 +7,23 @@ const StyledTextField = styled(TextField, {
 })({
   "& .MuiInputBase-root": {
     paddingLeft: 16,
-    height: 40,
+    minHeight: 40,
     border: "1px solid #e5e5e5",
     borderRadius: "4px",
   },
   "& .Mui-focused": {
-    borderColor: "#202844",
+    borderColor: "#202844 !important",
   },
   "& .Mui-disabled": {
-    borderColor: "#202844",
+    backgroundColor: "#f8f8f8",
+    borderColor: "#e5e5e5",
+    color: "#999",
+  },
+  "& .Mui-readOnly": {
+    backgroundColor: "#f8f8f8",
+    borderColor: "#e5e5e5",
+    color: "#000",
+    pointerEvents: "none",
   },
 });
 

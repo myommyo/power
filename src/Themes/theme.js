@@ -174,6 +174,10 @@ const baseTheme = createTheme({
     body1: {
       fontWeight: 500,
     },
+    popTitle: {
+      fontSize: "28px",
+      fontWeight: 700,
+    },
   },
 });
 

@@ -16,7 +16,7 @@ const StyledTextField = styled(TextField, {
 })({
   "& .MuiInputBase-root": {
     paddingLeft: 16,
-    height: 40,
+    minHeight: 40,
     border: "1px solid #e5e5e5",
     borderRadius: "4px",
   },
