@@ -178,5 +178,4 @@ const baseTheme = createTheme({
 });
 
 const defaultTheme = responsiveFontSizes(baseTheme);
-
 export default defaultTheme;

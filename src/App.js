@@ -25,22 +25,23 @@ import Sub09 from "./pages/Sub09";
 
 const themeArray = [
   {
-    name: "Default",
+    name: "Blue",
     themeName: defaultTheme,
   },
   {
-    name: "Dark Theme",
-    themeName: darkTheme,
-  },
-  {
-    name: "lightBlue Theme",
+    name: "Light",
     themeName: blueTheme,
   },
+  {
+    name: "Dark",
+    themeName: darkTheme,
+  },
+
 ];
 export default function App() {
   const [open, setOpen] = React.useState(false);
 
-  const [selectedThemeName, setSelectedThemeName] = useState(Cookies.get("selectedThemeName") || "Default");
+  const [selectedThemeName, setSelectedThemeName] = useState(Cookies.get("selectedThemeName") || "Blue");
   const [selectedTheme, setSelectedTheme] = useState(themeArray.find((theme) => theme.name === selectedThemeName).themeName);
   const handleChange = (event) => {
     const newThemeName = event.target.value;
