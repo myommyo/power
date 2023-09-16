@@ -355,15 +355,27 @@
 .calendarWrap > div {
   position: absolute;
   z-index: 1;
-  margin-top: 50px;
+  top: 50px;
 }
 .calendarWrap {
   display: flex;
-  justify-content: space-between;
-  gap: 32px;
+  align-items: center;
+  position: relative;
+}
+.calendarWrap .inputBoxWrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  flex: 1 1 100%;
+}
+.calendarWrap .inputBoxWrap > svg {
+  position: absolute;
+  right: 12px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 .calendarWrap .inputBox {
-  position: relative;
   width: 100%;
   padding-left: 16px;
   box-sizing: border-box;
@@ -376,15 +388,9 @@
 .calendarWrap .inputBox:active {
   border-color: #202844;
 }
-.calendarWrap .inputBox:after {
-  display: block;
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  position: absolute;
-  right: 0;
-  top: 0;
+.calendarWrap .divider {
+  flex: 0 0 auto;
+  padding: 0 12px;
 }
 .rdrCalendarWrapper {
   border: 1px solid #202844;
@@ -392,6 +398,13 @@
 }
 .rdrInRange {
   color: #eff2fa !important;
+}
+.rdrInRange span {
+}
+.rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span {
+  font-size: 13px;
+  color: #202844 !important;
+  font-weight: 500;
 }
 .rdrDayNumber span {
   font-size: 13px;
