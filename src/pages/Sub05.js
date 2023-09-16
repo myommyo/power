@@ -47,7 +47,7 @@ export default function Sub05() {
               }}
             >
               <Paper sx={{ height: "100%", pt: 8, pl: 8 }}>
-                <Typography variant="subtitle1" sx={{ mb: 7 }}>
+                <Typography variant="subTitle1" sx={{ mb: 7 }}>
                   메뉴정보
                 </Typography>
                 <TreeMenu />
@@ -62,7 +62,7 @@ export default function Sub05() {
             >
               <Paper sx={{ "& .MuiTextField-root": { minWidth: "336px" }, py: 10, px: 8 }}>
                 <Stack direction="row" justifyContent="space-between" alignItems="flex-end" sx={{ mb: 4 }}>
-                  <Typography variant="subtitle1">메뉴정보</Typography>
+                  <Typography variant="subTitle1">메뉴정보</Typography>
                   <Stack direction="row" spacing={2}>
                     <Buttons primary>
                       <FiCheckSquare />

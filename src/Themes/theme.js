@@ -134,9 +134,9 @@ const baseTheme = createTheme({
     MuiInputBase: {
       defaultProps: {
         style: {
-          paddingLeft: 16,
+          // paddingLeft: 16,
           minHeight: 40,
-          border: "1px solid #e5e5e5",
+          // border: "1px solid #e5e5e5",
           borderRadius: "4px",
         },
       },
@@ -167,12 +167,16 @@ const baseTheme = createTheme({
       fontSize: "14px",
       fontWeight: 700,
     },
-    subtitle1: {
+    subTitle1: {
       fontSize: "20px",
       fontWeight: 700,
     },
-    body1: {
-      fontWeight: 500,
+    subTitle2: {
+      fontSize: "16px",
+      fontWeight: 700,
+    },
+    inputSide: {
+      fontSize: "14px",
     },
     popTitle: {
       fontSize: "28px",
