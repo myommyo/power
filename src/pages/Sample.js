@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Grid, Stack, Typography, TextField } from "@mui/material";
+import { Box, Grid, Stack, Typography, TextField, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 import Buttons from "../components/Buttons";
@@ -114,115 +114,137 @@ export default function Sample() {
   return (
     <>
       <Stack direction="row">
-        <Box sx={{ p: 12, width: "100%", mt: 20 }}>
-          <Stack direction="row" alignItems="center" spacing={2} flexWrap="wrap">
-            <Buttons primary>Primary</Buttons>
-            <Buttons primary disabled>
-              Primary Disabled
-            </Buttons>
-            <Buttons outlined>
-              <FiCheckSquare />
-              Outlined
-            </Buttons>
-            <Buttons outlined disabled>
-              Outlined Disabled
-            </Buttons>
+        <Box sx={{ p: 12, width: "100%" }}>
+          <Paper sx={{ mt: 16, p: 8 }}>
+            <Box>
+              <Typography variant="subTitle1">Buttons</Typography>
+              <Stack direction="row" alignItems="center" spacing={2} flexWrap="wrap" sx={{ mb: 3 }}>
+                <Buttons primary>Primary</Buttons>
+                <Buttons primary disabled>
+                  Primary Disabled
+                </Buttons>
+                <Buttons outlined>
+                  <FiCheckSquare />
+                  Outlined
+                </Buttons>
+                <Buttons outlined disabled>
+                  Outlined Disabled
+                </Buttons>
 
-            <Buttons primary variant="text">
-              Text
-            </Buttons>
-            <Buttons primary variant="text" disabled>
-              Text Disabled
-            </Buttons>
+                <Buttons primary variant="text">
+                  Text
+                </Buttons>
+                <Buttons primary variant="text" disabled>
+                  Text Disabled
+                </Buttons>
 
-            <Buttons outlined variant="text">
-              Text Outlined
-            </Buttons>
-            <Buttons outlined variant="text" disabled>
-              Text Outlined Disabled
-            </Buttons>
+                <Buttons outlined variant="text">
+                  Text Outlined
+                </Buttons>
+                <Buttons outlined variant="text" disabled>
+                  Text Outlined Disabled
+                </Buttons>
 
-            <Buttons primary variant="etc2">
-              smaller
-            </Buttons>
-            <Buttons primary variant="etc2" disabled>
-              smaller Disabled
-            </Buttons>
+                <Buttons primary variant="etc2">
+                  smaller
+                </Buttons>
+                <Buttons primary variant="etc2" disabled>
+                  smaller Disabled
+                </Buttons>
 
-            <Buttons outlined variant="etc2">
-              smaller 대댓글에 사용
-            </Buttons>
-            <Buttons outlined variant="etc2" disabled>
-              smaller 대댓글에 사용 Disabled
-            </Buttons>
+                <Buttons outlined variant="etc2">
+                  smaller 대댓글에 사용
+                </Buttons>
+                <Buttons outlined variant="etc2" disabled>
+                  smaller 대댓글에 사용 Disabled
+                </Buttons>
 
-            <Buttons outlined variant="etc">
-              Etc
-            </Buttons>
-            <Buttons outlined variant="etc" disabled>
-              Etc Disabled
-            </Buttons>
-          </Stack>
-          <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 5 }}>
-            <Buttons primary>
-              <FiCheckSquare />
-              일괄등록
-            </Buttons>
-            <Buttons outlined>
-              <PiArrowCounterClockwiseBold />
-              초기화
-            </Buttons>
-            <Buttons outlined>
-              <BsPencilSquare />
-              신규
-            </Buttons>
-            <Buttons outlined>
-              <BsEye />
-              조회
-            </Buttons>
-            <Buttons outlined>
-              <IoDocumentOutline />
-              엑셀
-            </Buttons>
-          </Stack>
+                <Buttons outlined variant="etc">
+                  Etc
+                </Buttons>
+                <Buttons outlined variant="etc" disabled>
+                  Etc Disabled
+                </Buttons>
+              </Stack>
+              <Typography variant="subTitle2">Button Sample</Typography>
+              <Stack direction="row" alignItems="center" spacing={2}>
+                <Buttons primary>
+                  <FiCheckSquare />
+                  일괄등록
+                </Buttons>
+                <Buttons outlined>
+                  <PiArrowCounterClockwiseBold />
+                  초기화
+                </Buttons>
+                <Buttons outlined>
+                  <BsPencilSquare />
+                  신규
+                </Buttons>
+                <Buttons outlined>
+                  <BsEye />
+                  조회
+                </Buttons>
+                <Buttons outlined>
+                  <IoDocumentOutline />
+                  엑셀
+                </Buttons>
+              </Stack>
+            </Box>
 
-          <Typography variant="subTitle1" sx={{ mt: 5 }}>
-            Input Checkbox
-          </Typography>
-          <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 5 }}>
-            <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-            <FormControlLabel control={<Checkbox defaultChecked disableRipple />} label="Active " />
-            <FormControlLabel disabled control={<Checkbox disableRipple />} label="Default Disabled" />
-            <FormControlLabel disabled control={<Checkbox defaultChecked disableRipple />} label="Default Disabled" />
-          </Stack>
+            <Box sx={{ mt: 8 }}>
+              <Typography variant="subTitle1">Input Checkbox</Typography>
+              <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 5 }}>
+                <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                <FormControlLabel control={<Checkbox defaultChecked disableRipple />} label="Active " />
+                <FormControlLabel disabled control={<Checkbox disableRipple />} label="Default Disabled" />
+                <FormControlLabel disabled control={<Checkbox defaultChecked disableRipple />} label="Default Disabled" />
+              </Stack>
+            </Box>
 
-          <Typography variant="subTitle1" sx={{ mt: 5 }}>
-            Switch
-          </Typography>
-          <UseSwitchesBasic />
+            <Box sx={{ mt: 8 }}>
+              <Typography variant="subTitle1">Input Text</Typography>
+              <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 5 }}>
+                <StyledTextField variant="standard" placeholder="상위메뉴명" required="true" />
+                <StyledTextField disabled variant="standard" placeholder="disabled" required="true" />
+                <StyledTextField
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                  variant="standard"
+                  value="readOnly"
+                  required="true"
+                />
+              </Stack>
+            </Box>
 
-          <Typography variant="subTitle1" sx={{ mt: 5 }}>
-            Star Rating
-          </Typography>
-          <StarRating />
+            <Box sx={{ mt: 8 }}>
+              <Typography variant="subTitle1">Switch</Typography>
+              <UseSwitchesBasic />
+            </Box>
 
-          <Typography variant="subTitle1" sx={{ mt: 5 }}>
-            Modal
-          </Typography>
-          <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 1 }}>
-            <Buttons outlined onClick={() => openDialog("pop01")}>
-              워크센터 프로세스
-            </Buttons>
-            <Buttons outlined onClick={() => openDialog("pop02")}>
-              커뮤니티관리 상세
-            </Buttons>
-            <Buttons outlined onClick={() => openDialog("pop03")}>
-              업무 상세
-            </Buttons>
-            <Buttons outlined onClick={() => openDialog("pop04")}>
-              업무 상세 아코디언
-            </Buttons>
-          </Stack>
+            <Box sx={{ mt: 8 }}>
+              <Typography variant="subTitle1">Star Rating</Typography>
+              <StarRating />
+            </Box>
+
+            <Box sx={{ mt: 8 }}>
+              <Typography variant="subTitle1">Modal</Typography>
+              <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 1 }}>
+                <Buttons outlined onClick={() => openDialog("pop01")}>
+                  워크센터 프로세스
+                </Buttons>
+                <Buttons outlined onClick={() => openDialog("pop02")}>
+                  커뮤니티관리 상세
+                </Buttons>
+                <Buttons outlined onClick={() => openDialog("pop03")}>
+                  업무 상세
+                </Buttons>
+                <Buttons outlined onClick={() => openDialog("pop04")}>
+                  업무 상세 아코디언
+                </Buttons>
+              </Stack>
+            </Box>
+          </Paper>
         </Box>
       </Stack>
 
