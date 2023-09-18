@@ -36,7 +36,7 @@ var pop04;
 export default function Sample() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isDialogName, setDialogName] = useState("");
-  const [size, setSize] = useState({});
+  const [size, setSize] = useState();
 
   const openDialog = (pop) => {
     setIsDialogOpen(true);
