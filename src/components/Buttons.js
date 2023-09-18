@@ -15,7 +15,15 @@ const variStyles = css`
       font-size: 14px;
       border-radius: 4px;
       padding: 0 12px;
-      flex-shrink: 0;
+    `}
+  ${(props) =>
+    props.variant === "etc2" &&
+    css`
+      min-width: 80px;
+      height: 36px !important;
+      border-radius: 4px;
+      padding: 0 12px;
+      border-color: #d9d9d9;
     `}
 `;
 
@@ -32,6 +40,7 @@ const StyledButton = styled.button`
   font-size: 15px;
   color: #fff;
   font-weight: 500;
+  flex-shrink: 0;
 
   color: ${(p) => p.color || "#fff"};
   background: ${(p) => p.background || "#202844"};

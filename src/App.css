@@ -299,8 +299,10 @@
 }
 .tableView td {
   border-bottom: 1px solid #e8e9ec;
+  height: 64px;
 }
 .tableView td > div {
+  box-sizing: border-box;
   padding: 12px 0 12px 12px;
 }
 
@@ -663,4 +665,12 @@
 }
 .MuiCheckbox-root.Mui-disabled.Mui-checked svg {
   color: #e5e5e5 !important;
+}
+
+.commentBox .MuiRating-root .MuiRating-icon {
+  font-size: 22px;
+  margin-left: -4px;
+}
+.menuComment.MuiMenu-list {
+  background: red !important;
 }

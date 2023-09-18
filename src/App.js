@@ -22,6 +22,7 @@ import Sub04 from "./pages/Sub04";
 import Sub05 from "./pages/Sub05";
 import Sub06 from "./pages/Sub06";
 import Sub07 from "./pages/Sub07";
+import Sub08 from "./pages/Sub08";
 import Sub09 from "./pages/Sub09";
 
 const themeArray = [
@@ -84,6 +85,7 @@ export default function App() {
                 <Route path="/sub05" element={<Sub05 />} />
                 <Route path="/sub06" element={<Sub06 />} />
                 <Route path="/sub07" element={<Sub07 />} />
+                <Route path="/sub08" element={<Sub08 />} />
                 <Route path="/sub09" element={<Sub09 />} />
               </Routes>
             </div>

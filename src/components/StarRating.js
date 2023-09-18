@@ -23,12 +23,8 @@ const StyledStarRating = styled(Rating)({
 
 export default function CustomizedRating() {
   return (
-    <Box
-      sx={{
-        "& > legend": { mt: 2 },
-      }}
-    >
-      <StyledStarRating name="CustomizedRating" defaultValue={0} max={5} size="large" icon={<StarRoundedIcon fontSize="inherit" />} emptyIcon={<StarRoundedIcon fontSize="inherit" />} />
+    <Box>
+      <StyledStarRating name="CustomizedRating" defaultValue={0} max={5} icon={<StarRoundedIcon fontSize="inherit" />} emptyIcon={<StarRoundedIcon fontSize="inherit" />} />
     </Box>
   );
 }

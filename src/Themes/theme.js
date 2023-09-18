@@ -38,7 +38,7 @@ const baseTheme = createTheme({
       main: "#000",
       primary: "#000",
       secondary: "#e5e5e5",
-      disabled: grey[500],
+      disabled: "#999999",
     },
     action: {
       active: red[200],
@@ -59,7 +59,7 @@ const baseTheme = createTheme({
     common: {
       main: "#fff",
       black: grey[900],
-      white: grey[200],
+      cmtBd: "#e8e9ec", //comment border color
     },
     tonalOffset: 0.2,
   },

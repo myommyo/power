@@ -21,6 +21,9 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import Checkbox from "@mui/material/Checkbox";
 
+import UseSwitchesBasic from "../components/Switch";
+import StarRating from "../components/StarRating";
+
 //팝업 사용하는 애들
 import Button from "@mui/material/Button";
 import DialogPop from "../components/DialogPop";
@@ -36,7 +39,7 @@ var pop04;
 export default function Sample() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isDialogName, setDialogName] = useState("");
-  const [size, setSize] = useState('');
+  const [size, setSize] = useState("");
 
   const openDialog = (pop) => {
     setIsDialogOpen(true);
@@ -48,25 +51,25 @@ export default function Sample() {
       pop02 = false;
       pop03 = false;
       pop04 = false;
-      setSize('xs');
+      setSize("sm");
     } else if (pop == "pop02") {
       pop01 = false;
       pop02 = true;
       pop03 = false;
       pop04 = false;
-      setSize('md');
+      setSize("md");
     } else if (pop == "pop03") {
       pop01 = false;
       pop02 = false;
       pop03 = true;
       pop04 = false;
-      setSize('lg');
+      setSize("lg");
     } else if (pop == "pop04") {
       pop01 = false;
       pop02 = false;
       pop03 = false;
       pop04 = true;
-      setSize('xl');
+      setSize("xl");
     }
   };
   const closeDialog = () => setIsDialogOpen(false);
@@ -112,7 +115,7 @@ export default function Sample() {
     <>
       <Stack direction="row">
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
-          <Box>
+          <Stack direction="row" alignItems="center" spacing={2} flexWrap="wrap">
             <Buttons primary>Primary</Buttons>
             <Buttons primary disabled>
               Primary Disabled
@@ -139,13 +142,27 @@ export default function Sample() {
               Text Outlined Disabled
             </Buttons>
 
+            <Buttons primary variant="etc2">
+              smaller
+            </Buttons>
+            <Buttons primary variant="etc2" disabled>
+              smaller Disabled
+            </Buttons>
+
+            <Buttons outlined variant="etc2">
+              smaller 대댓글에 사용
+            </Buttons>
+            <Buttons outlined variant="etc2" disabled>
+              smaller 대댓글에 사용 Disabled
+            </Buttons>
+
             <Buttons outlined variant="etc">
               Etc
             </Buttons>
             <Buttons outlined variant="etc" disabled>
               Etc Disabled
             </Buttons>
-          </Box>
+          </Stack>
           <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 5 }}>
             <Buttons primary>
               <FiCheckSquare />
@@ -178,6 +195,16 @@ export default function Sample() {
             <FormControlLabel disabled control={<Checkbox disableRipple />} label="Default Disabled" />
             <FormControlLabel disabled control={<Checkbox defaultChecked disableRipple />} label="Default Disabled" />
           </Stack>
+
+          <Typography variant="subTitle1" sx={{ mt: 5 }}>
+            Switch
+          </Typography>
+          <UseSwitchesBasic />
+
+          <Typography variant="subTitle1" sx={{ mt: 5 }}>
+            Star Rating
+          </Typography>
+          <StarRating />
 
           <Typography variant="subTitle1" sx={{ mt: 5 }}>
             Modal
