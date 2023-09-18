@@ -25,6 +25,11 @@ import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import DialogPop from "../components/DialogPop";
 import DialogActions from "@mui/material/DialogActions";
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+
+
+
 
 var pop01;
 var pop02;
@@ -194,6 +199,7 @@ export default function Sample() {
 
       <DialogPop isOpen={isDialogOpen} closeDialog={closeDialog} title={"타이틀 영역"}>
         {pop01 && (
+          
           <Box
             sx={{
               p: 8,
@@ -237,6 +243,7 @@ export default function Sample() {
               </Stack>
             </DialogActions>
           </Box>
+          
         )}
         {pop02 && (
           <Box
@@ -572,11 +579,10 @@ export default function Sample() {
           </Box>
         )}
         {pop04 && (
-          <Box
-            sx={{
-              p: 8,
-            }}
-          >
+        <>
+        <DialogContent>
+          <DialogContentText >  
+
             <Stack sx={{ pb: 12 }}>
               <Accordion disableGutters expanded={expanded === "panel1"} onChange={AccHandleChange("panel1")}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon color="primary" sx={{ fontSize: "40px" }} />} aria-controls="panel1bh-content" id="panel1bh-header">
@@ -939,14 +945,19 @@ export default function Sample() {
                 <AccordionDetails>상세</AccordionDetails>
               </Accordion>
             </Stack>
-            <DialogActions disableSpacing>
-              <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" sx={{ width: "100%" }}>
-                <Buttons primary variant="text" onClick={closeDialog} autoFocus>
-                  닫기
-                </Buttons>
-              </Stack>
-            </DialogActions>
-          </Box>
+
+          </DialogContentText>
+        </DialogContent>
+
+        
+        <DialogActions disableSpacing>
+          <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" sx={{ width: "100%" }}>
+            <Buttons primary variant="text" onClick={closeDialog} autoFocus>
+              닫기
+            </Buttons>
+          </Stack>
+        </DialogActions>
+        </>
         )}
       </DialogPop>
     </>
