@@ -130,6 +130,7 @@ export default function BasicTable() {
                 <TableCell align="center">시작일자</TableCell>
                 <TableCell align="center">종료일자</TableCell>
                 <TableCell align="center">프로젝트 코드</TableCell>
+                <TableCell align="center">사용</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 
 function DialogPop({ title, popTest, isOpen, closeDialog, children }) {
   return (
-    <Dialog maxWidth="lg" open={isOpen} onClose={closeDialog}>
+    <Dialog open={isOpen} onClose={closeDialog}>
       <DialogTitle>
         <Typography variant="popTitle">{title}</Typography>
       </DialogTitle>

@@ -37,7 +37,7 @@ const baseTheme = createTheme({
     text: {
       main: "#000",
       primary: "#000",
-      secondary: grey[700],
+      secondary: "#e5e5e5",
       disabled: grey[500],
     },
     action: {

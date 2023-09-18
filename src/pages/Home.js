@@ -18,6 +18,7 @@ export default function Home() {
             <Link to={"/sub04"}>Sub04</Link>
             <Link to={"/sub05"}>Sub05</Link>
             <Link to={"/sub06"}>Sub06</Link>
+            <Link to={"/sub07"}>Sub07</Link>
             <Link to={"/sub09"}>Sub09</Link>
           </Stack>
 

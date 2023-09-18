@@ -1,21 +1,40 @@
 import * as React from "react";
-import { Box, Paper, Stack, Typography, Button } from "@mui/material";
-import ReplayOutlinedIcon from "@mui/icons-material/ReplayOutlined";
-import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
-import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
+import { Box, Paper, Stack, Typography, Grid, TextField } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 import Table from "../components/Table";
-import SearchBox from "../components/SearchBox";
 import Paginations from "../components/Paginations";
-import UseSwitchesBasic from "../components/Switch";
-import StarsRating from "../components/StarRating";
 
 import Buttons from "../components/Buttons";
 
 import { BsPencilSquare, BsEye } from "react-icons/bs";
 import { PiArrowCounterClockwiseBold } from "react-icons/pi";
 import { IoDocumentOutline } from "react-icons/io5";
+
+const StyledTextField = styled(TextField, {
+  name: "StyledTextField",
+})({
+  "& .MuiInputBase-root": {
+    paddingLeft: 16,
+    minHeight: 40,
+    border: "1px solid #e5e5e5",
+    borderRadius: "4px",
+  },
+  "& .Mui-focused": {
+    borderColor: "#202844 !important",
+  },
+  "& .Mui-disabled": {
+    backgroundColor: "#f8f8f8",
+    borderColor: "#e5e5e5",
+    color: "#999",
+  },
+  "& .Mui-readOnly": {
+    backgroundColor: "#f8f8f8",
+    borderColor: "#e5e5e5",
+    color: "#000",
+    pointerEvents: "none",
+  },
+});
 
 export default function Sub06() {
   return (
@@ -47,14 +66,31 @@ export default function Sub06() {
           </Stack>
 
           <Paper sx={{ mt: 3 }}>
-            <SearchBox />
+            <Grid container alignItems="center" sx={{ m: 0, p: 6 }}>
+              <Grid item xs={4}>
+                <Box>
+                  <Grid container alignItems="center">
+                    <Grid item xs={4} sx={{ flexShrink: 0 }}>
+                      <Box>
+                        <Typography variant="searchLabel">커뮤니티명</Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={8}>
+                      <Box>
+                        <Stack direction="row">
+                          <StyledTextField variant="standard" placeholder="Default" fullWidth />
+                        </Stack>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Grid>
+            </Grid>
           </Paper>
 
           <Paper sx={{ mt: 10, p: 8 }}>
             <Table />
             <Paginations />
-            <UseSwitchesBasic />
-            <StarsRating />
           </Paper>
         </Box>
       </Stack>
