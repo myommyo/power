@@ -6,9 +6,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import DialogTitle from "@mui/material/DialogTitle";
 import Typography from "@mui/material/Typography";
 
-function DialogPop({ title, popTest, isOpen, closeDialog, children }) {
-  return (
-    <Dialog open={isOpen} onClose={closeDialog}>
+function DialogPop({ title, popTest, maxWidth, isOpen, closeDialog, children }) {
+  return (    
+    <Dialog open={isOpen} onClose={closeDialog} maxWidth={maxWidth}>
       <DialogTitle>
         <Typography variant="popTitle">{title}</Typography>
       </DialogTitle>

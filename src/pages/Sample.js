@@ -36,7 +36,7 @@ var pop04;
 export default function Sample() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isDialogName, setDialogName] = useState("");
-  const [size, setSize] = useState();
+  const [size, setSize] = useState('');
 
   const openDialog = (pop) => {
     setIsDialogOpen(true);
@@ -48,21 +48,25 @@ export default function Sample() {
       pop02 = false;
       pop03 = false;
       pop04 = false;
+      setSize('xs');
     } else if (pop == "pop02") {
       pop01 = false;
       pop02 = true;
       pop03 = false;
       pop04 = false;
+      setSize('md');
     } else if (pop == "pop03") {
       pop01 = false;
       pop02 = false;
       pop03 = true;
       pop04 = false;
+      setSize('lg');
     } else if (pop == "pop04") {
       pop01 = false;
       pop02 = false;
       pop03 = false;
       pop04 = true;
+      setSize('xl');
     }
   };
   const closeDialog = () => setIsDialogOpen(false);
