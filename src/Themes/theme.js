@@ -11,6 +11,7 @@ const baseTheme = createTheme({
     mode: "light",
     primary: {
       main: "#202844",
+      contrastText: "#fff",
     },
     secondary: {
       light: "#a5b4cb",
@@ -60,6 +61,8 @@ const baseTheme = createTheme({
       main: "#fff",
       black: grey[900],
       cmtBd: "#e8e9ec", //comment border color
+      tabBd: "#d9d9d9", //Tab border color
+      textColor1: "#666", //textColor #666
     },
     tonalOffset: 0.2,
   },
@@ -154,11 +157,12 @@ const baseTheme = createTheme({
         },
       },
     },
+    MuiCssBaseline: {
+      styleOverrides: {},
+    },
   },
   typography: {
-    // fontFamily : {
-    //   fontFamily : {fontPre},
-    // },
+    // fontFamily: {},
     sectionTitle: {
       fontSize: "28px",
       fontWeight: 700,
