@@ -42,7 +42,7 @@ const baseTheme = createTheme({
       disabled: "#999999",
     },
     action: {
-      active: red[200],
+      active: "#202844",
       activeOpacity: 1,
       disabled: grey[700],
       disabledBackground: grey[200],
@@ -63,6 +63,7 @@ const baseTheme = createTheme({
       cmtBd: "#e8e9ec", //comment border color
       tabBd: "#d9d9d9", //Tab border color
       textColor1: "#666", //textColor #666
+      textColor2: "#555", //header Admin 글씨색
     },
     tonalOffset: 0.2,
   },

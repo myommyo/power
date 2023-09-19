@@ -96,19 +96,24 @@
   transition: all 0.2s;
 }
 
-.header img {
-  width: 100%;
+.headerMenu {
+  position: relative;
 }
-.header .imgA {
-  width: 179px;
-  height: 16px;
-  margin-left: 48px;
+
+.headerMenu .MuiMenu-paper {
+  box-sizing: border-box;
+  width: 280px !important;
+  border-radius: 24px !important;
+  padding: 32px;
 }
-.header .imgB {
-  width: 208px;
-  height: 36px;
-  margin-right: 48px;
+.headerMenu .MuiMenu-list {
+  padding: 0 !important;
 }
+.MuiMenu-list .MuiGrid-root {
+  /* width: 100% !important;
+  margin: 0 !important; */
+}
+
 .btnSide {
   width: 46px;
   height: 46px;
