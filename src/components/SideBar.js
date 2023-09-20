@@ -1,11 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import imgC from "../assets/images/temp_nav.png";
-import imgD from "../assets/images/btn_toggle.png";
+import React, { useState } from "react";
 
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Collapse } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
+const array = ["one", "two", "three"];
 
 const SideBar = ({ setOpen }) => {
   const [expanded, setExpanded] = React.useState(false);
@@ -13,6 +11,8 @@ const SideBar = ({ setOpen }) => {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  const [open, setListOpen] = useState(false);
 
   return (
     <>
@@ -33,7 +33,26 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">대시보드</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List>
+                  <ListItem>
+                    <ListItemButton onClick={() => setListOpen(true)}>
+                      <ListItemIcon>{">"}</ListItemIcon>
+                      <ListItemText primary={"list open"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
+                <Collapse in={open}>
+                  <List>
+                    {array.map((listElm) => (
+                      <ListItem>
+                        <ListItemButton onClick={() => setListOpen(false)}>
+                          <ListItemIcon>{">"}</ListItemIcon>
+                          <ListItemText primary={listElm} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Collapse>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList03" expanded={expanded === "panel3"} onChange={handleChange("panel3")} disableGutters={true} square={true}>

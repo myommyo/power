@@ -1,14 +1,11 @@
 import React from "react";
 import { DiCss3, DiJavascript, DiNpm } from "react-icons/di";
 import { FaList } from "react-icons/fa";
-import { FaRegSquarePlus, FaRegSquareMinus } from "react-icons/fa6";
 import { AiOutlineMinus } from "react-icons/ai";
 
 import { BsPlusLg } from "react-icons/bs";
 
 import TreeView, { flattenTree } from "react-accessible-treeview";
-
-import tempThumb from "../assets/images/tempThumb.png";
 
 const folder = {
   name: "",
