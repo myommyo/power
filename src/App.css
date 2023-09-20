@@ -872,3 +872,47 @@
 .stepBoxView + .stepBoxView {
   margin-top: 40px;
 }
+
+.acountMenu {
+  display: flex;
+  justify-content: space-between;
+}
+.acountMenu .MuiFormGroup-root {
+}
+.acountMenu .MuiButtonBase-root.MuiRadio-root {
+  box-sizing: border-box;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.acountMenu .MuiStack-root:nth-child(1) .MuiButtonBase-root.MuiRadio-root {
+  background-color: #202844;
+  border-color: #202844;
+}
+.acountMenu .MuiStack-root:nth-child(2) .MuiButtonBase-root.MuiRadio-root {
+  background-color: #fff;
+  border-color: #e5e5e5;
+}
+.acountMenu .MuiStack-root:nth-child(3) .MuiButtonBase-root.MuiRadio-root {
+  background-color: #2d2d2d;
+  border-color: #2d2d2d;
+}
+.acountMenu .MuiButtonBase-root.MuiRadio-root svg {
+  display: none;
+}
+.acountMenu .Mui-checked {
+  border: 2px solid #3f8cff !important;
+}
+.acountMenu .Mui-checked::after {
+  display: block;
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  background: url(/src/assets/images/ico_check.png) no-repeat center;
+  background-size: 100%;
+}

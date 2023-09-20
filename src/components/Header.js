@@ -66,15 +66,15 @@ const Appbar = ({ setOpen, handleChange, selectedThemeName, themeArray }) => {
               >
                 <Typography variant="subTitle2">테마선택</Typography>
 
-                <Grid container spacing={2} sx={{ width: "100%" }}>
-                  <RadioGroup row aria-labelledby="demo-form-control-label-placement" name="position" defaultValue="top" sx={{ width: "100%" }}>
+                <Stack spacing={2} sx={{ width: "100%", m: 0, mt: 5 }}>
+                  <RadioGroup className="acountMenu" row aria-labelledby="demo-form-control-label-placement" name="position" defaultValue="top" sx={{ width: "100%" }}>
                     {themeArray.map((theme) => (
-                      <Grid item xs={4} value={selectedThemeName} onChange={handleChange} key={theme.name} sx={{ textAlign: "center", fontSize: "12px" }}>
-                        <FormControlLabel onChange={handleChange} value={theme.name} control={<Radio />} label={theme.name} labelPlacement="bottom" />
-                      </Grid>
+                      <Stack item xs={4} value={selectedThemeName} onChange={handleChange} key={theme.name}>
+                        <FormControlLabel onChange={handleChange} value={theme.name} control={<Radio disableRipple />} label={theme.name} labelPlacement="bottom" />
+                      </Stack>
                     ))}
                   </RadioGroup>
-                </Grid>
+                </Stack>
 
                 <MenuItem
                   sx={{
