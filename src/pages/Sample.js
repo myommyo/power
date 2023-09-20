@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import InputAdornment from "@mui/material/InputAdornment";
 
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -97,6 +98,14 @@ export default function Sample() {
       borderColor: "#e5e5e5",
       color: "#000",
       pointerEvents: "none",
+    },
+  });
+
+  const InputAdornment = styled(Typography)({
+    "&.MuiTypography-root": {
+      color: "#999",
+      paddingRight: "16px",
+      flexShrink: "0",
     },
   });
 
@@ -783,18 +792,15 @@ export default function Sample() {
                               </th>
                               <td>
                                 <div>
-                                  <Stack direction="row" alignItems="center">
-                                    <StyledTextField variant="standard" placeholder="Default" fullWidth sx={{ mr: 2 }} />
-                                    <Typography
-                                      variant="inputSide"
-                                      sx={{
-                                        color: (theme) => theme.palette.grey[400],
-                                        flexShrink: 0,
-                                      }}
-                                    >
-                                      건/회
-                                    </Typography>
-                                  </Stack>
+                                  <StyledTextField
+                                    variant="standard"
+                                    placeholder="Default"
+                                    fullWidth
+                                    sx={{ mr: 2 }}
+                                    InputProps={{
+                                      endAdornment: <InputAdornment position="end">건/회</InputAdornment>,
+                                    }}
+                                  />
                                 </div>
                               </td>
                               <th>
@@ -802,18 +808,15 @@ export default function Sample() {
                               </th>
                               <td>
                                 <div>
-                                  <Stack direction="row" alignItems="center">
-                                    <StyledTextField variant="standard" placeholder="Default" fullWidth sx={{ mr: 2 }} />
-                                    <Typography
-                                      variant="inputSide"
-                                      sx={{
-                                        color: (theme) => theme.palette.grey[400],
-                                        flexShrink: 0,
-                                      }}
-                                    >
-                                      분
-                                    </Typography>
-                                  </Stack>
+                                  <StyledTextField
+                                    variant="standard"
+                                    placeholder="Default"
+                                    fullWidth
+                                    sx={{ mr: 2 }}
+                                    InputProps={{
+                                      endAdornment: <InputAdornment position="end">분</InputAdornment>,
+                                    }}
+                                  />
                                 </div>
                               </td>
                             </tr>
@@ -823,18 +826,14 @@ export default function Sample() {
                               </th>
                               <td>
                                 <div>
-                                  <Stack direction="row" alignItems="center">
-                                    <StyledTextField variant="standard" placeholder="Default" fullWidth sx={{ mr: 2 }} />
-                                    <Typography
-                                      variant="inputSide"
-                                      sx={{
-                                        color: (theme) => theme.palette.grey[400],
-                                        flexShrink: 0,
-                                      }}
-                                    >
-                                      회
-                                    </Typography>
-                                  </Stack>
+                                  <StyledTextField
+                                    variant="standard"
+                                    placeholder="Default"
+                                    fullWidth
+                                    InputProps={{
+                                      endAdornment: <InputAdornment position="end">회</InputAdornment>,
+                                    }}
+                                  />
                                 </div>
                               </td>
                               <th>
@@ -842,18 +841,14 @@ export default function Sample() {
                               </th>
                               <td>
                                 <div>
-                                  <Stack direction="row" alignItems="center">
-                                    <StyledTextField variant="standard" placeholder="Default" fullWidth sx={{ mr: 2 }} />
-                                    <Typography
-                                      variant="inputSide"
-                                      sx={{
-                                        color: (theme) => theme.palette.grey[400],
-                                        flexShrink: 0,
-                                      }}
-                                    >
-                                      분
-                                    </Typography>
-                                  </Stack>
+                                  <StyledTextField
+                                    variant="standard"
+                                    placeholder="Default"
+                                    fullWidth
+                                    InputProps={{
+                                      endAdornment: <InputAdornment position="end">분</InputAdornment>,
+                                    }}
+                                  />
                                 </div>
                               </td>
                             </tr>

@@ -1,15 +1,14 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import { Select, MenuItem, Button, Typography } from "@mui/material";
-import imgB from "../assets/images/temp_util.png";
+import { Stack, MenuItem, Avatar, Typography, Divider } from "@mui/material";
 import BreadCrums from "../components/BreadCrums";
+
+import { IoSettingsOutline } from "react-icons/io5";
 
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import IconButton from "@mui/material/IconButton";
-import SettingsIcon from "@mui/icons-material/Settings";
 import Menu from "@mui/material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Grid from "@mui/material/Grid";
@@ -31,19 +30,23 @@ const Appbar = ({ setOpen, handleChange, selectedThemeName, themeArray }) => {
       <AppBar>
         <div class="header">
           <BreadCrums />
-          <div className="imgB">
-            <img src={imgB} alt="" />
-          </div>
-          <Box
-            sx={{
-              width: "200px",
-            }}
-          >
+          <Stack direction="row" alignItems="center" sx={{ pr: 12 }}>
+            <Stack direction="row" alignItems="center">
+              <Avatar alt="Admin" src="/static/images/avatar/1.jpg" sx={{ width: 36, height: 36, mr: 3 }} />
+              <Typography variant="subTitle2" sx={{ color: "text.primary", fontWeight: "500" }}>
+                파워젠
+              </Typography>
+              <Divider sx={{ height: 11, mx: 3 }} orientation="vertical" />
+              <Typography variant="subTitle2" sx={{ color: "common.textColor2", fontWeight: "400" }}>
+                ADMIN
+              </Typography>
+            </Stack>
             <div>
-              <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleMenu} color="inherit">
-                <SettingsIcon color="primary" />
+              <IconButton disableRipple size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleMenu} color="text.main">
+                <IoSettingsOutline sx={{}} />
               </IconButton>
               <Menu
+                className="headerMenu"
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
@@ -61,17 +64,18 @@ const Appbar = ({ setOpen, handleChange, selectedThemeName, themeArray }) => {
                   top: "48px",
                 }}
               >
-                <Typography sx={{ fontSize: "16px", fontWegith: "700" }}>테마선택</Typography>
+                <Typography variant="subTitle2">테마선택</Typography>
 
-                <Grid container spacing={2} sx={{ border: "1px solid blue" }}>
-                  <RadioGroup row aria-labelledby="demo-form-control-label-placement" name="position" defaultValue="top">
+                <Grid container spacing={2} sx={{ width: "100%" }}>
+                  <RadioGroup row aria-labelledby="demo-form-control-label-placement" name="position" defaultValue="top" sx={{ width: "100%" }}>
                     {themeArray.map((theme) => (
-                      <Grid item xs={4} value={selectedThemeName} onChange={handleChange} key={theme.name}>
+                      <Grid item xs={4} value={selectedThemeName} onChange={handleChange} key={theme.name} sx={{ textAlign: "center", fontSize: "12px" }}>
                         <FormControlLabel onChange={handleChange} value={theme.name} control={<Radio />} label={theme.name} labelPlacement="bottom" />
                       </Grid>
                     ))}
                   </RadioGroup>
                 </Grid>
+
                 <MenuItem
                   sx={{
                     border: "1px solid #d9d9d9",
@@ -82,6 +86,10 @@ const Appbar = ({ setOpen, handleChange, selectedThemeName, themeArray }) => {
                     borderRadius: "4px",
                     mt: 6,
                     mb: 3,
+                    "&:hover": {
+                      backgroundColor: "transparent",
+                      textDecoration: "underline",
+                    },
                   }}
                 >
                   프로필 편집
@@ -94,6 +102,10 @@ const Appbar = ({ setOpen, handleChange, selectedThemeName, themeArray }) => {
                     justifyContent: "center",
                     height: "40px",
                     borderRadius: "4px",
+                    "&:hover": {
+                      backgroundColor: "transparent",
+                      textDecoration: "underline",
+                    },
                   }}
                 >
                   로그아웃
@@ -103,15 +115,15 @@ const Appbar = ({ setOpen, handleChange, selectedThemeName, themeArray }) => {
                   onClick={handleClose}
                   sx={{
                     position: "absolute",
-                    top: "16px",
-                    right: "16px",
+                    top: "-26px",
+                    right: "-24px",
                   }}
                 >
                   <CloseIcon color="primary" />
                 </IconButton>
               </Menu>
             </div>
-          </Box>
+          </Stack>
         </div>
       </AppBar>
     </>
