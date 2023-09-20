@@ -317,7 +317,7 @@ export default function Sub10() {
                           <li>실행구분 : 파일/워크센터</li>
                           <li>등록일 : 2023.05.10 11:30:12</li>
                           <li>
-                            평점 : <StarRating readOnly />
+                            평점 : <StarRating defaultValue={4} readOnly />
                           </li>
                           <li>다운로드 횟수 : 200</li>
                         </ul>
@@ -356,7 +356,7 @@ export default function Sub10() {
                           <li>실행구분 : 파일/워크센터</li>
                           <li>등록일 : 2023.05.10 11:30:12</li>
                           <li>
-                            평점 : <StarRating readOnly />
+                            평점 : <StarRating defaultValue={4} readOnly />
                           </li>
                           <li>다운로드 횟수 : 200</li>
                         </ul>
@@ -395,7 +395,7 @@ export default function Sub10() {
                           <li>실행구분 : 파일/워크센터</li>
                           <li>등록일 : 2023.05.10 11:30:12</li>
                           <li>
-                            평점 : <StarRating readOnly />
+                            평점 : <StarRating defaultValue={3} readOnly />
                           </li>
                           <li>다운로드 횟수 : 200</li>
                         </ul>
@@ -434,7 +434,7 @@ export default function Sub10() {
                           <li>실행구분 : 파일/워크센터</li>
                           <li>등록일 : 2023.05.10 11:30:12</li>
                           <li>
-                            평점 : <StarRating readOnly />
+                            평점 : <StarRating defaultValue={4} readOnly />
                           </li>
                           <li>다운로드 횟수 : 200</li>
                         </ul>

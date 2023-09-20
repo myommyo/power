@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
+import styled, { css } from "styled-components";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
@@ -21,10 +21,10 @@ const StyledStarRating = styled(Rating)({
   },
 });
 
-export default function CustomizedRating() {
+export default function CustomizedRating({ readOnly, defaultValue }) {
   return (
     <Box>
-      <StyledStarRating name="CustomizedRating" defaultValue={0} max={5} icon={<StarRoundedIcon fontSize="inherit" />} emptyIcon={<StarRoundedIcon fontSize="inherit" />} />
+      <StyledStarRating name="CustomizedRating" readOnly={readOnly} defaultValue={defaultValue} max={5} icon={<StarRoundedIcon fontSize="inherit" />} emptyIcon={<StarRoundedIcon fontSize="inherit" />} />
     </Box>
   );
 }

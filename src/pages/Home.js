@@ -22,6 +22,7 @@ export default function Home() {
             <Link to={"/sub08"}>Sub08</Link>
             <Link to={"/sub09"}>Sub09</Link>
             <Link to={"/sub10"}>Sub10</Link>
+            <Link to={"/sub11"}>Sub11</Link>
           </Stack>
 
           <div>Home 페이지 입니다.</div>
