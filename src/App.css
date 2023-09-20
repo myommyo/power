@@ -779,3 +779,96 @@
   border-radius: 10px;
   border: 4px solid #fff;
 }
+
+/* Drag and Drop */
+.dropArea {
+  flex-shrink: 0;
+  position: relative;
+  width: 178px;
+  aspect-ratio: 20/13;
+  border-radius: 12px;
+  border: 1px dashed #627399;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+}
+.dropArea .dropImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  border-radius: 12px;
+}
+.dropArea .dropImage .btnDelete {
+  display: none;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 100%;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+.dropArea .dropImage .btnDelete > svg {
+  font-size: 16px;
+}
+.dropArea .dropImage:has(img) .btnDelete {
+  display: block;
+}
+.dropArea .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dropArea .text p {
+  color: #627399;
+  margin-bottom: 8px;
+  display: none;
+}
+.dropArea .text > svg {
+  font-size: 26px;
+  color: #627399;
+}
+.thumbNail .dropArea {
+  width: 320px;
+}
+.thumbNail .dropArea .text p {
+  display: block;
+}
+.thumbNail .thumbNailImage {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 480px;
+}
+.thumbNail .thumbNailImageSmall {
+  width: 100%;
+  max-width: 240px;
+}
+.stepBtnSet {
+  flex-shrink: 0;
+}
+.stepBtnSet > button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #202844;
+}
+.stepBtnSet > button > svg {
+  font-size: 30px;
+}
+.stepBox + .stepBox {
+  margin-top: 12px;
+}
+
+.stepBoxView + .stepBoxView {
+  margin-top: 40px;
+}

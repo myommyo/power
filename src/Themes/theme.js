@@ -64,6 +64,7 @@ const baseTheme = createTheme({
       tabBd: "#d9d9d9", //Tab border color
       textColor1: "#666", //textColor #666
       textColor2: "#555", //header Admin 글씨색
+      textColor3: "#627399", //DragZone 글씨색
     },
     tonalOffset: 0.2,
   },
@@ -182,6 +183,9 @@ const baseTheme = createTheme({
     },
     inputSide: {
       fontSize: "14px",
+    },
+    smallFont: {
+      fontSize: "12px",
     },
     popTitle: {
       fontSize: "28px",

@@ -1,6 +1,6 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Box, Paper, Stack, Typography, TextField, Avatar } from "@mui/material";
+import { Box, Paper, Stack, Typography, TextField, Avatar, Link } from "@mui/material";
 
 import Buttons from "../components/Buttons";
 
@@ -12,6 +12,9 @@ import MenuItem from "@mui/material/MenuItem";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { PiDotsThreeVerticalBold, PiWarningCircleThin } from "react-icons/pi";
+
+import tempThumb from "../assets/images/tempThumb.png";
+import tempThumb2 from "../assets/images/tempThumb2.png";
 
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
@@ -38,7 +41,13 @@ const StyledTextField = styled(TextField, {
   },
 });
 
-export default function Sub08() {
+export default function Sub11() {
+  //select
+  const [age, setAge] = React.useState("");
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
@@ -55,193 +64,285 @@ export default function Sub08() {
     <>
       <Stack direction="row">
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
-          <Typography variant="sectionTitle">아이디어 제안 진행상황</Typography>
+          <Typography variant="sectionTitle">BOT STORE 등록/수정</Typography>
 
           <Paper sx={{ p: 8, mt: 4 }}>
             <Stack sx={{ mb: 10 }}>
+              <table className="tableView">
+                <colgroup>
+                  <col width="140" />
+                  <col width="*" />
+                  <col width="140" />
+                  <col width="*" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>
+                      <div>평점</div>
+                    </th>
+                    <td>
+                      <div>
+                        <StarRating readOnly defaultValue={2} />
+                      </div>
+                    </td>
+                    <th>
+                      <div>다운로드</div>
+                    </th>
+                    <td>
+                      <div>200회</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>Bot명</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>네이버 뉴스검색</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>RPA 제품</div>
+                    </th>
+                    <td>
+                      <div>A Works</div>
+                    </td>
+                    <th>
+                      <div>Version</div>
+                    </th>
+                    <td>
+                      <div>3.0</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>업무영역</div>
+                    </th>
+                    <td>
+                      <div>공통</div>
+                    </td>
+                    <th>
+                      <div>대상 어플리케이션</div>
+                    </th>
+                    <td>
+                      <div>Chrome / Excel</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>실행구분</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        <Stack direction="row" alignItems="center">
+                          File
+                          <Box
+                            sx={{
+                              height: "42px",
+                              display: "inline-flex",
+                              alignItems: "center",
+                              borderRadius: "4px",
+                              backgroundColor: "background.default",
+                              px: 2,
+                              ml: 4,
+                              mr: 30,
+                            }}
+                          >
+                            <Link href="#">NaverNewsBot.exe</Link>
+                          </Box>
+                          Work Center
+                          <Box
+                            sx={{
+                              height: "42px",
+                              display: "inline-flex",
+                              alignItems: "center",
+                              borderRadius: "4px",
+                              backgroundColor: "background.default",
+                              px: 2,
+                              ml: 4,
+                            }}
+                          >
+                            NaverNewsBot.Process
+                          </Box>
+                        </Stack>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>프로세스 설명</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        1. 검색할 키워드를 엑셀 템플릿 파일에 입력합니다. <br />
+                        2. 검색 키워드 작성 파일을 RPA에게 요청합니다.
+                        <br />
+                        3. 지정된 검색사이트, 네이버, 구글, 다음 에서 키워드 검색합니다.
+                        <br />
+                        4. 검색자료는 요청자의 메일로 접수됩니다.
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>장점</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        1. 검색할 키워드를 엑셀 템플릿 파일에 입력합니다. <br />
+                        2. 검색 키워드 작성 파일을 RPA에게 요청합니다.
+                        <br />
+                        3. 지정된 검색사이트, 네이버, 구글, 다음 에서 키워드 검색합니다.
+                        <br />
+                        4. 검색자료는 요청자의 메일로 접수됩니다.
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>대표이미지</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        <Stack className="thumbNail" flexShrink={0}>
+                          <img src={tempThumb} alt="대표이미지" className="thumbNailImage" />
+                        </Stack>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>실행방법</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        <Stack className="stepBoxView">
+                          <Typography
+                            variant="smallFont"
+                            sx={{
+                              display: "inline-flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              flexShrink: 0,
+                              color: "common.main",
+                              backgroundColor: "primary.main",
+                              width: "72px",
+                              height: "28px",
+                              borderRadius: "14px",
+                              mb: 3,
+                            }}
+                          >
+                            Step 01
+                          </Typography>
+                          <Stack direction="row">
+                            <Stack className="thumbNail" flexShrink={0} sx={{ mr: 6 }}>
+                              <img src={tempThumb} alt="Step01 이미지" className="thumbNailImageSmall" />
+                            </Stack>
+                            <Typography>
+                              내용이 들어갑니다 내용이 들어갑니다. <br /> 내용내용 내용이 들어갑니다 내용 들어갑니다. <br />
+                              내용이 들어갑니다 내용 들어갑니다.
+                              <br /> 내용이 들어갑니다내용 들어갑니다. <br />
+                              내용이 들어갑니다내용 들어갑니다. <br />
+                              내용이 들어갑니다내용 들어갑니다. 내용이 들어갑니다내용 들어갑니다. <br />
+                              내용이 들어갑니다내용 들어갑니다. 내용이 들어갑니다내용 들어갑니다. 내용이 들어갑니다내용 들어갑니다. <br />
+                              내용이 들어갑니다내용 들어갑니다. 내용이 들어갑니다
+                            </Typography>
+                          </Stack>
+                        </Stack>
+                        <Stack className="stepBoxView">
+                          <Typography
+                            variant="smallFont"
+                            sx={{
+                              display: "inline-flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              flexShrink: 0,
+                              color: "common.main",
+                              backgroundColor: "primary.main",
+                              width: "72px",
+                              height: "28px",
+                              borderRadius: "14px",
+                              mb: 3,
+                            }}
+                          >
+                            Step 02
+                          </Typography>
+                          <Stack direction="row">
+                            <Stack className="thumbNail" flexShrink={0} sx={{ mr: 6 }}>
+                              <img src={tempThumb2} alt="Step02 이미지" className="thumbNailImageSmall" />
+                            </Stack>
+                            <Typography>
+                              내용이 들어갑니다 내용이 들어갑니다. <br /> 내용내용 내용이 들어갑니다 내용 들어갑니다. <br />
+                              내용이 들어갑니다 내용 들어갑니다.
+                              <br /> 내용이 들어갑니다내용 들어갑니다. <br />
+                              내용이 들어갑니다내용 들어갑니다.
+                            </Typography>
+                          </Stack>
+                        </Stack>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </Stack>
+            <Stack sx={{ mb: 10 }}>
               <Typography variant="subTitle1" sx={{ mb: 4 }}>
+                프로세스 정보
+              </Typography>
+              <table className="tableView">
+                <colgroup>
+                  <col width="140" />
+                  <col width="*" />
+                  <col width="140" />
+                  <col width="*" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>
+                      <div>프로세스</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>네이버 뉴스검색</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>등록부서</div>
+                    </th>
+                    <td>
+                      <div>IT 지원</div>
+                    </td>
+                    <th>
+                      <div>등록자</div>
+                    </th>
+                    <td>
+                      <div>Dongjun.kim@powergen.ai</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>등록일</div>
+                    </th>
+                    <td>
+                      <div>2023.05.01 11:30:12</div>
+                    </td>
+                    <th>
+                      <div>최근수정일</div>
+                    </th>
+                    <td>
+                      <div>2023.05.01 11:30:12</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </Stack>
+            <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ mt: 12 }}>
+              <Buttons outlined variant="text">
+                취소
+              </Buttons>
+              <Buttons primary variant="text">
                 요청
-              </Typography>
-              <table className="tableView">
-                <colgroup>
-                  <col width="140" />
-                  <col width="*" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>제목</div>
-                    </th>
-                    <td>
-                      <div>아이디어 등록</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>작성자</div>
-                    </th>
-                    <td>
-                      <div>admin</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>내용</div>
-                    </th>
-                    <td>
-                      <div>아이디어 제안 진행 상황 내용이 입력되는 영역입니다.</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>첨부파일</div>
-                    </th>
-                    <td>
-                      <div>첨부파일 들어가요</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>진행상황</div>
-                    </th>
-                    <td>
-                      <div>검토대기중</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </Stack>
-            <Stack sx={{ mb: 10 }}>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                접수
-              </Typography>
-              <table className="tableView">
-                <colgroup>
-                  <col width="140" />
-                  <col width="*" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>업무담당자</div>
-                    </th>
-                    <td>
-                      <div>admin</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>기술담당자</div>
-                    </th>
-                    <td>
-                      <div>admin</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>접수의견</div>
-                    </th>
-                    <td>
-                      <div>1 업무 당당자 및 기술 담당자 접수 의견이 입력되는 영역입니다</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </Stack>
-            <Stack sx={{ mb: 10 }}>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                업무검토
-              </Typography>
-              <table className="tableView">
-                <colgroup>
-                  <col width="140" />
-                  <col width="*" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>업무담당자</div>
-                    </th>
-                    <td>
-                      <div>admin</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div className="required">진행 가능 여부</div>
-                    </th>
-                    <td>
-                      <div>적합</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>업무 검토 의견</div>
-                    </th>
-                    <td>
-                      <div>해당 아이디어 제안에 대한 업무 검토 의견이 입력되는 영역입니다</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </Stack>
-            <Stack sx={{ mb: 10 }}>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                기술 검토
-              </Typography>
-              <table className="tableView">
-                <colgroup>
-                  <col width="140" />
-                  <col width="*" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>기술담당자</div>
-                    </th>
-                    <td>
-                      <div>admin</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div className="required">진행 가능 여부</div>
-                    </th>
-                    <td>
-                      <div>적합</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>업무 검토 의견</div>
-                    </th>
-                    <td>
-                      <div>해당 아이디어 제안에 대한 기술 검토 의견이 입력되는 영역입니다</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </Stack>
-            <Stack>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                최종승인
-              </Typography>
-              <table className="tableView">
-                <colgroup>
-                  <col width="140" />
-                  <col width="*" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>최종 검토 의견</div>
-                    </th>
-                    <td>
-                      <div>해당 아이디어 제안에 대한 최종 검토 의견이 입력되는 영역입니다</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              </Buttons>
             </Stack>
           </Paper>
 

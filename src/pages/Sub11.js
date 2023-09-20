@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import { Box, Paper, Stack, Typography, TextField, Avatar } from "@mui/material";
 
@@ -18,6 +18,9 @@ import { PiDotsThreeVerticalBold } from "react-icons/pi";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+import Dropzone from "../components/Dropzone";
+import { LuTrash } from "react-icons/lu";
 
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
@@ -85,7 +88,7 @@ export default function Sub11() {
                     </th>
                     <td>
                       <div>
-                        <StarRating readOnly defaultValue={2} />
+                        <StarRating readOnly={false} defaultValue={2} />
                       </div>
                     </td>
                     <th>
@@ -151,443 +154,307 @@ export default function Sub11() {
                       <div>3.0</div>
                     </td>
                   </tr>
+                  <tr>
+                    <th>
+                      <div>업무영역</div>
+                    </th>
+                    <td>
+                      <div>
+                        <FormControl
+                          sx={{
+                            width: "336px",
+                          }}
+                        >
+                          <Select
+                            fullWidth
+                            value={age}
+                            onChange={handleChange}
+                            displayEmpty
+                            variant="outlined"
+                            IconComponent={KeyboardArrowDownIcon}
+                            MenuProps={{
+                              sx: {
+                                "&& .Mui-selected": {
+                                  backgroundColor: "action.hover",
+                                  "&:hover": {
+                                    backgroundColor: "action.hover",
+                                  },
+                                },
+                              },
+                            }}
+                          >
+                            <MenuItem value="">
+                              <em>전체</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </div>
+                    </td>
+                    <th>
+                      <div>대상 어플리케이션</div>
+                    </th>
+                    <td>
+                      <div>
+                        <FormControl
+                          sx={{
+                            width: "336px",
+                          }}
+                        >
+                          <Select
+                            fullWidth
+                            value={age}
+                            onChange={handleChange}
+                            displayEmpty
+                            variant="outlined"
+                            IconComponent={KeyboardArrowDownIcon}
+                            MenuProps={{
+                              sx: {
+                                "&& .Mui-selected": {
+                                  backgroundColor: "action.hover",
+                                  "&:hover": {
+                                    backgroundColor: "action.hover",
+                                  },
+                                },
+                              },
+                            }}
+                          >
+                            <MenuItem value="">
+                              <em>전체</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>실행구분</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>File / Work Center 들어갈예정</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>프로세스 설명</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        <Box
+                          sx={{
+                            border: "1px solid",
+                            borderColor: "text.secondary",
+                            minHeight: "158px",
+                            borderRadius: "4px",
+                          }}
+                        >
+                          에디터영역
+                        </Box>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>장점</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        <Box
+                          sx={{
+                            border: "1px solid",
+                            borderColor: "text.secondary",
+                            minHeight: "158px",
+                            borderRadius: "4px",
+                          }}
+                        >
+                          에디터영역
+                        </Box>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>대표이미지</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        <Box className="thumbNail">
+                          <Dropzone />
+                        </Box>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>실행방법</div>
+                    </th>
+                    <td colSpan={3}>
+                      <div>
+                        <Stack
+                          className="stepBox"
+                          direction="row"
+                          alignItems="center"
+                          sx={{
+                            p: 4,
+                            backgroundColor: "background.default",
+                            borderRadius: "12px",
+                          }}
+                        >
+                          <Typography
+                            variant="searchLabel"
+                            sx={{
+                              display: "block",
+                              pl: 4,
+                              pr: 8,
+                              flexShrink: 0,
+                            }}
+                          >
+                            Step 01
+                          </Typography>
+                          <Dropzone />
+                          <StyledTextField
+                            multiline
+                            fullWidth
+                            rows={5}
+                            variant="standard"
+                            placeholder="내용이 들어갑니다"
+                            sx={{
+                              backgroundColor: "#fff",
+                              ml: 4,
+                              "& textarea": {
+                                boxSizing: "border-box",
+                                height: "106px !important",
+                              },
+                            }}
+                          />
+                          <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
+                            <button>
+                              <LuTrash />
+                            </button>
+                            <button>
+                              <LuTrash />
+                            </button>
+                            <button>
+                              <LuTrash />
+                            </button>
+                          </Stack>
+                        </Stack>
+                        <Stack
+                          className="stepBox"
+                          direction="row"
+                          alignItems="center"
+                          sx={{
+                            p: 4,
+                            backgroundColor: "background.default",
+                            borderRadius: "12px",
+                          }}
+                        >
+                          <Typography
+                            variant="searchLabel"
+                            sx={{
+                              display: "block",
+                              pl: 4,
+                              pr: 8,
+                              flexShrink: 0,
+                            }}
+                          >
+                            Step 02
+                          </Typography>
+                          <Dropzone />
+                          <StyledTextField
+                            multiline
+                            fullWidth
+                            rows={5}
+                            variant="standard"
+                            placeholder="내용이 들어갑니다"
+                            sx={{
+                              backgroundColor: "#fff",
+                              ml: 4,
+                              "& textarea": {
+                                boxSizing: "border-box",
+                                height: "106px !important",
+                              },
+                            }}
+                          />
+                          <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
+                            <button>
+                              <LuTrash />
+                            </button>
+                            <button>
+                              <LuTrash />
+                            </button>
+                            <button>
+                              <LuTrash />
+                            </button>
+                          </Stack>
+                        </Stack>
+                        <Stack direction="row" justifyContent="center" alignItems="center" sx={{ mt: 6, mb: 3 }}>
+                          <Buttons outlined variant="text">
+                            + 순서 추가
+                          </Buttons>
+                        </Stack>
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </Stack>
             <Stack sx={{ mb: 10 }}>
               <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                접수
+                프로세스 정보
               </Typography>
               <table className="tableView">
                 <colgroup>
+                  <col width="140" />
+                  <col width="*" />
                   <col width="140" />
                   <col width="*" />
                 </colgroup>
                 <tbody>
                   <tr>
                     <th>
-                      <div>업무담당자</div>
+                      <div>프로세스</div>
                     </th>
-                    <td>
-                      <div>admin</div>
+                    <td colSpan={3}>
+                      <div>네이버 뉴스검색</div>
                     </td>
                   </tr>
                   <tr>
                     <th>
-                      <div>기술담당자</div>
+                      <div>등록부서</div>
                     </th>
                     <td>
-                      <div>admin</div>
+                      <div>IT 지원</div>
+                    </td>
+                    <th>
+                      <div>등록자</div>
+                    </th>
+                    <td>
+                      <div>Dongjun.kim@powergen.ai</div>
                     </td>
                   </tr>
                   <tr>
                     <th>
-                      <div>접수의견</div>
+                      <div>등록일</div>
                     </th>
                     <td>
-                      <div>1 업무 당당자 및 기술 담당자 접수 의견이 입력되는 영역입니다</div>
+                      <div>2023.05.01 11:30:12</div>
+                    </td>
+                    <th>
+                      <div>최근수정일</div>
+                    </th>
+                    <td>
+                      <div>2023.05.01 11:30:12</div>
                     </td>
                   </tr>
                 </tbody>
               </table>
-            </Stack>
-            <Stack sx={{ mb: 10 }}>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                업무검토
-              </Typography>
-              <table className="tableView">
-                <colgroup>
-                  <col width="140" />
-                  <col width="*" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>업무담당자</div>
-                    </th>
-                    <td>
-                      <div>admin</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div className="required">진행 가능 여부</div>
-                    </th>
-                    <td>
-                      <div>적합</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>업무 검토 의견</div>
-                    </th>
-                    <td>
-                      <div>해당 아이디어 제안에 대한 업무 검토 의견이 입력되는 영역입니다</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </Stack>
-            <Stack sx={{ mb: 10 }}>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                기술 검토
-              </Typography>
-              <table className="tableView">
-                <colgroup>
-                  <col width="140" />
-                  <col width="*" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>기술담당자</div>
-                    </th>
-                    <td>
-                      <div>admin</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div className="required">진행 가능 여부</div>
-                    </th>
-                    <td>
-                      <div>적합</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>업무 검토 의견</div>
-                    </th>
-                    <td>
-                      <div>해당 아이디어 제안에 대한 기술 검토 의견이 입력되는 영역입니다</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </Stack>
-            <Stack>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                최종승인
-              </Typography>
-              <table className="tableView">
-                <colgroup>
-                  <col width="140" />
-                  <col width="*" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>최종 검토 의견</div>
-                    </th>
-                    <td>
-                      <div>해당 아이디어 제안에 대한 최종 검토 의견이 입력되는 영역입니다</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </Stack>
-          </Paper>
-
-          <Paper sx={{ p: 8, mt: 10 }}>
-            <Box sx={{ borderBottom: "1px solid", borderColor: "primary", pb: 4 }}>
-              <Typography variant="subTitle1">댓글 (0)</Typography>
-            </Box>
-            {/* 댓글 없는 경우 */}
-            <Stack className="commentBox" sx={{ borderBottom: "1px solid", borderColor: "common.cmtBd" }}>
-              <Stack justifyContent="center" alignItems="center" sx={{ height: "237px" }}>
-                <Box
-                  sx={{
-                    "& svg": {
-                      width: "60px",
-                      height: "60px",
-                      color: "text.disabled",
-                    },
-                  }}
-                >
-                  <CiCircleInfo color="warning" sx={{ width: "48px", height: "48px" }} />
-                </Box>
-                <Typography sx={{ mt: 3, color: "text.disabled" }}>아이디어에 대한 의견이 없습니다.</Typography>
-              </Stack>
-            </Stack>
-            {/* //댓글 없는 경우 */}
-
-            {/* 댓글 */}
-            <Stack className="commentBox" sx={{ py: 8, borderBottom: "1px solid", borderColor: "common.cmtBd" }}>
-              <Stack className="commentHeader" direction="row" justifyContent="space-between" alignItems="center">
-                <Stack direction="row" alignItems="center">
-                  <Avatar alt="Admin" src="/static/images/avatar/3.jpg" sx={{ width: 36, height: 36, mr: 3 }} />
-                  <Typography variant="subTitle2" sx={{ mr: 2 }}>
-                    Admin
-                  </Typography>
-                  <Typography variant="inputSide" sx={{ mr: 4 }}>
-                    2023.08.22 18:54:10
-                  </Typography>
-                  <StarRating readOnly />
-                </Stack>
-                <Box>
-                  <IconButton disableRipple aria-label="account of current user" aria-controls="menu-comment" aria-haspopup="true" onClick={handleMenu} color="inherit">
-                    <PiDotsThreeVerticalBold color="text.secondary" />
-                  </IconButton>
-                  <Menu
-                    id="menu-comment"
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                    sx={{
-                      "& .MuiMenu-paper": {
-                        borderRadius: "24px !important",
-                        minWidth: 152,
-                        boxSizing: "border-box",
-                        px: 6,
-                        pt: 9,
-                      },
-                      "& .MuiList-root": {
-                        p: 0,
-                        pb: 6,
-                      },
-                      "& .MuiList-root > li": {
-                        background: "#fff",
-                        p: 0,
-                      },
-                    }}
-                  >
-                    <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                      대댓글
-                    </MenuItem>
-                    <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                      공감?
-                    </MenuItem>
-                    <MenuItem disableRipple disableGutters sx={{ fontSize: 16 }}>
-                      삭제
-                    </MenuItem>
-
-                    <IconButton
-                      disableRipple
-                      onClick={handleClose}
-                      sx={{
-                        position: "absolute",
-                        top: "-31px",
-                        right: "-17px",
-                      }}
-                    >
-                      <CloseIcon color="primary" />
-                    </IconButton>
-                  </Menu>
-                </Box>
-              </Stack>
-              <Stack>
-                <Typography sx={{ pt: 2, pl: 12, lineHeight: "21px" }}>
-                  굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극
-                  추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다.
-                </Typography>
-              </Stack>
-
-              {/* 대댓글 */}
-              <Stack className="commentBox" sx={{ pt: 8, pl: 11, pb: 0 }}>
-                <Stack className="commentHeader" direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" alignItems="center">
-                    <Avatar alt="Admin" src="/static/images/avatar/3.jpg" sx={{ width: 36, height: 36, mr: 3 }} />
-                    <Typography variant="subTitle2" sx={{ mr: 2 }}>
-                      Admin
-                    </Typography>
-                    <Typography variant="inputSide" sx={{ mr: 4 }}>
-                      2023.08.22 18:54:10
-                    </Typography>
-                    <StarRating readOnly />
-                  </Stack>
-                  <Box>
-                    <IconButton disableRipple aria-label="account of current user" aria-controls="menu-comment" aria-haspopup="true" onClick={handleMenu} color="inherit">
-                      <PiDotsThreeVerticalBold color="text.secondary" />
-                    </IconButton>
-                    <Menu
-                      id="menu-comment"
-                      anchorEl={anchorEl}
-                      anchorOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                      }}
-                      keepMounted
-                      transformOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                      }}
-                      open={Boolean(anchorEl)}
-                      onClose={handleClose}
-                      sx={{
-                        "& .MuiMenu-paper": {
-                          borderRadius: "24px !important",
-                          minWidth: 152,
-                          boxSizing: "border-box",
-                          px: 6,
-                          pt: 9,
-                        },
-                        "& .MuiList-root": {
-                          p: 0,
-                          pb: 6,
-                        },
-                        "& .MuiList-root > li": {
-                          background: "#fff",
-                          p: 0,
-                        },
-                      }}
-                    >
-                      <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                        대댓글
-                      </MenuItem>
-                      <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                        공감?
-                      </MenuItem>
-                      <MenuItem disableRipple disableGutters sx={{ fontSize: 16 }}>
-                        삭제
-                      </MenuItem>
-
-                      <IconButton
-                        disableRipple
-                        onClick={handleClose}
-                        sx={{
-                          position: "absolute",
-                          top: "-31px",
-                          right: "-17px",
-                        }}
-                      >
-                        <CloseIcon color="primary" />
-                      </IconButton>
-                    </Menu>
-                  </Box>
-                </Stack>
-                <Stack>
-                  <Typography sx={{ pt: 2, pl: 12, lineHeight: "21px" }}>
-                    굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극
-                    추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다.
-                  </Typography>
-                </Stack>
-              </Stack>
-              {/* //대댓글 */}
-            </Stack>
-            {/* //댓글 */}
-
-            {/* 댓글 */}
-            <Stack className="commentBox" sx={{ py: 8, borderBottom: "1px solid", borderColor: "common.cmtBd" }}>
-              <Stack className="commentHeader" direction="row" justifyContent="space-between" alignItems="center">
-                <Stack direction="row" alignItems="center">
-                  <Avatar alt="Admin" src="/static/images/avatar/3.jpg" sx={{ width: 36, height: 36, mr: 3 }} />
-                  <Typography variant="subTitle2" sx={{ mr: 2 }}>
-                    Admin
-                  </Typography>
-                  <Typography variant="inputSide" sx={{ mr: 4 }}>
-                    2023.08.22 18:54:10
-                  </Typography>
-                  <StarRating readOnly />
-                </Stack>
-                <Box>
-                  <IconButton disableRipple aria-label="account of current user" aria-controls="menu-comment" aria-haspopup="true" onClick={handleMenu} color="inherit">
-                    <PiDotsThreeVerticalBold color="text.secondary" />
-                  </IconButton>
-                  <Menu
-                    id="menu-comment"
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                    sx={{
-                      "& .MuiMenu-paper": {
-                        borderRadius: "24px !important",
-                        minWidth: 152,
-                        boxSizing: "border-box",
-                        px: 6,
-                        pt: 9,
-                      },
-                      "& .MuiList-root": {
-                        p: 0,
-                        pb: 6,
-                      },
-                      "& .MuiList-root > li": {
-                        background: "#fff",
-                        p: 0,
-                      },
-                    }}
-                  >
-                    <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                      대댓글
-                    </MenuItem>
-                    <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                      공감?
-                    </MenuItem>
-                    <MenuItem disableRipple disableGutters sx={{ fontSize: 16 }}>
-                      삭제
-                    </MenuItem>
-
-                    <IconButton
-                      disableRipple
-                      onClick={handleClose}
-                      sx={{
-                        position: "absolute",
-                        top: "-31px",
-                        right: "-17px",
-                      }}
-                    >
-                      <CloseIcon color="primary" />
-                    </IconButton>
-                  </Menu>
-                </Box>
-              </Stack>
-              <Stack>
-                <Typography sx={{ pt: 2, pl: 12, lineHeight: "21px" }}>
-                  굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극
-                  추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다. 굉장히 참신한 아이디어입니다. 적극 추천합니다.
-                </Typography>
-              </Stack>
-
-              {/* 대댓글 작성 */}
-              <Stack className="commentBox" sx={{ pt: 8, pl: 11, pb: 0 }}>
-                <Stack className="commentHeader" direction="row" justifyContent="space-between" alignItems="center">
-                  <Typography variant="subTitle2" sx={{ mr: 2, mb: 3 }}>
-                    Admin님에게 댓글
-                  </Typography>
-                </Stack>
-                <StyledTextField multiline fullWidth rows="5" variant="standard" placeholder="댓글 내용 작성" />
-                <Stack direction="row" justifyContent="flex-end" alignItems="center" spacing={2} sx={{ mt: 3 }}>
-                  <Buttons outlined variant="etc2">
-                    취소
-                  </Buttons>
-                  <Buttons primary variant="etc2">
-                    작성
-                  </Buttons>
-                </Stack>
-              </Stack>
-              {/* //대댓글 작성 */}
-            </Stack>
-            {/* //댓글 */}
-
-            <Stack justifyContent="center" alignItems="center" sx={{ mt: 16 }}>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                이 아이디어에 대한 평가
-              </Typography>
-              <StarRating />
-            </Stack>
-
-            <Stack sx={{ mt: 10 }}>
-              <Typography variant="subTitle1" sx={{ mb: 4 }}>
-                이 아이디어에 대한 의견
-              </Typography>
-              <StyledTextField multiline fullWidth rows="5" variant="standard" placeholder="이 아이디어에 대한 의견" />
             </Stack>
 
             <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ mt: 12 }}>
