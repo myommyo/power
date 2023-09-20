@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import { Box, Paper, Stack, Typography, TextField, Avatar } from "@mui/material";
+import { Box, Paper, Stack, Typography, TextField, Avatar, Link } from "@mui/material";
 
 import Buttons from "../components/Buttons";
 
@@ -97,7 +97,20 @@ export default function Sub08() {
                       <div>첨부파일</div>
                     </th>
                     <td>
-                      <div>첨부파일 들어가요</div>
+                      <div>
+                        <Box
+                          sx={{
+                            height: "42px",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            borderRadius: "4px",
+                            backgroundColor: "background.default",
+                            px: 2,
+                          }}
+                        >
+                          <Link href="#">.GITCONFIG</Link>
+                        </Box>
+                      </div>
                     </td>
                   </tr>
                   <tr>

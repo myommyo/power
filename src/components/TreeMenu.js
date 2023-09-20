@@ -2,8 +2,13 @@ import React from "react";
 import { DiCss3, DiJavascript, DiNpm } from "react-icons/di";
 import { FaList } from "react-icons/fa";
 import { FaRegSquarePlus, FaRegSquareMinus } from "react-icons/fa6";
+import { AiOutlineMinus } from "react-icons/ai";
+
+import { BsPlusLg } from "react-icons/bs";
 
 import TreeView, { flattenTree } from "react-accessible-treeview";
+
+import tempThumb from "../assets/images/tempThumb.png";
 
 const folder = {
   name: "",
@@ -15,7 +20,7 @@ const folder = {
         { name: "대시보드" },
         { name: "아이디어관리" },
         { name: "업무그룹관리" },
-        { name: "RPA업무관리" },
+        { name: "RPA업무관리", children: [{ name: "Sub1" }, { name: "Sub2" }] },
         { name: "RPA변경관리" },
         { name: "실행관리" },
         { name: "모니터링&현황" },
@@ -32,26 +37,24 @@ const data = flattenTree(folder);
 function TreeMenu() {
   return (
     <>
-      <div>
-        <div className="directory">
-          <TreeView
-            data={data}
-            aria-label="directory tree"
-            nodeRenderer={({ element, isBranch, isExpanded, getNodeProps, level }) => (
-              <div {...getNodeProps()} style={{ paddingLeft: 24 * (level - 1) }}>
-                {isBranch ? <FolderIcon isOpen={isExpanded} /> : <FileIcon filename={element.name} />}
+      <div className="directory">
+        <TreeView
+          data={data}
+          aria-label="directory tree"
+          nodeRenderer={({ element, isBranch, isExpanded, getNodeProps, level }) => (
+            <div {...getNodeProps()} style={{ paddingLeft: 16 * (level - 1) }}>
+              {isBranch ? <FolderIcon isOpen={isExpanded} /> : <FileIcon filename={element.name} />}
 
-                {element.name}
-              </div>
-            )}
-          />
-        </div>
+              {element.name}
+            </div>
+          )}
+        />
       </div>
     </>
   );
 }
 
-const FolderIcon = ({ isOpen }) => (isOpen ? <FaRegSquareMinus color="999999" className="icon" /> : <FaRegSquarePlus color="primary" className="icon" />);
+const FolderIcon = ({ isOpen }) => (isOpen ? <AiOutlineMinus color="text.secondary" className="icon" /> : <BsPlusLg color="text.secondary" className="icon" />);
 
 const FileIcon = ({ filename }) => {
   const extension = filename.slice(filename.lastIndexOf(".") + 1);

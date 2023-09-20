@@ -319,6 +319,7 @@
   padding: 12px 0 12px 12px;
 }
 
+/* treeMenu */
 .directory {
   user-select: none;
 }
@@ -344,6 +345,17 @@
   cursor: pointer;
 }
 
+.directory .tree-leaf-list-item:not(:has(ul)) {
+  padding-left: 24px;
+  background: url(/src/assets/images/ico_tree_arrow.png) no-repeat 16px center;
+  background-size: 16px;
+}
+.directory .tree-branch-wrapper .tree-branch-wrapper .tree-leaf-list-item {
+  background: none;
+}
+.directory .tree-branch-wrapper {
+}
+
 .directory .tree-node:hover {
   background: rgba(255, 255, 255, 0.1);
 }
@@ -353,7 +365,7 @@
 }
 
 .directory .tree .tree-node--selected {
-  color: #3f8cff;
+  /* color: #3f8cff; */
   font-weight: 700;
 }
 
@@ -362,8 +374,16 @@
 }
 
 .directory .icon {
+  box-sizing: border-box;
+  padding: 2px;
   vertical-align: middle;
-  padding-right: 5px;
+  margin-right: 8px;
+  margin-top: -3px;
+  color: #999;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #e5e5e5;
 }
 
 /* DateRange 상단 숭김 */
