@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 import { styled, useTheme, ThemeProvider } from "@mui/material/styles";
 import Cookies from "js-cookie";
 import { Stack } from "@mui/material";
@@ -79,19 +79,43 @@ export default function App() {
           <CssBaseline />
           <BrowserRouter component="main" sx={{ flexGrow: 1, p: 3 }}>
             <div className="App">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/Sample" element={<Sample />} />
-                <Route path="/sub01" element={<Sub01 />} />
-                <Route path="/sub04" element={<Sub04 />} />
-                <Route path="/sub05" element={<Sub05 />} />
-                <Route path="/sub06" element={<Sub06 />} />
-                <Route path="/sub07" element={<Sub07 />} />
-                <Route path="/sub08" element={<Sub08 />} />
-                <Route path="/sub09" element={<Sub09 />} />
-                <Route path="/sub10" element={<Sub10 />} />
-                <Route path="/sub11" element={<Sub11 />} />
-              </Routes>
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route exact path="/Sample">
+                  <Sample />
+                </Route>                  
+                <Route exact path="/Sub01">
+                  <Sub01 />
+                </Route>                  
+                <Route exact path="/Sub04">
+                  <Sub04 />
+                </Route>                  
+                <Route exact path="/Sub05">
+                  <Sub05 />
+                </Route>                  
+                <Route exact path="/Sub06">
+                  <Sub06 />
+                </Route>                  
+                <Route exact path="/Sub07">
+                  <Sub07 />
+                </Route>                  
+                <Route exact path="/Sub08">
+                  <Sub08 />
+                </Route>                  
+                <Route exact path="/Sub09">
+                  <Sub09 />
+                </Route>                  
+                <Route exact path="/Sub10">
+                  <Sub10 />
+                </Route>                  
+                <Route exact path="/Sub11">
+                  <Sub11 />
+                </Route>                  
+
+
+              </Switch>
             </div>
           </BrowserRouter>
         </Stack>
