@@ -155,7 +155,7 @@
   justify-content: center;
   align-items: center;
 }
-.sideClose .MuiAccordionSummary-content::before {
+.sideClose .sideBar .MuiAccordionSummary-content::before {
   margin-right: 0;
 }
 .sideClose .sideBar .logo > h1 {
