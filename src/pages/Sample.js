@@ -54,7 +54,7 @@ export default function Sample() {
       pop02 = true;
       pop03 = false;
       pop04 = false;
-      setSize("md");
+      setSize("lg");
     } else if (pop == "pop03") {
       pop01 = false;
       pop02 = false;
