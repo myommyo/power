@@ -280,7 +280,7 @@
 .tableView {
   width: 100%;
   box-sizing: border-box;
-  table-layout: fixed;
+  /* table-layout: fixed; */
 }
 .tableView tr:first-child th,
 .tableView tr:first-child td {
@@ -480,6 +480,7 @@
 .sideBar .MuiAccordionSummary-root.Mui-expanded {
   background-color: transparent !important;
   color: #fff;
+  font-weight: 700;
 }
 .sideBar .MuiCollapse-root {
   padding: 0 16px;
@@ -595,20 +596,35 @@
   background-size: 24px;
 }
 
-/* 메뉴랑 셀렉트가 같이 되넴?? */
+.sideBar .subMenu .MuiButtonBase-root:hover,
+.sideBar .subMenu + .MuiCollapse-root .MuiButtonBase-root:hover {
+  background-color: transparent !important;
+}
+.sideBar .subMenu .MuiButtonBase-root:hover .MuiListItemText-root,
+.sideBar .subMenu + .MuiCollapse-root .MuiButtonBase-root:hover .MuiListItemText-root {
+  text-decoration: underline;
+}
+.sideBar .subMenu .MuiListItemIcon-root,
+.sideBar .subMenu + .MuiCollapse-root .MuiListItemIcon-root {
+  min-width: auto;
+  color: #fff;
+  margin-right: 8px;
+  font-weight: 700;
+}
+.sideBar .subMenu .MuiTypography-root {
+  font-size: 14px;
+  font-weight: 700;
+}
+.sideBar .subMenu + .MuiCollapse-root {
+}
+
 .MuiMenu-paper {
-  /* width: 280px !important;
-  border-radius: 24px !important;
-  */
   border: 1px solid #202844 !important;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.08) !important;
 }
 .MuiMenu-list {
-  /* padding: 36px 34px 34px 34px !important; */
 }
 .MuiMenu-list .MuiGrid-root {
-  /* width: 100% !important;
-  margin: 0 !important; */
 }
 
 /* modal */
@@ -704,6 +720,7 @@
   font-size: 22px;
   margin-left: -4px;
 }
+
 .menuComment.MuiMenu-list {
   background: red !important;
 }
@@ -944,4 +961,61 @@
   top: -4px;
   background: url(/src/assets/images/ico_check.png) no-repeat center;
   background-size: 100%;
+}
+
+/* date range picker */
+.calendarElement {
+  width: 334px;
+}
+.calendarElement .rdrDay {
+  height: 30px;
+  margin-bottom: 4px;
+}
+.calendarElement .rdrDayToday .rdrDayNumber span:after {
+  bottom: 0;
+}
+.calendarElement .rdrMonthName {
+  display: none;
+}
+
+.calendarElement .rdrMonthAndYearWrapper {
+  padding: 26px 24px 16px 24px;
+  box-sizing: border-box;
+}
+.calendarElement .rdrMonthAndYearWrapper .rdrMonthAndYearPickers {
+  font-size: 21px;
+  font-weight: 700;
+  order: -1;
+  justify-content: flex-start;
+}
+.calendarElement .rdrMonthAndYearWrapper .rdrNextPrevButton {
+  margin: 0;
+  background: transparent;
+}
+.calendarElement .rdrMonthAndYearWrapper .rdrNextPrevButton i {
+  border: solid #999;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.calendarElement .rdrNextPrevButton.rdrPprevButton i {
+  transform: rotate(135deg);
+}
+.calendarElement .rdrNextPrevButton.rdrNextButton i {
+  transform: rotate(-45deg);
+}
+
+.calendarElement .rdrSelected,
+.calendarElement .rdrInRange,
+.calendarElement .rdrStartEdge,
+.calendarElement .rdrEndEdge {
+  top: 0 !important;
+  bottom: 0 !important;
+}
+.calendarElement .rdrDayToday .rdrDayNumber span:after {
+  display: none;
+}
+
+.MuiPaper-root-MuiCard-root {
+  overflow: initial !important;
 }

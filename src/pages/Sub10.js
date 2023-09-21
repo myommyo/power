@@ -9,6 +9,7 @@ import imgChrome from "../assets/images/img_chrome.png";
 import imgExcel from "../assets/images/img_excel.png";
 import StarRating from "../components/StarRating";
 import Buttons from "../components/Buttons";
+import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile, LuTrash } from "react-icons/lu";
 
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
@@ -18,8 +19,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 //search
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
-import { FiSearch, FiCheckSquare } from "react-icons/fi";
-import { PiArrowCounterClockwiseBold } from "react-icons/pi";
+import { RiSearchLine } from "react-icons/ri";
 
 //Tab
 function TabPanel(props) {
@@ -70,16 +70,16 @@ export default function Sub10() {
             <Box component="form" sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 480, borderBottom: "2px solid", borderColor: "text.main" }}>
               <InputBase sx={{ ml: 1, flex: 1 }} placeholder="검색어를 입력하세요." inputProps={{ "aria-label": "검색어를 입력하세요." }} />
               <IconButton disableRipple color="primary" type="submit" aria-label="search" sx={{ marginRight: "-10px" }}>
-                <FiSearch sx={{ fontSize: "35px" }} />
+                <RiSearchLine sx={{ fontSize: "35px" }} />
               </IconButton>
             </Box>
             <Stack direction="row" alignItems="center" spacing={2}>
               <Buttons primary>
-                <FiCheckSquare />
+                <LuCheckSquare />
                 등록
               </Buttons>
               <Buttons outlined>
-                <PiArrowCounterClockwiseBold />
+                <LuRotateCcw />
                 초기화
               </Buttons>
             </Stack>

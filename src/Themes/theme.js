@@ -65,6 +65,7 @@ const baseTheme = createTheme({
       textColor1: "#666", //textColor #666
       textColor2: "#555", //header Admin 글씨색
       textColor3: "#627399", //DragZone 글씨색
+      bgColor1: "#ddd", //x 버튼 Bg color
     },
     tonalOffset: 0.2,
   },

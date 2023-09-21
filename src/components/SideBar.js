@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Accordion, AccordionDetails, AccordionSummary, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Collapse } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-const array = ["one", "two", "three"];
+const array = ["서브메뉴 1-1", "서브메뉴 1-2", "서브메뉴 1-3"];
 
 const SideBar = ({ setOpen }) => {
   const [expanded, setExpanded] = React.useState(false);
@@ -13,6 +13,9 @@ const SideBar = ({ setOpen }) => {
   };
 
   const [open, setListOpen] = useState(false);
+  const handleClick = () => {
+    setListOpen(!open);
+  };
 
   return (
     <>
@@ -33,20 +36,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">대시보드</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <List>
-                  <ListItem>
-                    <ListItemButton onClick={() => setListOpen(true)}>
-                      <ListItemIcon>{">"}</ListItemIcon>
-                      <ListItemText primary={"list open"} />
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton onClick={handleClick} dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
                     </ListItemButton>
                   </ListItem>
                 </List>
-                <Collapse in={open}>
-                  <List>
+                <Collapse in={open} timeout="auto" unmountOnExit sx={{ p: 0 }}>
+                  <List sx={{ p: 0 }}>
                     {array.map((listElm) => (
-                      <ListItem>
-                        <ListItemButton onClick={() => setListOpen(false)}>
-                          <ListItemIcon>{">"}</ListItemIcon>
+                      <ListItem sx={{ p: 0 }}>
+                        <ListItemButton sx={{ p: 0 }}>
+                          <ListItemIcon>{"·"}</ListItemIcon>
                           <ListItemText primary={listElm} />
                         </ListItemButton>
                       </ListItem>
@@ -60,7 +63,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">아이디어관리</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList04" expanded={expanded === "panel4"} onChange={handleChange("panel4")} disableGutters={true} square={true}>
@@ -68,7 +84,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">프로젝트 관리</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList05" expanded={expanded === "panel5"} onChange={handleChange("panel5")} disableGutters={true} square={true}>
@@ -76,7 +105,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">RPA 업무관리</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList06" expanded={expanded === "panel6"} onChange={handleChange("panel6")} disableGutters={true} square={true}>
@@ -84,7 +126,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">RPA 변경관리</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList07" expanded={expanded === "panel7"} onChange={handleChange("panel7")} disableGutters={true} square={true}>
@@ -92,7 +147,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">실행관리</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList08" expanded={expanded === "panel8"} onChange={handleChange("panel8")} disableGutters={true} square={true}>
@@ -100,7 +168,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">모니터링&현황</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList09" expanded={expanded === "panel9"} onChange={handleChange("panel9")} disableGutters={true} square={true}>
@@ -108,7 +189,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">커뮤니티</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList10" expanded={expanded === "panel10"} onChange={handleChange("panel10")} disableGutters={true} square={true}>
@@ -116,7 +210,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">시스템관리</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
             <Accordion className="sideBarList11" expanded={expanded === "panel11"} onChange={handleChange("panel11")} disableGutters={true} square={true}>
@@ -124,7 +231,20 @@ const SideBar = ({ setOpen }) => {
                 <Typography variant="sideBarHeader">마이페이지</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>디테일이어요</Typography>
+                <List className="subMenu" sx={{ p: 0 }}>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem sx={{ p: 0 }}>
+                    <ListItemButton dense disableGutters disableRipple sx={{ p: 0 }}>
+                      <ListItemIcon>{"-"}</ListItemIcon>
+                      <ListItemText primary={"서브메뉴1"} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </AccordionDetails>
             </Accordion>
           </div>

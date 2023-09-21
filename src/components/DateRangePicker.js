@@ -56,7 +56,22 @@ const CalendarRangComp = () => {
         <AiOutlineCalendar />
       </span>
 
-      <div ref={refOne}>{open && <DateRange onChange={(item) => setRange([item.selection])} editableDateInputs={true} moveRangeOnFirstSelection={false} ranges={range} months={1} direction="horizontal" className="calendarElement" />}</div>
+      <div ref={refOne}>
+        {open && (
+          <DateRange
+            dragSelectionEnabled={true}
+            onChange={(item) => setRange([item.selection])}
+            showMonthAndYearPickers={false}
+            editableDateInputs={true}
+            moveRangeOnFirstSelection={false}
+            ranges={range}
+            preview={false}
+            months={1}
+            direction="horizontal"
+            className="calendarElement"
+          />
+        )}
+      </div>
     </div>
   );
 };

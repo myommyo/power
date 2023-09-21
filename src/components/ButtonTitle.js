@@ -2,10 +2,7 @@ import React from "react";
 import { Stack, Button, Typography } from "@mui/material";
 
 import Buttons from "../components/Buttons";
-import { FiCheckSquare } from "react-icons/fi";
-import { BsPencilSquare, BsEye } from "react-icons/bs";
-import { PiArrowCounterClockwiseBold } from "react-icons/pi";
-import { IoDocumentOutline } from "react-icons/io5";
+import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile } from "react-icons/lu";
 
 const ButtonTitle = () => {
   return (
@@ -16,23 +13,23 @@ const ButtonTitle = () => {
         </div>
         <Stack direction="row" spacing={2}>
           <Buttons primary>
-            <FiCheckSquare />
+            <LuPenSquare />
             일괄등록
           </Buttons>
           <Buttons outlined>
-            <PiArrowCounterClockwiseBold />
+            <LuRotateCcw />
             초기화
           </Buttons>
           <Buttons outlined>
-            <BsPencilSquare />
+            <LuCheckSquare />
             신규
           </Buttons>
           <Buttons outlined>
-            <BsEye />
+            <LuEye />
             조회
           </Buttons>
           <Buttons outlined>
-            <IoDocumentOutline />
+            <LuFile />
             엑셀
           </Buttons>
         </Stack>

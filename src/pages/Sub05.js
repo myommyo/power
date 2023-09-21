@@ -3,8 +3,7 @@ import { styled } from "@mui/material/styles";
 import { Box, Paper, Stack, Typography, TextField, Button } from "@mui/material";
 
 import Buttons from "../components/Buttons";
-import { FiCheckSquare } from "react-icons/fi";
-import { RiDeleteBin7Line } from "react-icons/ri";
+import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile, LuTrash } from "react-icons/lu";
 
 import TreeMenu from "../components/TreeMenu";
 
@@ -65,15 +64,15 @@ export default function Sub05() {
                   <Typography variant="subTitle1">메뉴정보</Typography>
                   <Stack direction="row" spacing={2}>
                     <Buttons primary>
-                      <FiCheckSquare />
+                      <LuCheckSquare />
                       하위메뉴추가
                     </Buttons>
                     <Buttons outlined>
-                      <FiCheckSquare />
+                      <LuCheckSquare />
                       수정
                     </Buttons>
                     <Buttons outlined>
-                      <RiDeleteBin7Line />
+                      <LuTrash />
                       삭제
                     </Buttons>
                   </Stack>

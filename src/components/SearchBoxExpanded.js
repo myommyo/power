@@ -10,10 +10,15 @@ import CssBaseline from "@mui/material/CssBaseline";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import CachedOutlinedIcon from "@mui/icons-material/CachedOutlined";
-import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
+import { LuRefreshCcw, LuSearch } from "react-icons/lu";
+
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+
+import DateRange from "./DateRangePicker";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -73,7 +78,7 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    <Card sx={{ m: 0, pt: 6, pb: 6 }}>
+    <Card sx={{ m: 0, pt: 6, pb: 6, overflow: "visible" }}>
       <CardContent sx={{ m: 0, p: 0 }}>
         <CssBaseline />
         <Grid container alignItems="center" sx={{ m: 0, pl: 6, pr: 6 }}>
@@ -89,8 +94,8 @@ export default function RecipeReviewCard() {
                   <Item>
                     <Stack direction="row">
                       <StyledTextField variant="standard" placeholder="프로젝트명" fullWidth />
-                      <IconButton aria-label="Refresh" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid #e5e5e5" }}>
-                        <CachedOutlinedIcon fontSize="inherit" />
+                      <IconButton disableRipple aria-label="Refresh" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid ", borderColor: "text.secondary" }}>
+                        <LuRefreshCcw fontSize="18px" />
                       </IconButton>
                     </Stack>
                   </Item>
@@ -110,8 +115,8 @@ export default function RecipeReviewCard() {
                   <Item>
                     <Stack direction="row">
                       <StyledTextField variant="standard" placeholder="전체" fullWidth />
-                      <IconButton aria-label="찾기" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid #e5e5e5" }}>
-                        <SearchIcon fontSize="inherit" />
+                      <IconButton disableRipple aria-label="찾기" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid ", borderColor: "text.secondary" }}>
+                        <LuSearch fontSize="18px" />
                       </IconButton>
                     </Stack>
                   </Item>
@@ -197,7 +202,7 @@ export default function RecipeReviewCard() {
                 <Grid item xs={8}>
                   <Item>
                     <Stack direction="row" alignItems="center">
-                      {/* <DateRange editableDateInputs={true} onChange={(item) => setState([item.selection])} moveRangeOnFirstSelection={false} ranges={state} /> */}
+                      <DateRange />
                     </Stack>
                   </Item>
                 </Grid>
