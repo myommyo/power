@@ -17,12 +17,7 @@ import UseSwitchesBasic from "../components/Switch";
 
 import Paginations from "../components/Paginations";
 import Buttons from "../components/Buttons";
-
-//icon
-import { FiCheckSquare } from "react-icons/fi";
-import { RiDeleteBin7Line } from "react-icons/ri";
-import { BsPencilSquare, BsEye } from "react-icons/bs";
-import { PiArrowCounterClockwiseBold } from "react-icons/pi";
+import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile, LuTrash } from "react-icons/lu";
 
 export const NoDataFound = () => (
   <Stack height="100%" alignItems="center" justifyContent="center">
@@ -92,15 +87,15 @@ export default function Sub07() {
             </div>
             <Stack direction="row" spacing={2}>
               <Buttons outlined>
-                <PiArrowCounterClockwiseBold />
+                <LuRotateCcw />
                 초기화
               </Buttons>
               <Buttons outlined>
-                <BsPencilSquare />
+                <LuCheckSquare />
                 신규
               </Buttons>
               <Buttons outlined>
-                <BsEye />
+                <LuEye />
                 조회
               </Buttons>
             </Stack>
@@ -246,7 +241,7 @@ export default function Sub07() {
                 <Typography variant="subTitle1">사용자 정보</Typography>
                 <Stack direction="row">
                   <Buttons primary>
-                    <FiCheckSquare />
+                    <LuCheckSquare />
                     추가
                   </Buttons>
                 </Stack>
@@ -357,7 +352,7 @@ export default function Sub07() {
                 <Typography variant="subTitle1">업무권한목록</Typography>
                 <Stack direction="row">
                   <Buttons primary>
-                    <FiCheckSquare />
+                    <LuCheckSquare />
                     추가
                   </Buttons>
                 </Stack>

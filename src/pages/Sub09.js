@@ -11,6 +11,7 @@ import Buttons from "../components/Buttons";
 import NoProfile from "../assets/images/no_profile.png";
 import IcoCamera from "../assets/images/ico_camera.png";
 
+import { LuCamera } from "react-icons/lu";
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
 })({
@@ -52,7 +53,15 @@ export default function Sub09() {
 
           <Paper sx={{ mt: 3, px: 8, pb: 8, pt: 16 }}>
             <Stack direction="row" justifyContent="center">
-              <Badge overlap="circular" anchorOrigin={{ vertical: "bottom", horizontal: "right" }} badgeContent={<SmallAvatar alt="" src={IcoCamera} />}>
+              <Badge
+                overlap="circular"
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                badgeContent={
+                  <SmallAvatar sx={{ backgroundColor: "secondary.main" }}>
+                    <LuCamera />
+                  </SmallAvatar>
+                }
+              >
                 <Avatar alt="" src={NoProfile} sx={{ width: 128, height: 128, background: "#d9d9d9" }} />
               </Badge>
             </Stack>

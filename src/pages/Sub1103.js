@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { PiDotsThreeVerticalBold, PiWarningCircleThin } from "react-icons/pi";
+import { LuThumbsUp } from "react-icons/lu";
 
 import tempThumb from "../assets/images/tempThumb.png";
 import tempThumb2 from "../assets/images/tempThumb2.png";
@@ -381,6 +382,12 @@ export default function Sub11() {
                     2023.08.22 18:54:10
                   </Typography>
                   <StarRating readOnly />
+                  <Stack direction="row" alignItems="center" sx={{ px: 3, ml: 4, height: "30px", backgroundColor: "background.default", borderRadius: "16px" }}>
+                    <LuThumbsUp />
+                    <Typography variant="searchLabel" sx={{ ml: 2, mt: "4px" }}>
+                      0
+                    </Typography>
+                  </Stack>
                 </Stack>
                 <Box>
                   <IconButton disableRipple aria-label="account of current user" aria-controls="menu-comment" aria-haspopup="true" onClick={handleMenu} color="inherit">
@@ -422,7 +429,7 @@ export default function Sub11() {
                       대댓글
                     </MenuItem>
                     <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                      공감?
+                      공감
                     </MenuItem>
                     <MenuItem disableRipple disableGutters sx={{ fontSize: 16 }}>
                       삭제
@@ -461,6 +468,12 @@ export default function Sub11() {
                       2023.08.22 18:54:10
                     </Typography>
                     <StarRating readOnly />
+                    <Stack direction="row" alignItems="center" sx={{ px: 3, ml: 4, height: "30px", backgroundColor: "background.default", borderRadius: "16px" }}>
+                      <LuThumbsUp />
+                      <Typography variant="searchLabel" sx={{ ml: 2, mt: "4px" }}>
+                        999
+                      </Typography>
+                    </Stack>
                   </Stack>
                   <Box>
                     <IconButton disableRipple aria-label="account of current user" aria-controls="menu-comment" aria-haspopup="true" onClick={handleMenu} color="inherit">
@@ -502,7 +515,7 @@ export default function Sub11() {
                         대댓글
                       </MenuItem>
                       <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                        공감?
+                        공감
                       </MenuItem>
                       <MenuItem disableRipple disableGutters sx={{ fontSize: 16 }}>
                         삭제
@@ -545,6 +558,12 @@ export default function Sub11() {
                     2023.08.22 18:54:10
                   </Typography>
                   <StarRating readOnly />
+                  <Stack direction="row" alignItems="center" sx={{ px: 3, ml: 4, height: "30px", backgroundColor: "background.default", borderRadius: "16px" }}>
+                    <LuThumbsUp />
+                    <Typography variant="searchLabel" sx={{ ml: 2, mt: "4px" }}>
+                      999
+                    </Typography>
+                  </Stack>
                 </Stack>
                 <Box>
                   <IconButton disableRipple aria-label="account of current user" aria-controls="menu-comment" aria-haspopup="true" onClick={handleMenu} color="inherit">
@@ -586,7 +605,7 @@ export default function Sub11() {
                       대댓글
                     </MenuItem>
                     <MenuItem disableRipple disableGutters sx={{ fontSize: 16, mb: 2 }}>
-                      공감?
+                      공감
                     </MenuItem>
                     <MenuItem disableRipple disableGutters sx={{ fontSize: 16 }}>
                       삭제

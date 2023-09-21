@@ -6,9 +6,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import CachedOutlinedIcon from "@mui/icons-material/CachedOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+import { LuRefreshCcw, LuSearch } from "react-icons/lu";
 
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -63,8 +64,8 @@ const SearchBox = () => {
                 <Box>
                   <Stack direction="row">
                     <StyledTextField variant="standard" placeholder="프로젝트명" fullWidth />
-                    <IconButton aria-label="Refresh" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid #e5e5e5" }}>
-                      <CachedOutlinedIcon fontSize="inherit" />
+                    <IconButton disableRipple aria-label="Refresh" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid ", borderColor: "text.secondary" }}>
+                      <LuRefreshCcw fontSize="18px" />
                     </IconButton>
                   </Stack>
                 </Box>
@@ -84,8 +85,8 @@ const SearchBox = () => {
                 <Box>
                   <Stack direction="row">
                     <StyledTextField variant="standard" placeholder="전체" fullWidth />
-                    <IconButton aria-label="찾기" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid #e5e5e5" }}>
-                      <SearchIcon fontSize="inherit" />
+                    <IconButton disableRipple aria-label="찾기" color="text" sx={{ ml: 1, width: "40px", height: "40px", borderRadius: "4px", border: "1px solid ", borderColor: "text.secondary" }}>
+                      <LuSearch fontSize="18px" />
                     </IconButton>
                   </Stack>
                 </Box>

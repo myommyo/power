@@ -6,10 +6,7 @@ import Table from "../components/Table";
 import Paginations from "../components/Paginations";
 
 import Buttons from "../components/Buttons";
-
-import { BsPencilSquare, BsEye } from "react-icons/bs";
-import { PiArrowCounterClockwiseBold } from "react-icons/pi";
-import { IoDocumentOutline } from "react-icons/io5";
+import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile, LuTrash } from "react-icons/lu";
 
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
@@ -47,19 +44,19 @@ export default function Sub06() {
             </div>
             <Stack direction="row" spacing={2}>
               <Buttons outlined>
-                <PiArrowCounterClockwiseBold />
+                <LuRotateCcw />
                 초기화
               </Buttons>
               <Buttons outlined>
-                <BsPencilSquare />
+                <LuCheckSquare />
                 신규
               </Buttons>
               <Buttons outlined>
-                <BsEye />
+                <LuEye />
                 조회
               </Buttons>
               <Buttons outlined>
-                <IoDocumentOutline />
+                <LuFile />
                 엑셀
               </Buttons>
             </Stack>

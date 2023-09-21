@@ -6,13 +6,7 @@ import Buttons from "../components/Buttons";
 
 import StarRating from "../components/StarRating";
 
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { CiCircleInfo } from "react-icons/ci";
-
-import CloseIcon from "@mui/icons-material/Close";
-import { PiDotsThreeVerticalBold } from "react-icons/pi";
 
 //select
 import FormControl from "@mui/material/FormControl";
@@ -20,7 +14,7 @@ import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import Dropzone from "../components/Dropzone";
-import { LuTrash } from "react-icons/lu";
+import { LuTrash, LuChevronUp, LuChevronDown } from "react-icons/lu";
 
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
@@ -335,10 +329,10 @@ export default function Sub11() {
                           />
                           <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
                             <button>
-                              <LuTrash />
+                              <LuChevronUp />
                             </button>
                             <button>
-                              <LuTrash />
+                              <LuChevronDown />
                             </button>
                             <button>
                               <LuTrash />
@@ -384,10 +378,10 @@ export default function Sub11() {
                           />
                           <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
                             <button>
-                              <LuTrash />
+                              <LuChevronUp />
                             </button>
                             <button>
-                              <LuTrash />
+                              <LuChevronDown />
                             </button>
                             <button>
                               <LuTrash />

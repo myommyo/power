@@ -1,13 +1,12 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import { Box, Paper, Stack, Typography, TextField, Button } from "@mui/material";
+
+import { Box, Paper, Stack, Typography } from "@mui/material";
 
 import Calendar from "../components/Calendar";
 
 import SearchBox from "../components/SearchBox";
 import Buttons from "../components/Buttons";
-import { BsEye } from "react-icons/bs";
-import { PiArrowCounterClockwiseBold } from "react-icons/pi";
+import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile } from "react-icons/lu";
 
 import "./Sub04.css";
 
@@ -22,11 +21,12 @@ export default function Sub04() {
             </div>
             <Stack direction="row" spacing={2}>
               <Buttons outlined>
-                <PiArrowCounterClockwiseBold />
+                <LuRotateCcw />
                 초기화
               </Buttons>
+
               <Buttons outlined>
-                <BsEye />
+                <LuEye />
                 조회
               </Buttons>
             </Stack>

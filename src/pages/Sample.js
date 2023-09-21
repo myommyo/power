@@ -3,16 +3,12 @@ import { Box, Grid, Stack, Typography, TextField, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 import Buttons from "../components/Buttons";
-import { FiCheckSquare } from "react-icons/fi";
-import { BsPencilSquare, BsEye } from "react-icons/bs";
-import { PiArrowCounterClockwiseBold } from "react-icons/pi";
-import { IoDocumentOutline } from "react-icons/io5";
+import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile, LuTrash } from "react-icons/lu";
 
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import InputAdornment from "@mui/material/InputAdornment";
 
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -132,10 +128,7 @@ export default function Sample() {
                 <Buttons primary disabled>
                   Primary Disabled
                 </Buttons>
-                <Buttons outlined>
-                  <FiCheckSquare />
-                  Outlined
-                </Buttons>
+                <Buttons outlined>Outlined</Buttons>
                 <Buttons outlined disabled>
                   Outlined Disabled
                 </Buttons>
@@ -175,27 +168,32 @@ export default function Sample() {
                   Etc Disabled
                 </Buttons>
               </Stack>
+
               <Typography variant="subTitle2">Button Sample</Typography>
               <Stack direction="row" alignItems="center" spacing={2}>
                 <Buttons primary>
-                  <FiCheckSquare />
+                  <LuPenSquare />
                   일괄등록
                 </Buttons>
                 <Buttons outlined>
-                  <PiArrowCounterClockwiseBold />
+                  <LuRotateCcw />
                   초기화
                 </Buttons>
                 <Buttons outlined>
-                  <BsPencilSquare />
+                  <LuCheckSquare />
                   신규
                 </Buttons>
                 <Buttons outlined>
-                  <BsEye />
+                  <LuEye />
                   조회
                 </Buttons>
                 <Buttons outlined>
-                  <IoDocumentOutline />
+                  <LuFile />
                   엑셀
+                </Buttons>
+                <Buttons outlined>
+                  <LuTrash />
+                  삭제
                 </Buttons>
               </Stack>
             </Box>
