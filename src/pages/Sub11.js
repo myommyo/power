@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Box, Paper, Stack, Typography, TextField, Avatar } from "@mui/material";
+import { Box, Paper, Stack, Typography, TextField } from "@mui/material";
 
 import Buttons from "../components/Buttons";
-
 import StarRating from "../components/StarRating";
-
 import MenuItem from "@mui/material/MenuItem";
 
 //select
@@ -13,8 +11,19 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+
 import Dropzone from "../components/Dropzone";
 import { LuTrash, LuChevronUp, LuChevronDown } from "react-icons/lu";
+
+//search
+import InputBase from "@mui/material/InputBase";
+import IconButton from "@mui/material/IconButton";
+import { RiSearchLine } from "react-icons/ri";
+
+import { TbX } from "react-icons/tb";
 
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
@@ -66,7 +75,15 @@ export default function Sub11() {
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
           <Typography variant="sectionTitle">BOT STORE 등록/수정</Typography>
 
-          <Paper sx={{ p: 8, mt: 4 }}>
+          <Paper
+            sx={{
+              p: 8,
+              mt: 4,
+              "& .tableView": {
+                tableLayout: "fixed !important",
+              },
+            }}
+          >
             <Stack sx={{ mb: 10 }}>
               <table className="tableView">
                 <colgroup>
@@ -231,7 +248,54 @@ export default function Sub11() {
                       <div>실행구분</div>
                     </th>
                     <td colSpan={3}>
-                      <div>File / Work Center 들어갈예정</div>
+                      <div>
+                        <FormControl component="fieldset">
+                          <RadioGroup row aria-label="실행구분" defaultValue="File" name="radio-buttons-group">
+                            <FormControlLabel value="File" control={<Radio disableRipple />} label="File" />
+                            <FormControlLabel sx={{ pl: 2 }} value="Work Center" control={<Radio disableRipple />} label="Work Center" />
+                          </RadioGroup>
+                        </FormControl>
+                        <Stack direction="row" alignItems="center">
+                          <Box component="form" sx={{ display: "flex", alignItems: "center", width: "336px", height: "40px", pl: 4, pr: 3, border: "1px solid", borderColor: "text.secondary", borderRadius: "4px" }}>
+                            <InputBase sx={{ flex: 1 }} placeholder="업로드할 파일을 선택하세요." inputProps={{ "aria-label": "업로드할 파일을 선택하세요." }} />
+                            <IconButton disableRipple color="primary" type="submit" aria-label="search" sx={{ marginRight: "-10px" }}>
+                              <RiSearchLine sx={{ fontSize: "18px" }} />
+                            </IconButton>
+                          </Box>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              width: "336px",
+                              height: "40px",
+                              pl: 4,
+                              pr: 3,
+                              ml: 3,
+                              border: "1px solid",
+                              borderColor: "text.secondary",
+                              borderRadius: "4px",
+                            }}
+                          >
+                            <Typography>NaverNewsBot.exe</Typography>
+                            <IconButton
+                              disableRipple
+                              sx={{
+                                ml: 2,
+                                borderRadius: "100%",
+                                p: "2px",
+                                backgroundColor: "#ddd",
+                                "& svg": {
+                                  fontSize: "10px",
+                                  color: "common.main",
+                                },
+                              }}
+                              aria-label="menu"
+                            >
+                              <TbX />
+                            </IconButton>
+                          </Box>
+                        </Stack>
+                      </div>
                     </td>
                   </tr>
                   <tr>

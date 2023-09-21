@@ -67,8 +67,20 @@ export default function Sub11() {
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
           <Typography variant="sectionTitle">BOT STORE 등록/수정</Typography>
 
-          <Paper sx={{ p: 8, mt: 4 }}>
-            <Stack sx={{ mb: 10 }}>
+          <Paper
+            sx={{
+              p: 8,
+              mt: 4,
+              "& .tableView": {
+                tableLayout: "fixed !important",
+              },
+            }}
+          >
+            <Stack
+              sx={{
+                mb: 10,
+              }}
+            >
               <table className="tableView">
                 <colgroup>
                   <col width="140" />

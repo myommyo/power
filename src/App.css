@@ -280,7 +280,7 @@
 .tableView {
   width: 100%;
   box-sizing: border-box;
-  table-layout: fixed;
+  /* table-layout: fixed; */
 }
 .tableView tr:first-child th,
 .tableView tr:first-child td {
