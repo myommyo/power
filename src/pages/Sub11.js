@@ -26,11 +26,6 @@ import { RiSearchLine } from "react-icons/ri";
 import { TbX } from "react-icons/tb";
 
 
-//리스트 추가
-import SampleAddList from "../components/SampleAddList"
-
-
-
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
 })({
@@ -373,7 +368,65 @@ export default function Sub11() {
                     </th>
                     <td colSpan={3}>
                       <div>
-                        <SampleAddList countList={countList} />
+
+                      <listTy01 countList={countList}>
+                      {countList && countList.map((item, i) => (
+                        <Stack
+                          key={i}
+                          className="stepBox"
+                          direction="row"
+                          alignItems="center"
+                          sx={{
+                            p: 4,
+                            backgroundColor: "background.default",
+                            borderRadius: "12px",
+                          }}
+                        >
+                          <Typography
+                            variant="searchLabel"
+                            sx={{
+                              display: "block",
+                              pl: 4,
+                              pr: 8,
+                              flexShrink: 0,
+                            }}
+                          >
+                            Step 0{i+1}
+                          </Typography>
+                          <Dropzone />
+                          <StyledTextField
+                            multiline
+                            fullWidth
+                            rows={5}
+                            variant="standard"
+                            placeholder="내용이 들어갑니다"
+                            sx={{
+                              backgroundColor: "#fff",
+                              ml: 4,
+                              "& textarea": {
+                                boxSizing: "border-box",
+                                height: "106px !important",
+                              },
+                            }}
+                          />
+                          <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
+                            <button>
+                              <LuChevronUp />
+                            </button>
+                            <button>
+                              <LuChevronDown />
+                            </button>
+                            <button>
+                              <LuTrash />
+                            </button>
+                          </Stack>
+                        </Stack>
+                      ))}
+                      </listTy01>
+
+
+
+                        
                         <Stack direction="row" justifyContent="center" alignItems="center" sx={{ mt: 6, mb: 3 }}>
                           <Buttons outlined variant="text" onClick={onAddDetailDiv}>
                             + 순서 추가
