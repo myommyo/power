@@ -20,6 +20,14 @@ const Dropzone = ({ className }) => {
   });
 
   const images = files.map((file) => <img key={file.name} src={file.preview} alt="image" style={{ width: "100%" }} />);
+
+
+  const removeFile = file => () => {
+    const newFiles = [...images]
+    newFiles.splice(newFiles.indexOf(file), 1)
+    setFiles(newFiles)
+  }
+
   return (
     <>
       <div className="dropArea" {...getRootProps()}>
@@ -30,7 +38,7 @@ const Dropzone = ({ className }) => {
         </div>
         <div className="dropImage">
           {images}
-          <button className="btnDelete">
+          <button className="btnDelete" onClick={removeFile(images)}>
             <LuTrash />
           </button>
         </div>
