@@ -25,6 +25,12 @@ import { RiSearchLine } from "react-icons/ri";
 
 import { TbX } from "react-icons/tb";
 
+
+//리스트 추가
+import SampleAddList from "../components/SampleAddList"
+
+
+
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
 })({
@@ -51,6 +57,19 @@ const StyledTextField = styled(TextField, {
 });
 
 export default function Sub11() {
+
+  //리스트 추가
+  const [countList, setCountList] = useState([0])
+   
+  const onAddDetailDiv = () => {
+    let countArr = [...countList]
+    let counter = countArr.slice(-1)[0]
+    counter += 1
+    countArr.push(counter)	// index 사용 X
+    // countArr[counter] = counter	// index 사용 시 윗줄 대신 사용	
+    setCountList(countArr)
+  }
+
   //select
   const [age, setAge] = React.useState("");
   const handleChange = (event) => {
@@ -354,106 +373,9 @@ export default function Sub11() {
                     </th>
                     <td colSpan={3}>
                       <div>
-                        <Stack
-                          className="stepBox"
-                          direction="row"
-                          alignItems="center"
-                          sx={{
-                            p: 4,
-                            backgroundColor: "background.default",
-                            borderRadius: "12px",
-                          }}
-                        >
-                          <Typography
-                            variant="searchLabel"
-                            sx={{
-                              display: "block",
-                              pl: 4,
-                              pr: 8,
-                              flexShrink: 0,
-                            }}
-                          >
-                            Step 01
-                          </Typography>
-                          <Dropzone />
-                          <StyledTextField
-                            multiline
-                            fullWidth
-                            rows={5}
-                            variant="standard"
-                            placeholder="내용이 들어갑니다"
-                            sx={{
-                              backgroundColor: "#fff",
-                              ml: 4,
-                              "& textarea": {
-                                boxSizing: "border-box",
-                                height: "106px !important",
-                              },
-                            }}
-                          />
-                          <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
-                            <button>
-                              <LuChevronUp />
-                            </button>
-                            <button>
-                              <LuChevronDown />
-                            </button>
-                            <button>
-                              <LuTrash />
-                            </button>
-                          </Stack>
-                        </Stack>
-                        <Stack
-                          className="stepBox"
-                          direction="row"
-                          alignItems="center"
-                          sx={{
-                            p: 4,
-                            backgroundColor: "background.default",
-                            borderRadius: "12px",
-                          }}
-                        >
-                          <Typography
-                            variant="searchLabel"
-                            sx={{
-                              display: "block",
-                              pl: 4,
-                              pr: 8,
-                              flexShrink: 0,
-                            }}
-                          >
-                            Step 02
-                          </Typography>
-                          <Dropzone />
-                          <StyledTextField
-                            multiline
-                            fullWidth
-                            rows={5}
-                            variant="standard"
-                            placeholder="내용이 들어갑니다"
-                            sx={{
-                              backgroundColor: "#fff",
-                              ml: 4,
-                              "& textarea": {
-                                boxSizing: "border-box",
-                                height: "106px !important",
-                              },
-                            }}
-                          />
-                          <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
-                            <button>
-                              <LuChevronUp />
-                            </button>
-                            <button>
-                              <LuChevronDown />
-                            </button>
-                            <button>
-                              <LuTrash />
-                            </button>
-                          </Stack>
-                        </Stack>
+                        <SampleAddList countList={countList} />
                         <Stack direction="row" justifyContent="center" alignItems="center" sx={{ mt: 6, mb: 3 }}>
-                          <Buttons outlined variant="text">
+                          <Buttons outlined variant="text" onClick={onAddDetailDiv}>
                             + 순서 추가
                           </Buttons>
                         </Stack>
