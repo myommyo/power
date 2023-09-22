@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import { Box, Grid, Stack, Typography, TextField, Paper } from "@mui/material";
+import { Box, Grid, Stack, Typography, TextField, Paper, Link } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 import Buttons from "../components/Buttons";
 import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile, LuTrash } from "react-icons/lu";
+import { PiInfoThin } from "react-icons/pi";
 
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
@@ -20,6 +17,19 @@ import Checkbox from "@mui/material/Checkbox";
 
 import UseSwitchesBasic from "../components/Switch";
 import StarRating from "../components/StarRating";
+
+//Drag & Drop
+import Dropzone from "../components/Dropzone";
+
+//daterange
+import DateRange from "../components/DateRangePicker";
+
+// radio
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 
 //팝업 사용하는 애들
 import Button from "@mui/material/Button";
@@ -33,6 +43,67 @@ var pop01;
 var pop02;
 var pop03;
 var pop04;
+
+//Radio
+const BpIcon = styled("span")(({ theme }) => ({
+  borderRadius: "50%",
+  width: 20,
+  height: 20,
+  boxShadow: theme.palette.mode === "dark" ? "0 0 0 1px rgb(16 22 26 / 40%)" : "inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)",
+  backgroundColor: theme.palette.mode === "dark" ? "#394b59" : "#fff",
+  backgroundImage: theme.palette.mode === "dark" ? "linear-gradient(180deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,0))" : "linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))",
+  ".Mui-focusVisible &": {},
+  "input:hover ~ &": {
+    backgroundColor: theme.palette.mode === "dark" ? "#30404d" : "#ebf1f5",
+  },
+  "input:disabled ~ &": {
+    boxShadow: "none",
+    background: theme.palette.mode === "dark" ? "#000" : "#f8f8f8",
+    border: "1px solid",
+    borderColor: theme.palette.mode === "dark" ? "#000" : "#e5e5e5",
+  },
+}));
+
+const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#000" : "#202844",
+  backgroundImage: "linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))",
+  "&:before": {
+    display: "block",
+    width: 20,
+    height: 20,
+    backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
+    content: '""',
+  },
+  "input:hover ~ &": {
+    backgroundColor: theme.palette.mode === "dark" ? "#000" : "#202844",
+  },
+  "input:disabled  ~ &": {
+    backgroundColor: theme.palette.mode === "dark" ? "#000" : "#f8f8f8",
+    "&:before": {
+      display: "block",
+      width: 18,
+      height: 18,
+      backgroundImage: "radial-gradient(#e5e5e5,#e5e5e5 28%,transparent 32%)",
+    },
+  },
+}));
+
+function BpRadio(props) {
+  return (
+    <Radio
+      sx={{
+        "&:hover": {
+          bgcolor: "transparent",
+        },
+      }}
+      disableRipple
+      color="default"
+      checkedIcon={<BpCheckedIcon />}
+      icon={<BpIcon />}
+      {...props}
+    />
+  );
+}
 
 export default function Sample() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -117,6 +188,7 @@ export default function Sample() {
   const AccHandleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
   return (
     <>
       <Stack direction="row">
@@ -203,10 +275,24 @@ export default function Sample() {
               <Typography variant="subTitle1">Input Checkbox</Typography>
               <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 5 }}>
                 <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                <FormControlLabel control={<Checkbox defaultChecked disableRipple />} label="Active " />
-                <FormControlLabel disabled control={<Checkbox disableRipple />} label="Default Disabled" />
-                <FormControlLabel disabled control={<Checkbox defaultChecked disableRipple />} label="Default Disabled" />
+                <FormControlLabel control={<Checkbox defaultChecked disableRipple />} label="Checked " />
+                <FormControlLabel disabled control={<Checkbox disableRipple />} label="Disabled" />
+                <FormControlLabel disabled control={<Checkbox defaultChecked disableRipple />} label="Disabled Checked" />
               </Stack>
+            </Box>
+
+            <Box sx={{ mt: 8 }}>
+              <Typography variant="subTitle1">Radio Button</Typography>
+              <Box>
+                <FormControl component="fieldset">
+                  <RadioGroup row defaultValue="" aria-label="Default" name="customized-radios">
+                    <FormControlLabel value="Default" control={<BpRadio />} label="Default" />
+                    <FormControlLabel value="Checked" control={<BpRadio checked />} label="Checked" />
+                    <FormControlLabel value="Disabled" disabled control={<BpRadio disabled />} label="Disabled" />
+                    <FormControlLabel value="disabled" disabled checked control={<BpRadio checked />} label="Disabled Checked" />
+                  </RadioGroup>
+                </FormControl>
+              </Box>
             </Box>
 
             <Box sx={{ mt: 8 }}>
@@ -233,6 +319,11 @@ export default function Sample() {
             <Box sx={{ mt: 8 }}>
               <Typography variant="subTitle1">Star Rating</Typography>
               <StarRating />
+            </Box>
+
+            <Box sx={{ mt: 8 }}>
+              <Typography variant="subTitle1">Date Range</Typography>
+              <DateRange />
             </Box>
 
             <Box sx={{ mt: 8 }}>
@@ -449,9 +540,9 @@ export default function Sample() {
                     <td>
                       <div>
                         <FormControl component="fieldset">
-                          <RadioGroup row aria-label="첨부파일사용여부" name="temp">
-                            <FormControlLabel value="사용" control={<Radio disableRipple />} label="사용" />
-                            <FormControlLabel value="미사용" control={<Radio disableRipple checked />} label="미사용" />
+                          <RadioGroup row defaultValue="사용" aria-label="Default" name="customized-radios">
+                            <FormControlLabel value="사용" control={<BpRadio />} label="사용" />
+                            <FormControlLabel value="미사용" control={<BpRadio />} label="미사용" />
                           </RadioGroup>
                         </FormControl>
                       </div>
@@ -464,9 +555,9 @@ export default function Sample() {
                     <td>
                       <div>
                         <FormControl component="fieldset">
-                          <RadioGroup row aria-label="첨부파일사용여부" name="temp">
-                            <FormControlLabel value="사용" control={<Radio disableRipple />} label="사용" />
-                            <FormControlLabel value="미사용" control={<Radio disableRipple checked />} label="미사용" />
+                          <RadioGroup row defaultValue="사용" aria-label="Default" name="customized-radios">
+                            <FormControlLabel value="사용" control={<BpRadio />} label="사용" />
+                            <FormControlLabel value="미사용" control={<BpRadio />} label="미사용" />
                           </RadioGroup>
                         </FormControl>
                       </div>
@@ -477,9 +568,9 @@ export default function Sample() {
                     <td>
                       <div>
                         <FormControl component="fieldset">
-                          <RadioGroup row aria-label="첨부파일사용여부" name="temp">
-                            <FormControlLabel value="사용" control={<Radio disableRipple />} label="사용" />
-                            <FormControlLabel value="미사용" control={<Radio disableRipple checked />} label="미사용" />
+                          <RadioGroup row defaultValue="사용" aria-label="Default" name="customized-radios">
+                            <FormControlLabel value="사용" control={<BpRadio />} label="사용" />
+                            <FormControlLabel value="미사용" control={<BpRadio />} label="미사용" />
                           </RadioGroup>
                         </FormControl>
                       </div>
@@ -492,9 +583,9 @@ export default function Sample() {
                     <td>
                       <div>
                         <FormControl component="fieldset">
-                          <RadioGroup row aria-label="첨부파일사용여부" name="temp">
-                            <FormControlLabel value="사용" control={<Radio disableRipple />} label="사용" />
-                            <FormControlLabel value="미사용" control={<Radio disableRipple checked />} label="미사용" />
+                          <RadioGroup row defaultValue="사용" aria-label="Default" name="customized-radios">
+                            <FormControlLabel value="사용" control={<BpRadio />} label="사용" />
+                            <FormControlLabel value="미사용" control={<BpRadio />} label="미사용" />
                           </RadioGroup>
                         </FormControl>
                       </div>
@@ -581,9 +672,9 @@ export default function Sample() {
                     <td>
                       <div>
                         <FormControl component="fieldset">
-                          <RadioGroup row aria-label="중요" name="temp">
-                            <FormControlLabel value="사용" control={<Radio disableRipple />} label="사용" />
-                            <FormControlLabel value="미사용" control={<Radio disableRipple checked />} label="미사용" />
+                          <RadioGroup row defaultValue="사용" aria-label="Default" name="customized-radios">
+                            <FormControlLabel value="사용" control={<BpRadio />} label="사용" />
+                            <FormControlLabel value="미사용" control={<BpRadio />} label="미사용" />
                           </RadioGroup>
                         </FormControl>
                       </div>
@@ -614,7 +705,11 @@ export default function Sample() {
                       <div>첨부파일</div>
                     </th>
                     <td colSpan="3">
-                      <div>Drag & Drop 들어갈거에염</div>
+                      <div>
+                        <Stack>
+                          <Dropzone />
+                        </Stack>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -973,11 +1068,30 @@ export default function Sample() {
                                   <div>첨부파일</div>
                                 </th>
                                 <td colspan="3">
-                                  <div>첨부파일</div>
+                                  <div>
+                                    <Box
+                                      sx={{
+                                        height: "42px",
+                                        display: "inline-flex",
+                                        alignItems: "center",
+                                        borderRadius: "4px",
+                                        backgroundColor: "background.default",
+                                        px: 2,
+                                      }}
+                                    >
+                                      <Link href="#">.GITCONFIG</Link>
+                                    </Box>
+                                  </div>
                                 </td>
                               </tr>
                             </tbody>
                           </table>
+                          <Stack direction="row" alignItems="center" sx={{ mt: 4 }}>
+                            <PiInfoThin />
+                            <Typography sx={{ ml: 1 }} color="text.disabled">
+                              실제 로봇 수행 시간은 변경될 수 있습니다.
+                            </Typography>
+                          </Stack>
                         </Stack>
                       </AccordionDetails>
                     </Accordion>

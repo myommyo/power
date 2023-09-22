@@ -8,7 +8,7 @@ import "../App.css";
 const baseTheme = createTheme({
   spacing: 4,
   palette: {
-    mode: "light",
+    // mode: "light",
     primary: {
       main: "#202844",
       contrastText: "#fff",
@@ -66,6 +66,7 @@ const baseTheme = createTheme({
       textColor2: "#555", //header Admin 글씨색
       textColor3: "#627399", //DragZone 글씨색
       bgColor1: "#ddd", //x 버튼 Bg color
+      radioBg: "#f8f8f8", //Radio Button Bg
     },
     tonalOffset: 0.2,
   },

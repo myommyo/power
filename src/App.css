@@ -319,7 +319,13 @@
   box-sizing: border-box;
   padding: 12px 0 12px 12px;
 }
-
+.tableView .dropArea {
+  width: 100%;
+  height: 116px;
+}
+.tableView .dropArea .text p {
+  display: block;
+}
 /* treeMenu */
 .directory {
   user-select: none;
@@ -859,6 +865,7 @@
   position: absolute;
   right: 8px;
   top: 8px;
+  z-index: 1;
 }
 .dropArea .dropImage .btnDelete > svg {
   font-size: 16px;
@@ -882,7 +889,9 @@
 }
 .thumbNail .dropArea {
   width: 320px;
+  height: auto;
 }
+
 .thumbNail .dropArea .text p {
   display: block;
 }
@@ -915,7 +924,13 @@
 .stepBox + .stepBox {
   margin-top: 12px;
 }
-
+.stepBox .dropArea {
+  width: 178px;
+  height: auto;
+}
+.stepBox .dropArea .text p {
+  display: none;
+}
 .stepBoxView + .stepBoxView {
   margin-top: 40px;
 }

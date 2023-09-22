@@ -440,6 +440,7 @@ export default function Sub07() {
                     {rows.map((row) => (
                       <StyledTableRow>
                         <TableCell
+                          colSpan={5}
                           components={{
                             NoRowsOverlay: () => <NoDataFound />,
                           }}
@@ -449,7 +450,6 @@ export default function Sub07() {
                   </TableBody>
                 </Table>
               </TableContainer>
-              <Paginations />
             </Paper>
           </Stack>
         </Box>

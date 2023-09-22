@@ -11,6 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
+// radio
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -24,7 +25,6 @@ import IconButton from "@mui/material/IconButton";
 import { RiSearchLine } from "react-icons/ri";
 
 import { TbX } from "react-icons/tb";
-
 
 const StyledTextField = styled(TextField, {
   name: "StyledTextField",
@@ -51,19 +51,78 @@ const StyledTextField = styled(TextField, {
   },
 });
 
-export default function Sub11() {
+//Radio
+const BpIcon = styled("span")(({ theme }) => ({
+  borderRadius: "50%",
+  width: 20,
+  height: 20,
+  boxShadow: theme.palette.mode === "dark" ? "0 0 0 1px rgb(16 22 26 / 40%)" : "inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)",
+  backgroundColor: theme.palette.mode === "dark" ? "#394b59" : "#fff",
+  backgroundImage: theme.palette.mode === "dark" ? "linear-gradient(180deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,0))" : "linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))",
+  ".Mui-focusVisible &": {},
+  "input:hover ~ &": {
+    backgroundColor: theme.palette.mode === "dark" ? "#30404d" : "#ebf1f5",
+  },
+  "input:disabled ~ &": {
+    boxShadow: "none",
+    background: theme.palette.mode === "dark" ? "#000" : "#f8f8f8",
+    border: "1px solid",
+    borderColor: theme.palette.mode === "dark" ? "#000" : "#e5e5e5",
+  },
+}));
 
+const BpCheckedIcon = styled(BpIcon)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#000" : "#202844",
+  backgroundImage: "linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))",
+  "&:before": {
+    display: "block",
+    width: 20,
+    height: 20,
+    backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
+    content: '""',
+  },
+  "input:hover ~ &": {
+    backgroundColor: theme.palette.mode === "dark" ? "#000" : "#202844",
+  },
+  "input:disabled  ~ &": {
+    backgroundColor: theme.palette.mode === "dark" ? "#000" : "#f8f8f8",
+    "&:before": {
+      display: "block",
+      width: 18,
+      height: 18,
+      backgroundImage: "radial-gradient(#e5e5e5,#e5e5e5 28%,transparent 32%)",
+    },
+  },
+}));
+
+function BpRadio(props) {
+  return (
+    <Radio
+      sx={{
+        "&:hover": {
+          bgcolor: "transparent",
+        },
+      }}
+      disableRipple
+      color="default"
+      checkedIcon={<BpCheckedIcon />}
+      icon={<BpIcon />}
+      {...props}
+    />
+  );
+}
+export default function Sub11() {
   //리스트 추가
-  const [countList, setCountList] = useState([0])
-   
+  const [countList, setCountList] = useState([0]);
+
   const onAddDetailDiv = () => {
-    let countArr = [...countList]
-    let counter = countArr.slice(-1)[0]
-    counter += 1
-    countArr.push(counter)	// index 사용 X
-    // countArr[counter] = counter	// index 사용 시 윗줄 대신 사용	
-    setCountList(countArr)
-  }
+    let countArr = [...countList];
+    let counter = countArr.slice(-1)[0];
+    counter += 1;
+    countArr.push(counter); // index 사용 X
+    // countArr[counter] = counter	// index 사용 시 윗줄 대신 사용
+    setCountList(countArr);
+  };
 
   //select
   const [age, setAge] = React.useState("");
@@ -265,10 +324,11 @@ export default function Sub11() {
                       <div>
                         <FormControl component="fieldset">
                           <RadioGroup row aria-label="실행구분" defaultValue="File" name="radio-buttons-group">
-                            <FormControlLabel value="File" control={<Radio disableRipple />} label="File" />
-                            <FormControlLabel sx={{ pl: 2 }} value="Work Center" control={<Radio disableRipple />} label="Work Center" />
+                            <FormControlLabel value="File" control={<BpRadio />} label="File" />
+                            <FormControlLabel sx={{ pl: 2 }} value="Work Center" control={<BpRadio />} label="Work Center" />
                           </RadioGroup>
                         </FormControl>
+
                         <Stack direction="row" alignItems="center">
                           <Box component="form" sx={{ display: "flex", alignItems: "center", width: "336px", height: "40px", pl: 4, pr: 3, border: "1px solid", borderColor: "text.secondary", borderRadius: "4px" }}>
                             <InputBase sx={{ flex: 1 }} placeholder="업로드할 파일을 선택하세요." inputProps={{ "aria-label": "업로드할 파일을 선택하세요." }} />
@@ -368,65 +428,62 @@ export default function Sub11() {
                     </th>
                     <td colSpan={3}>
                       <div>
+                        <listTy01 countList={countList}>
+                          {countList &&
+                            countList.map((item, i) => (
+                              <Stack
+                                key={i}
+                                className="stepBox"
+                                direction="row"
+                                alignItems="center"
+                                sx={{
+                                  p: 4,
+                                  backgroundColor: "background.default",
+                                  borderRadius: "12px",
+                                }}
+                              >
+                                <Typography
+                                  variant="searchLabel"
+                                  sx={{
+                                    display: "block",
+                                    pl: 4,
+                                    pr: 8,
+                                    flexShrink: 0,
+                                  }}
+                                >
+                                  Step 0{i + 1}
+                                </Typography>
+                                <Dropzone />
+                                <StyledTextField
+                                  multiline
+                                  fullWidth
+                                  rows={5}
+                                  variant="standard"
+                                  placeholder="내용이 들어갑니다"
+                                  sx={{
+                                    backgroundColor: "#fff",
+                                    ml: 4,
+                                    "& textarea": {
+                                      boxSizing: "border-box",
+                                      height: "106px !important",
+                                    },
+                                  }}
+                                />
+                                <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
+                                  <button>
+                                    <LuChevronUp />
+                                  </button>
+                                  <button>
+                                    <LuChevronDown />
+                                  </button>
+                                  <button>
+                                    <LuTrash />
+                                  </button>
+                                </Stack>
+                              </Stack>
+                            ))}
+                        </listTy01>
 
-                      <listTy01 countList={countList}>
-                      {countList && countList.map((item, i) => (
-                        <Stack
-                          key={i}
-                          className="stepBox"
-                          direction="row"
-                          alignItems="center"
-                          sx={{
-                            p: 4,
-                            backgroundColor: "background.default",
-                            borderRadius: "12px",
-                          }}
-                        >
-                          <Typography
-                            variant="searchLabel"
-                            sx={{
-                              display: "block",
-                              pl: 4,
-                              pr: 8,
-                              flexShrink: 0,
-                            }}
-                          >
-                            Step 0{i+1}
-                          </Typography>
-                          <Dropzone />
-                          <StyledTextField
-                            multiline
-                            fullWidth
-                            rows={5}
-                            variant="standard"
-                            placeholder="내용이 들어갑니다"
-                            sx={{
-                              backgroundColor: "#fff",
-                              ml: 4,
-                              "& textarea": {
-                                boxSizing: "border-box",
-                                height: "106px !important",
-                              },
-                            }}
-                          />
-                          <Stack className="stepBtnSet" spacing={1} sx={{ ml: 2 }}>
-                            <button>
-                              <LuChevronUp />
-                            </button>
-                            <button>
-                              <LuChevronDown />
-                            </button>
-                            <button>
-                              <LuTrash />
-                            </button>
-                          </Stack>
-                        </Stack>
-                      ))}
-                      </listTy01>
-
-
-
-                        
                         <Stack direction="row" justifyContent="center" alignItems="center" sx={{ mt: 6, mb: 3 }}>
                           <Buttons outlined variant="text" onClick={onAddDetailDiv}>
                             + 순서 추가

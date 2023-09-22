@@ -3,16 +3,15 @@ import { Box, Paper, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import "./Home.css";
-import ResponsiveGridLayout from "../components/layoutGrid";
-import DateRange from "../components/DateRangePicker";
+// import ResponsiveGridLayout from "../components/layoutGrid";
 
 export default function Home() {
   return (
     <>
       <Stack direction="row">
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
-          <Stack>
-            <Link to={"/"}>Home</Link>
+          <Stack spacing={4}>
+            <Link to={"/"}>Home (미완성)</Link>
             <Link to={"/Sample"}>Sample</Link>
             <Link to={"/sub01"}>Sub01</Link>
             <Link to={"/sub04"}>Sub04</Link>
@@ -26,11 +25,11 @@ export default function Home() {
             <Link to={"/Sub1103"}>Sub1103</Link>
           </Stack>
 
-          <div>Home 페이지 입니다.</div>
-          <DateRange />
-          <Paper sx={{ mt: 5 }}>
+          {/* <div>Home 페이지 입니다.</div> */}
+
+          {/* <Paper sx={{ mt: 5 }}>
             <ResponsiveGridLayout />
-          </Paper>
+          </Paper> */}
         </Box>
       </Stack>
     </>
