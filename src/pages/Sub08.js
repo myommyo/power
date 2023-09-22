@@ -379,13 +379,6 @@ export default function Sub08() {
                     <Typography variant="inputSide" sx={{ mr: 4 }}>
                       2023.08.22 18:54:10
                     </Typography>
-                    <StarRating readOnly />
-                    <Stack direction="row" alignItems="center" sx={{ px: 3, ml: 4, height: "30px", backgroundColor: "background.default", borderRadius: "16px" }}>
-                      <LuThumbsUp />
-                      <Typography variant="searchLabel" sx={{ ml: 2, mt: "4px" }}>
-                        999
-                      </Typography>
-                    </Stack>
                   </Stack>
                   <Box>
                     <IconButton disableRipple aria-label="account of current user" aria-controls="menu-comment" aria-haspopup="true" onClick={handleMenu} color="inherit">
