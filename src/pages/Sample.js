@@ -67,7 +67,7 @@ export default function Sample() {
       pop02 = false;
       pop03 = false;
       pop04 = true;
-      setSize("xl");
+      setSize("lg");
     }
   };
   const closeDialog = () => setIsDialogOpen(false);

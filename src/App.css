@@ -302,6 +302,7 @@
 .tableView th > div {
   box-sizing: border-box;
   padding-left: 12px;
+  line-height: 21px;
 }
 .tableView th > div.required::after {
   display: inline-block;
