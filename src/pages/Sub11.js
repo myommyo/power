@@ -65,6 +65,17 @@ export default function Sub11() {
     setCountList(countArr)
   }
 
+  //리스트 삭제
+  const removeList = (i, e) => {
+    console.log(i)
+    const newList = [...countList]
+    newList.splice(newList.indexOf(i), 1)
+    setCountList(newList)
+  }
+
+
+
+
   //select
   const [age, setAge] = React.useState("");
   const handleChange = (event) => {
@@ -416,7 +427,7 @@ export default function Sub11() {
                             <button>
                               <LuChevronDown />
                             </button>
-                            <button>
+                            <button onClick={(e) => {removeList(i, e)}} id={'list'+ i}>
                               <LuTrash />
                             </button>
                           </Stack>
