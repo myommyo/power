@@ -27,6 +27,7 @@ import DialogPop from "../components/DialogPop";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 var pop01;
 var pop02;
@@ -255,14 +256,13 @@ export default function Sample() {
         </Box>
       </Stack>
 
-      <DialogPop isOpen={isDialogOpen} closeDialog={closeDialog} maxWidth={size} title={"타이틀 영역"}>
+      <DialogPop isOpen={isDialogOpen} closeDialog={closeDialog} maxWidth={size}>
         {pop01 && (
-          <Box
-            sx={{
-              p: 8,
-            }}
-          >
-            <Stack sx={{ pb: 12 }}>
+          <Box>
+            <DialogTitle>
+              <Typography variant="popTitle">워크센터 프로세스</Typography>
+            </DialogTitle>
+            <Stack sx={{ p: 8, pb: 12 }}>
               <Typography
                 variant="searchLabel"
                 sx={{
@@ -289,7 +289,7 @@ export default function Sample() {
               </Typography>
               <StyledTextField multiline fullWidth rows="3" variant="standard" placeholder="신청목적" />
             </Stack>
-            <DialogActions disableSpacing>
+            <DialogActions disableSpacing sx={{ p: 0, pb: 8 }}>
               <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" sx={{ width: "100%" }}>
                 <Buttons outlined variant="text" onClick={closeDialog}>
                   닫기
@@ -302,12 +302,11 @@ export default function Sample() {
           </Box>
         )}
         {pop02 && (
-          <Box
-            sx={{
-              p: 8,
-            }}
-          >
-            <Stack sx={{ pb: 12 }}>
+          <Box>
+            <DialogTitle>
+              <Typography variant="popTitle">커뮤니티 관리상세</Typography>
+            </DialogTitle>
+            <Stack sx={{ p: 8, pb: 12 }}>
               <table className="tableView">
                 <colgroup>
                   <col width="140" />
@@ -512,7 +511,7 @@ export default function Sample() {
                 </tbody>
               </table>
             </Stack>
-            <DialogActions disableSpacing>
+            <DialogActions disableSpacing sx={{ p: 0, pb: 8 }}>
               <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" sx={{ width: "100%" }}>
                 <Buttons outlined variant="text">
                   삭제
@@ -528,12 +527,11 @@ export default function Sample() {
           </Box>
         )}
         {pop03 && (
-          <Box
-            sx={{
-              p: 8,
-            }}
-          >
-            <Stack sx={{ pb: 12 }}>
+          <Box>
+            <DialogTitle>
+              <Typography variant="popTitle">업무상세</Typography>
+            </DialogTitle>
+            <Stack sx={{ p: 8, pb: 12 }}>
               <table className="tableView">
                 <colgroup>
                   <col width="140" />
@@ -622,7 +620,7 @@ export default function Sample() {
                 </tbody>
               </table>
             </Stack>
-            <DialogActions disableSpacing>
+            <DialogActions disableSpacing sx={{ p: 0, pb: 8 }}>
               <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" sx={{ width: "100%" }}>
                 <Buttons outlined variant="text" onClick={closeDialog}>
                   닫기
@@ -635,368 +633,372 @@ export default function Sample() {
           </Box>
         )}
         {pop04 && (
-          <>
-            <DialogContent>
-              <DialogContentText>
-                <Stack sx={{ pb: 12 }}>
-                  <Accordion disableGutters expanded={expanded === "panel1"} onChange={AccHandleChange("panel1")}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon color="primary" sx={{ fontSize: "40px" }} />} aria-controls="panel1bh-content" id="panel1bh-header">
-                      <Typography variant="subTitle1">요청 </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Stack sx={{ pb: 10 }}>
-                        <table className="tableView">
-                          <colgroup>
-                            <col width="140" />
-                            <col width="308" />
-                            <col width="140" />
-                            <col width="308" />
-                          </colgroup>
-                          <tbody>
-                            <tr>
-                              <th>
-                                <div className="required">업무구분</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <FormControl fullWidth>
-                                    <Select
-                                      fullWidth
-                                      value={age}
-                                      onChange={handleChange}
-                                      displayEmpty
-                                      variant="outlined"
-                                      IconComponent={KeyboardArrowDownIcon}
-                                      MenuProps={{
-                                        sx: {
-                                          "&& .Mui-selected": {
-                                            backgroundColor: "action.hover",
-                                            "&:hover": {
+          <Box>
+            <DialogTitle>
+              <Typography variant="popTitle">업무상세</Typography>
+            </DialogTitle>
+            <Stack sx={{ p: 8, pb: 12 }}>
+              <DialogContent sx={{ p: 0 }}>
+                <DialogContentText>
+                  <Stack>
+                    <Accordion disableGutters expanded={expanded === "panel1"} onChange={AccHandleChange("panel1")}>
+                      <AccordionSummary expandIcon={<ExpandMoreIcon color="primary" sx={{ fontSize: "40px" }} />} aria-controls="panel1bh-content" id="panel1bh-header">
+                        <Typography variant="subTitle1">요청 </Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Stack sx={{ pb: 10 }}>
+                          <table className="tableView">
+                            <colgroup>
+                              <col width="140" />
+                              <col width="308" />
+                              <col width="140" />
+                              <col width="308" />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th>
+                                  <div className="required">업무구분</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <FormControl fullWidth>
+                                      <Select
+                                        fullWidth
+                                        value={age}
+                                        onChange={handleChange}
+                                        displayEmpty
+                                        variant="outlined"
+                                        IconComponent={KeyboardArrowDownIcon}
+                                        MenuProps={{
+                                          sx: {
+                                            "&& .Mui-selected": {
                                               backgroundColor: "action.hover",
+                                              "&:hover": {
+                                                backgroundColor: "action.hover",
+                                              },
                                             },
                                           },
-                                        },
-                                      }}
-                                    >
-                                      <MenuItem value="">
-                                        <em>전체</em>
-                                      </MenuItem>
-                                      <MenuItem value={10}>Ten</MenuItem>
-                                      <MenuItem value={20}>Twenty</MenuItem>
-                                      <MenuItem value={30}>Thirty</MenuItem>
-                                    </Select>
-                                  </FormControl>
-                                </div>
-                              </td>
-                              <th>
-                                <div className="required">업무명</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField variant="standard" placeholder="Default" required="true" fullWidth />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div>요청부서</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField variant="standard" placeholder="Default" fullWidth />
-                                </div>
-                              </td>
-                              <th>
-                                <div>요청자</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField variant="standard" placeholder="Default" fullWidth />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div>주담당자</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField variant="standard" placeholder="Default" fullWidth />
-                                </div>
-                              </td>
-                              <th>
-                                <div>부담당자</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField variant="standard" placeholder="Default" fullWidth />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div>요청일시</div>
-                              </th>
-                              <td colSpan="3">
-                                <div>
-                                  <StyledTextField variant="standard" placeholder="Default" fullWidth />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div className="required">업무내용</div>
-                              </th>
-                              <td colSpan="3">
-                                <div>
-                                  <StyledTextField multiline fullWidth rows="3" variant="standard" placeholder="업무내용" />
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </Stack>
-                      <Typography variant="subTitle2">부가 정보 </Typography>
-                      <Stack sx={{ pt: 4, pb: 10 }}>
-                        <table className="tableView">
-                          <colgroup>
-                            <col width="140" />
-                            <col width="308" />
-                            <col width="140" />
-                            <col width="308" />
-                          </colgroup>
-                          <tbody>
-                            <tr>
-                              <th>
-                                <div>업무처리시작시간</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField variant="standard" placeholder="Default" fullWidth />
-                                </div>
-                              </td>
-                              <th>
-                                <div>업무처리마감시간</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField variant="standard" placeholder="Default" fullWidth />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div className="required">평균처리건수</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField
-                                    variant="standard"
-                                    placeholder="Default"
-                                    fullWidth
-                                    sx={{ mr: 2 }}
-                                    InputProps={{
-                                      endAdornment: <InputAdornment position="end">건/회</InputAdornment>,
-                                    }}
-                                  />
-                                </div>
-                              </td>
-                              <th>
-                                <div className="required">평균수행시간</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField
-                                    variant="standard"
-                                    placeholder="Default"
-                                    fullWidth
-                                    sx={{ mr: 2 }}
-                                    InputProps={{
-                                      endAdornment: <InputAdornment position="end">분</InputAdornment>,
-                                    }}
-                                  />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div className="required">수행횟수</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField
-                                    variant="standard"
-                                    placeholder="Default"
-                                    fullWidth
-                                    InputProps={{
-                                      endAdornment: <InputAdornment position="end">회</InputAdornment>,
-                                    }}
-                                  />
-                                </div>
-                              </td>
-                              <th>
-                                <div className="required">수행인원</div>
-                              </th>
-                              <td>
-                                <div>
-                                  <StyledTextField
-                                    variant="standard"
-                                    placeholder="Default"
-                                    fullWidth
-                                    InputProps={{
-                                      endAdornment: <InputAdornment position="end">분</InputAdornment>,
-                                    }}
-                                  />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div className="required">수행주기</div>
-                              </th>
-                              <td colspan="3">
-                                <div>
-                                  <FormControl
-                                    fullWidth
-                                    sx={{
-                                      display: "flex",
-                                      alignItems: "center",
-                                      flexDirection: "row",
-                                    }}
-                                  >
-                                    <Select
-                                      sx={{ width: 110, mr: 2 }}
-                                      value={age}
-                                      onChange={handleChange}
-                                      displayEmpty
-                                      variant="outlined"
-                                      IconComponent={KeyboardArrowDownIcon}
-                                      MenuProps={{
-                                        sx: {
-                                          "&& .Mui-selected": {
-                                            backgroundColor: "action.hover",
-                                            "&:hover": {
-                                              backgroundColor: "action.hover",
-                                            },
-                                          },
-                                        },
-                                      }}
-                                    >
-                                      <MenuItem value="">
-                                        <em>전체</em>
-                                      </MenuItem>
-                                      <MenuItem value={10}>Ten</MenuItem>
-                                      <MenuItem value={20}>Twenty</MenuItem>
-                                      <MenuItem value={30}>Thirty</MenuItem>
-                                    </Select>
+                                        }}
+                                      >
+                                        <MenuItem value="">
+                                          <em>전체</em>
+                                        </MenuItem>
+                                        <MenuItem value={10}>Ten</MenuItem>
+                                        <MenuItem value={20}>Twenty</MenuItem>
+                                        <MenuItem value={30}>Thirty</MenuItem>
+                                      </Select>
+                                    </FormControl>
+                                  </div>
+                                </td>
+                                <th>
+                                  <div className="required">업무명</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField variant="standard" placeholder="Default" required="true" fullWidth />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div>요청부서</div>
+                                </th>
+                                <td>
+                                  <div>
                                     <StyledTextField variant="standard" placeholder="Default" fullWidth />
-                                  </FormControl>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div className="required">업무내용</div>
-                              </th>
-                              <td colspan="3">
-                                <div>
-                                  <Grid container sx={{ pl: 2 }} spacing={3}>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                  </div>
+                                </td>
+                                <th>
+                                  <div>요청자</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField variant="standard" placeholder="Default" fullWidth />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div>주담당자</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField variant="standard" placeholder="Default" fullWidth />
+                                  </div>
+                                </td>
+                                <th>
+                                  <div>부담당자</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField variant="standard" placeholder="Default" fullWidth />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div>요청일시</div>
+                                </th>
+                                <td colSpan="3">
+                                  <div>
+                                    <StyledTextField variant="standard" placeholder="Default" fullWidth />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div className="required">업무내용</div>
+                                </th>
+                                <td colSpan="3">
+                                  <div>
+                                    <StyledTextField multiline fullWidth rows="3" variant="standard" placeholder="업무내용" />
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </Stack>
+                        <Typography variant="subTitle2">부가 정보 </Typography>
+                        <Stack sx={{ pt: 4, pb: 10 }}>
+                          <table className="tableView">
+                            <colgroup>
+                              <col width="140" />
+                              <col width="308" />
+                              <col width="140" />
+                              <col width="308" />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th>
+                                  <div>업무처리시작시간</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField variant="standard" placeholder="Default" fullWidth />
+                                  </div>
+                                </td>
+                                <th>
+                                  <div>업무처리마감시간</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField variant="standard" placeholder="Default" fullWidth />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div className="required">평균처리건수</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField
+                                      variant="standard"
+                                      placeholder="Default"
+                                      fullWidth
+                                      sx={{ mr: 2 }}
+                                      InputProps={{
+                                        endAdornment: <InputAdornment position="end">건/회</InputAdornment>,
+                                      }}
+                                    />
+                                  </div>
+                                </td>
+                                <th>
+                                  <div className="required">평균수행시간</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField
+                                      variant="standard"
+                                      placeholder="Default"
+                                      fullWidth
+                                      sx={{ mr: 2 }}
+                                      InputProps={{
+                                        endAdornment: <InputAdornment position="end">분</InputAdornment>,
+                                      }}
+                                    />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div className="required">수행횟수</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField
+                                      variant="standard"
+                                      placeholder="Default"
+                                      fullWidth
+                                      InputProps={{
+                                        endAdornment: <InputAdornment position="end">회</InputAdornment>,
+                                      }}
+                                    />
+                                  </div>
+                                </td>
+                                <th>
+                                  <div className="required">수행인원</div>
+                                </th>
+                                <td>
+                                  <div>
+                                    <StyledTextField
+                                      variant="standard"
+                                      placeholder="Default"
+                                      fullWidth
+                                      InputProps={{
+                                        endAdornment: <InputAdornment position="end">분</InputAdornment>,
+                                      }}
+                                    />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div className="required">수행주기</div>
+                                </th>
+                                <td colspan="3">
+                                  <div>
+                                    <FormControl
+                                      fullWidth
+                                      sx={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        flexDirection: "row",
+                                      }}
+                                    >
+                                      <Select
+                                        sx={{ width: 110, mr: 2 }}
+                                        value={age}
+                                        onChange={handleChange}
+                                        displayEmpty
+                                        variant="outlined"
+                                        IconComponent={KeyboardArrowDownIcon}
+                                        MenuProps={{
+                                          sx: {
+                                            "&& .Mui-selected": {
+                                              backgroundColor: "action.hover",
+                                              "&:hover": {
+                                                backgroundColor: "action.hover",
+                                              },
+                                            },
+                                          },
+                                        }}
+                                      >
+                                        <MenuItem value="">
+                                          <em>전체</em>
+                                        </MenuItem>
+                                        <MenuItem value={10}>Ten</MenuItem>
+                                        <MenuItem value={20}>Twenty</MenuItem>
+                                        <MenuItem value={30}>Thirty</MenuItem>
+                                      </Select>
+                                      <StyledTextField variant="standard" placeholder="Default" fullWidth />
+                                    </FormControl>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div className="required">업무내용</div>
+                                </th>
+                                <td colspan="3">
+                                  <div>
+                                    <Grid container sx={{ pl: 2 }} spacing={3}>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
                                     </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                    <StyledTextField variant="standard" placeholder="Default" sx={{ mt: 3, width: "250px" }} />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div className="required">업무관련시스템</div>
+                                </th>
+                                <td colspan="3">
+                                  <div>
+                                    <Grid container sx={{ pl: 2 }} spacing={3}>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
+                                      <Grid item xs={3}>
+                                        <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
+                                      </Grid>
                                     </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                  </Grid>
-                                  <StyledTextField variant="standard" placeholder="Default" sx={{ mt: 3, width: "250px" }} />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div className="required">업무관련시스템</div>
-                              </th>
-                              <td colspan="3">
-                                <div>
-                                  <Grid container sx={{ pl: 2 }} spacing={3}>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                    <Grid item xs={3}>
-                                      <FormControlLabel control={<Checkbox disableRipple />} label="Default" />
-                                    </Grid>
-                                  </Grid>
-                                  <StyledTextField variant="standard" placeholder="Default" sx={{ mt: 3, width: "250px" }} />
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>
-                                <div>첨부파일</div>
-                              </th>
-                              <td colspan="3">
-                                <div>첨부파일</div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </Stack>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion disableGutters expanded={expanded === "panel2"} onChange={AccHandleChange("panel2")}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon color="primary" sx={{ fontSize: "40px" }} />} aria-controls="panel2bh-content" id="panel2bh-header">
-                      <Typography variant="subTitle1">개발진행중 </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>상세</AccordionDetails>
-                  </Accordion>
-                </Stack>
-              </DialogContentText>
-            </DialogContent>
-
-            <DialogActions disableSpacing>
+                                    <StyledTextField variant="standard" placeholder="Default" sx={{ mt: 3, width: "250px" }} />
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>
+                                  <div>첨부파일</div>
+                                </th>
+                                <td colspan="3">
+                                  <div>첨부파일</div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </Stack>
+                      </AccordionDetails>
+                    </Accordion>
+                    <Accordion disableGutters expanded={expanded === "panel2"} onChange={AccHandleChange("panel2")}>
+                      <AccordionSummary expandIcon={<ExpandMoreIcon color="primary" sx={{ fontSize: "40px" }} />} aria-controls="panel2bh-content" id="panel2bh-header">
+                        <Typography variant="subTitle1">개발진행중 </Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>상세</AccordionDetails>
+                    </Accordion>
+                  </Stack>
+                </DialogContentText>
+              </DialogContent>
+            </Stack>
+            <DialogActions disableSpacing sx={{ p: 0, pb: 8 }}>
               <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" sx={{ width: "100%" }}>
                 <Buttons primary variant="text" onClick={closeDialog} autoFocus>
                   닫기
                 </Buttons>
               </Stack>
             </DialogActions>
-          </>
+          </Box>
         )}
       </DialogPop>
     </>
