@@ -395,10 +395,10 @@
 
 
 .directory .tree > li{position:relative;}
-.directory .tree > li:before{content:'';left:7px;top:24px;width:1px;height:calc(100% - 44px);background:#e5e5e5;position:absolute;}
+.directory .tree > li:before{content:'';left:7px;top:28px;width:1px;height:calc(100% - 50px);background:#e5e5e5;position:absolute;}
 .directory .tree > li > ul > li{position:relative;}
-.directory .tree > li > ul > li:before{content:'';left:23px;top:24px;width:1px;height:calc(100% - 44px);background:#e5e5e5;position:absolute;}
-.directory .tree > li > ul > li:after{content:'';left:7px;top:16px;width:9px;height:1px;background:#e5e5e5;position:absolute;}
+.directory .tree > li > ul > li:before{content:'';left:23px;top:28px;width:1px;height:calc(100% - 56px);background:#e5e5e5;position:absolute;}
+.directory .tree > li > ul > li:after{content:'';left:7px;top:22px;width:9px;height:1px;background:#e5e5e5;position:absolute;}
 .directory .tree > li > ul > li > ul > li{position:relative;}
 .directory .tree > li > ul > li > ul > li:after{content:'';left:23px;top:16px;width:16px;height:1px;background:#e5e5e5;position:absolute;}
 
