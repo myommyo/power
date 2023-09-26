@@ -237,7 +237,7 @@
 }
 .MuiTableCell-root {
   font-size: 14px !important;
-  padding: 12px !important;
+  padding: 12px 0 !important;
 }
 
 .react-grid-item.cssTransforms {
@@ -430,7 +430,7 @@
   left: 23px;
   top: 28px;
   width: 1px;
-  height: calc(100% - 56px);
+  height: calc(100% - 50px);
   background: #e5e5e5;
   position: absolute;
 }
@@ -449,7 +449,7 @@
 .directory .tree > li > ul > li > ul > li:after {
   content: "";
   left: 23px;
-  top: 16px;
+  top: 21px;
   width: 16px;
   height: 1px;
   background: #e5e5e5;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Paper, Stack, Typography, Grid, TextField } from "@mui/material";
+import { Box, Paper, Stack, Typography, Grid, TextField, Divider } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 import Table from "@mui/material/Table";
@@ -195,15 +195,99 @@ export default function Sub07() {
                         backgroundColor: "secondary.light",
                         color: "#fff",
                       },
+
+                      "& th:first-child": {
+                        borderRadius: "12px 0 0 0",
+                      },
+                      "& th:last-child": {
+                        borderRadius: "0 12px 0 0",
+                      },
                     }}
                   >
-                    <TableCell align="center">프로젝트 코드</TableCell>
-                    <TableCell align="center">프로젝트명</TableCell>
-                    <TableCell align="center">프로젝트 타입</TableCell>
-                    <TableCell align="center">프로젝트 담당자</TableCell>
-                    <TableCell align="center">시작일자</TableCell>
-                    <TableCell align="center">종료일자</TableCell>
-                    <TableCell align="center">프로젝트 코드</TableCell>
+                    <TableCell align="center">
+                      <Stack
+                        direction="row"
+                        justifyContent="center"
+                        sx={{
+                          position: "relative",
+                        }}
+                      >
+                        프로젝트 코드
+                        <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                      </Stack>
+                    </TableCell>
+                    <TableCell align="center">
+                      <Stack
+                        direction="row"
+                        justifyContent="center"
+                        sx={{
+                          position: "relative",
+                        }}
+                      >
+                        프로젝트명
+                        <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                      </Stack>
+                    </TableCell>
+                    <TableCell align="center">
+                      <Stack
+                        direction="row"
+                        justifyContent="center"
+                        sx={{
+                          position: "relative",
+                        }}
+                      >
+                        프로젝트 타입
+                        <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                      </Stack>
+                    </TableCell>
+                    <TableCell align="center">
+                      <Stack
+                        direction="row"
+                        justifyContent="center"
+                        sx={{
+                          position: "relative",
+                        }}
+                      >
+                        프로젝트 담당자
+                        <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                      </Stack>
+                    </TableCell>
+                    <TableCell align="center">
+                      <Stack
+                        direction="row"
+                        justifyContent="center"
+                        sx={{
+                          position: "relative",
+                        }}
+                      >
+                        시작일자
+                        <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                      </Stack>
+                    </TableCell>
+                    <TableCell align="center">
+                      <Stack
+                        direction="row"
+                        justifyContent="center"
+                        sx={{
+                          position: "relative",
+                        }}
+                      >
+                        종료일자
+                        <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                      </Stack>
+                    </TableCell>
+                    <TableCell align="center">
+                      <Stack
+                        direction="row"
+                        justifyContent="center"
+                        sx={{
+                          position: "relative",
+                        }}
+                      >
+                        프로젝트 코드
+                        <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                      </Stack>
+                    </TableCell>
                     <TableCell align="center">사용</TableCell>
                   </TableRow>
                 </TableHead>
@@ -318,10 +402,54 @@ export default function Sub07() {
                         },
                       }}
                     >
-                      <TableCell align="center">프로젝트 코드</TableCell>
-                      <TableCell align="center">프로젝트명</TableCell>
-                      <TableCell align="center">프로젝트 타입</TableCell>
-                      <TableCell align="center">프로젝트 담당자</TableCell>
+                      <TableCell align="center">
+                        <Stack
+                          direction="row"
+                          justifyContent="center"
+                          sx={{
+                            position: "relative",
+                          }}
+                        >
+                          프로젝트 코드
+                          <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                        </Stack>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Stack
+                          direction="row"
+                          justifyContent="center"
+                          sx={{
+                            position: "relative",
+                          }}
+                        >
+                          프로젝트명
+                          <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                        </Stack>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Stack
+                          direction="row"
+                          justifyContent="center"
+                          sx={{
+                            position: "relative",
+                          }}
+                        >
+                          프로젝트 타입
+                          <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                        </Stack>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Stack
+                          direction="row"
+                          justifyContent="center"
+                          sx={{
+                            position: "relative",
+                          }}
+                        >
+                          프로젝트 담당자
+                          <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                        </Stack>
+                      </TableCell>
                       <TableCell align="center">시작일자</TableCell>
                     </TableRow>
                   </TableHead>
@@ -429,10 +557,54 @@ export default function Sub07() {
                         },
                       }}
                     >
-                      <TableCell align="center">프로젝트 코드</TableCell>
-                      <TableCell align="center">프로젝트명</TableCell>
-                      <TableCell align="center">프로젝트 타입</TableCell>
-                      <TableCell align="center">프로젝트 담당자</TableCell>
+                      <TableCell align="center">
+                        <Stack
+                          direction="row"
+                          justifyContent="center"
+                          sx={{
+                            position: "relative",
+                          }}
+                        >
+                          프로젝트 코드
+                          <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                        </Stack>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Stack
+                          direction="row"
+                          justifyContent="center"
+                          sx={{
+                            position: "relative",
+                          }}
+                        >
+                          프로젝트명
+                          <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                        </Stack>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Stack
+                          direction="row"
+                          justifyContent="center"
+                          sx={{
+                            position: "relative",
+                          }}
+                        >
+                          프로젝트 타입
+                          <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                        </Stack>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Stack
+                          direction="row"
+                          justifyContent="center"
+                          sx={{
+                            position: "relative",
+                          }}
+                        >
+                          프로젝트 담당자
+                          <Divider orientation="vertical" variant="middle" flexItem sx={{ bgcolor: "text.secondary", position: "absolute", right: "0", top: "0", bottom: "0", margin: "auto" }} />
+                        </Stack>
+                      </TableCell>
                       <TableCell align="center">시작일자</TableCell>
                     </TableRow>
                   </TableHead>

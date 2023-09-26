@@ -22,9 +22,9 @@ function layoutGrid() {
 
   //ReactGridLayout = require('react-grid-layout');`
   const layout = [
-    { i: "a", x: 0, y: 0, w: 4, h: 2 },
-    { i: "b", x: 4, y: 0, w: 4, h: 2 },
-    { i: "c", x: 8, y: 0, w: 4, h: 2 },
+    { i: "a", x: 0, y: 0, w: 4, h: 2, minH: 2 },
+    { i: "b", x: 4, y: 0, w: 4, h: 2, minH: 2 },
+    { i: "c", x: 8, y: 0, w: 4, h: 2, minH: 2 },
     { i: "d", x: 0, y: 2, w: 6, h: 3 },
     { i: "e", x: 6, y: 2, w: 6, h: 3 },
   ];
