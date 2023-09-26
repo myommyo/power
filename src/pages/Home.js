@@ -11,8 +11,9 @@ export default function Home() {
       <Stack direction="row">
         <Box sx={{ p: 12, width: "100%", mt: 20 }}>
           <Stack spacing={4}>
-            <Link to={"/"}>Home (미완성)</Link>
+            <Link to={"/"}>Home</Link>
             <Link to={"/Sample"}>Sample</Link>
+            <Link to={"/Main"}>Main</Link>
             <Link to={"/sub01"}>Sub01</Link>
             <Link to={"/sub04"}>Sub04</Link>
             <Link to={"/sub05"}>Sub05</Link>

@@ -189,9 +189,16 @@ const baseTheme = createTheme({
     smallFont: {
       fontSize: "12px",
     },
-    popTitle: {
-      fontSize: "28px",
+    font18: {
+      fontSize: "18px",
+    },
+    gridNumbs: {
+      fontSize: "48px",
       fontWeight: 700,
+    },
+    gridNumbsText: {
+      fontSize: "32px",
+      fontWeight: 500,
     },
   },
 });

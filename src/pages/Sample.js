@@ -3,7 +3,7 @@ import { Box, Grid, Stack, Typography, TextField, Paper, Link } from "@mui/mater
 import { styled } from "@mui/material/styles";
 
 import Buttons from "../components/Buttons";
-import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile, LuTrash } from "react-icons/lu";
+import { LuPenSquare, LuRotateCcw, LuCheckSquare, LuEye, LuFile, LuTrash, LuPlus } from "react-icons/lu";
 import { PiInfoThin } from "react-icons/pi";
 
 import MenuItem from "@mui/material/MenuItem";
@@ -268,6 +268,10 @@ export default function Sample() {
                   <LuTrash />
                   삭제
                 </Buttons>
+                <Buttons outlined>
+                  <LuPlus />
+                  영역추가
+                </Buttons>
               </Stack>
             </Box>
 
@@ -351,7 +355,7 @@ export default function Sample() {
         {pop01 && (
           <Box>
             <DialogTitle>
-              <Typography variant="popTitle">워크센터 프로세스</Typography>
+              <Typography variant="sectionTitle">워크센터 프로세스</Typography>
             </DialogTitle>
             <Stack sx={{ p: 8, pb: 12 }}>
               <Typography
@@ -395,7 +399,7 @@ export default function Sample() {
         {pop02 && (
           <Box>
             <DialogTitle>
-              <Typography variant="popTitle">커뮤니티 관리상세</Typography>
+              <Typography variant="sectionTitle">커뮤니티 관리상세</Typography>
             </DialogTitle>
             <Stack sx={{ p: 8, pb: 12 }}>
               <table className="tableView">
@@ -620,7 +624,7 @@ export default function Sample() {
         {pop03 && (
           <Box>
             <DialogTitle>
-              <Typography variant="popTitle">업무상세</Typography>
+              <Typography variant="sectionTitle">업무상세</Typography>
             </DialogTitle>
             <Stack sx={{ p: 8, pb: 12 }}>
               <table className="tableView">
@@ -730,7 +734,7 @@ export default function Sample() {
         {pop04 && (
           <Box>
             <DialogTitle>
-              <Typography variant="popTitle">업무상세</Typography>
+              <Typography variant="sectionTitle">업무상세</Typography>
             </DialogTitle>
             <Stack sx={{ p: 8, pb: 12 }}>
               <DialogContent sx={{ p: 0 }}>

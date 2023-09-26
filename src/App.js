@@ -17,6 +17,7 @@ import "./App.css";
 //페이지 추가
 import Sample from "./pages/Sample";
 import Home from "./pages/Home";
+import Main from "./pages/Main";
 import Sub01 from "./pages/Sub01";
 import Sub04 from "./pages/Sub04";
 import Sub05 from "./pages/Sub05";
@@ -83,6 +84,9 @@ export default function App() {
               <Switch>
                 <Route exact path="/">
                   <Home />
+                </Route>
+                <Route exact path="/Main">
+                  <Main />
                 </Route>
                 <Route exact path="/Sample">
                   <Sample />

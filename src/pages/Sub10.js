@@ -293,11 +293,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -332,11 +333,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -371,11 +373,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -410,11 +413,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -449,11 +453,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -494,11 +499,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -533,11 +539,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -572,11 +579,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -611,11 +619,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -650,11 +659,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -689,11 +699,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -728,11 +739,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -773,11 +785,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -812,11 +825,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -851,11 +865,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
@@ -896,11 +911,12 @@ export default function Sub10() {
                         backgroundColor: "background.default",
                         borderRadius: "24px",
                         p: 8,
-                        trnasition: "all .5s ease",
+                        transition: "all .5s ease",
                         "&:hover": {
                           backgroundColor: "background.paper",
                           boxShadow: "4px 8px 16px 0 rgba(0, 0, 0, 0.16);",
                           borderColor: "primary.main",
+                          cursor: "pointer",
                         },
                       }}
                     >
