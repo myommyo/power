@@ -875,10 +875,12 @@
 }
 
 /* 스크롤바 설정*/
-.tableToggle .tableToggleList::-webkit-scrollbar {
+.tableToggle .tableToggleList::-webkit-scrollbar,
+.MuiDialog-container ::-webkit-scrollbar {
   width: 12px;
 }
-.tableToggle .tableToggleList::-webkit-scrollbar-thumb {
+.tableToggle .tableToggleList::-webkit-scrollbar-thumb,
+.MuiDialog-container ::-webkit-scrollbar-thumb {
   min-height: 60px;
   background-color: rgba(62, 83, 130, 0.16);
   border-radius: 10px;

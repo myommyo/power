@@ -189,6 +189,8 @@ export default function Sample() {
     setExpanded(isExpanded ? panel : false);
   };
 
+  const [scroll, setScroll] = React.useState("paper");
+
   return (
     <>
       <Stack direction="row">
@@ -736,7 +738,7 @@ export default function Sample() {
             <DialogTitle>
               <Typography variant="sectionTitle">업무상세</Typography>
             </DialogTitle>
-            <Stack sx={{ p: 8, pb: 12 }}>
+            <Stack sx={{ p: 8, pb: 12, maxHeight: "calc(100vh - 250px)", overflow: "auto" }} dividers={scroll === "paper"}>
               <DialogContent sx={{ p: 0 }}>
                 <DialogContentText>
                   <Stack>
