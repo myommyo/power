@@ -31,7 +31,7 @@ function layoutGrid() {
 
   return (
     <div id="container">
-      <ResponsiveGridLayout margin={[20, 20]} className="layout" layouts={{ lg: layout }} breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }} cols={{ lg: 12, md: 6, sm: 4, xs: 2, xxs: 1 }}>
+      <ResponsiveGridLayout margin={[20, 20]} className="layout" layouts={{ lg: layout }} breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }} cols={{ lg: 12, md: 12, sm: 12, xs: 2, xxs: 1 }}>
         <div key="a">
           <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ flexGrow: "1", position: "relative" }}>
             <Typography variant="font18" sx={{ fontWeight: "500" }}>

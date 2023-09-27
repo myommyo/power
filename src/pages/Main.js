@@ -114,16 +114,7 @@ export default function Main() {
               <Tab disableRipple label="사용자매뉴얼 RPA (0)" {...a11yProps(3)} />
             </Tabs>
 
-            <TabPanel
-              value={value}
-              index={0}
-              sx={{
-                "& .css-38zrbw": {
-                  p: 0,
-                  border: "1px solid red !important",
-                },
-              }}
-            >
+            <TabPanel value={value} index={0}>
               <table className="tableList">
                 <colgroup>
                   <col width="*" />
@@ -839,7 +830,7 @@ export default function Main() {
 
           <Paper sx={{ mt: 10, p: 8, pt: 10, flex: "0 0 100%" }}>
             <Typography variant="sectionTitle">홍보존</Typography>
-            <Stack sx={{ width: "100%", maxWidth: "1300px", mt: 8 }}>
+            <Stack sx={{ width: "100%", maxWidth: "1280px", mt: 8 }}>
               <Swiper
                 slidesPerView={5}
                 spaceBetween={20}
@@ -1055,6 +1046,60 @@ export default function Main() {
               </Swiper>
             </Stack>
           </Paper>
+        </Box>
+        <Box className="speedDial">
+          <Box className={show ? "panelShow" : "panelHide"}>
+            <ul>
+              <li className="penelItem01">
+                <Link href="#" underline="none">
+                  RPA 이력관리 (1)
+                </Link>
+              </li>
+              <li className="penelItem02">
+                <Link href="#" underline="none">
+                  RPA 변경관리 (2)
+                </Link>
+              </li>
+              <li className="penelItem03">
+                <Link href="#" underline="none">
+                  RPA 적합성 및 정확성 검증 (3)
+                </Link>
+              </li>
+              <li className="penelItem04">
+                <Link href="#" underline="none">
+                  아이디어제안 (6)
+                </Link>
+              </li>
+              <li className="penelItem05">
+                <Link href="#" underline="none">
+                  Q&A (1)
+                </Link>
+              </li>
+              <li className="penelItem06">
+                <Link href="#" underline="none">
+                  RPA 119 (1)
+                </Link>
+              </li>
+              <li className="penelItem07">
+                <Link href="#" underline="none">
+                  전체 (13)
+                </Link>
+              </li>
+            </ul>
+          </Box>
+          <IconButton
+            onClick={() => setShow(!show)}
+            disableRipple
+            sx={{
+              "& svg": {
+                width: "26px",
+                height: "26px",
+                color: "common.main",
+              },
+            }}
+          >
+            <TbX />
+          </IconButton>
         </Box>
       </Box>
     </>

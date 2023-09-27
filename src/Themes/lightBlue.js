@@ -6,6 +6,7 @@ import green from "@mui/material/colors/green";
 import lightBlue from "@mui/material/colors/lightBlue";
 import "../App.css";
 const baseTheme = createTheme({
+  spacing: 4,
   palette: {
     primary: {
       main: "#202844",

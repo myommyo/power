@@ -3,7 +3,6 @@ import red from "@mui/material/colors/red";
 import grey from "@mui/material/colors/grey";
 import yellow from "@mui/material/colors/yellow";
 import green from "@mui/material/colors/green";
-import lightBlue from "@mui/material/colors/lightBlue";
 import "../App.css";
 const baseTheme = createTheme({
   spacing: 4,

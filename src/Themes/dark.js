@@ -6,6 +6,7 @@ import green from "@mui/material/colors/green";
 import lightBlue from "@mui/material/colors/lightBlue";
 import "../App.css";
 const baseTheme = createTheme({
+  spacing: 4,
   palette: {
     mode: "dark",
     primary: {
@@ -51,7 +52,7 @@ const baseTheme = createTheme({
       selectedOpacity: 1,
     },
     background: {
-      default: "#000000",
+      default: "#2d2d2d",
       paper: "#fff",
     },
     common: {

@@ -25,6 +25,18 @@ const variStyles = css`
       padding: 0 12px;
       border-color: #d9d9d9;
     `}
+  ${(props) =>
+    props.variant === "login" &&
+    css`
+      width: 100%;
+      height: 80px;
+      border-radius: 4px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+      border-color: #fff;
+      background-color: #fff;
+    `}
 `;
 
 const StyledButton = styled.button`

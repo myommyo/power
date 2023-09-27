@@ -14,6 +14,7 @@ export default function Home() {
             <Link to={"/"}>Home</Link>
             <Link to={"/Sample"}>Sample</Link>
             <Link to={"/Main"}>Main</Link>
+            <Link to={"/Login"}>Login</Link>
             <Link to={"/sub01"}>Sub01</Link>
             <Link to={"/sub04"}>Sub04</Link>
             <Link to={"/sub05"}>Sub05</Link>

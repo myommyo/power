@@ -3,7 +3,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 import { styled, useTheme, ThemeProvider } from "@mui/material/styles";
 import Cookies from "js-cookie";
-import { Stack } from "@mui/material";
 import SideBar from "./components/SideBar";
 
 import AppBar from "./components/Header";
@@ -11,6 +10,15 @@ import darkTheme from "./Themes/dark";
 import blueTheme from "./Themes/lightBlue";
 import defaultTheme from "./Themes/theme";
 
+//login
+import { Box, Paper, Stack, TextField, Typography, Link, Divider } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Buttons from "../src/components/Buttons";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import "./App.css";
 // import theme from "./assets/js/Theme";
 
@@ -18,6 +26,7 @@ import "./App.css";
 import Sample from "./pages/Sample";
 import Home from "./pages/Home";
 import Main from "./pages/Main";
+import Login from "./pages/Login";
 import Sub01 from "./pages/Sub01";
 import Sub04 from "./pages/Sub04";
 import Sub05 from "./pages/Sub05";
@@ -67,13 +76,32 @@ export default function App() {
     }
   };
 
+  //loginWrap
+  const [age, setAge] = React.useState("");
+
+  const selectChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  //input
+  const StyledTextField = styled(TextField, {
+    name: "StyledTextField",
+  })({
+    "& .MuiInputBase-root": {
+      paddingLeft: "16px",
+      height: "72px",
+      borderRadius: "4px",
+      fontSize: "16px",
+      color: "rgba(255,255,255,0.48)",
+      backgroundColor: "rgba(255, 255, 255, 0.16);",
+      border: "none",
+      outline: "none",
+      marginTop: "16px",
+    },
+  });
   return (
     <ThemeProvider theme={selectedTheme}>
       <div className={open ? "sideClose" : "sideOpen"}>
-        {/* <AppBar setOpen={open} setSelectedTheme={setSelectedTheme} handleChange={handleChange} selectedTheme={selectedTheme} selectedThemeName={selectedThemeName} themeArray={themeArray} />
-        <div className={"btnSide" + (open ? ' sideClose' : ' sideOpen')} onClick={toggleHdSd}></div>
-        <SideBar setOpen={open} /> */}
-
         <AppBar setSelectedTheme={setSelectedTheme} handleChange={handleChange} selectedTheme={selectedTheme} selectedThemeName={selectedThemeName} themeArray={themeArray} />
         <div className="btnSide" onClick={toggleHdSd}></div>
         <Stack direction="row">
@@ -87,6 +115,9 @@ export default function App() {
                 </Route>
                 <Route exact path="/Main">
                   <Main />
+                </Route>
+                <Route exact path="/Login">
+                  <Login />
                 </Route>
                 <Route exact path="/Sample">
                   <Sample />
@@ -126,6 +157,65 @@ export default function App() {
           </BrowserRouter>
         </Stack>
       </div>
+
+      {/* <Stack direction="row" justifyContent="flex-end" className="LoginWrap">
+        <Stack
+          justifyContent="center"
+          alignItems="flex-start"
+          sx={{
+            px: 30,
+            minWidth: "840px",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.8)",
+          }}
+        >
+          <FormControl fullWidth sx={{ pb: 10 }}>
+            <Select
+              fullWidth
+              value={age}
+              onChange={handleChange}
+              displayEmpty
+              variant="outlined"
+              IconComponent={KeyboardArrowDownIcon}
+              sx={{
+                borderRadius: "4px",
+                pl: 4,
+                fontSize: "16px",
+                color: "rgba(255,255,255,0.48)",
+                backgroundColor: "rgba(255, 255, 255, 0.16);",
+                border: "none !important",
+                outline: "none !important",
+              }}
+              MenuProps={{
+                sx: {
+                  "&& .Mui-selected": {
+                    backgroundColor: "transparent !important",
+                    "&:hover": {
+                      backgroundColor: "action.hover",
+                    },
+                  },
+                  "&& .Mui-focusVisible": {
+                    backgroundColor: "transparent",
+                  },
+                },
+              }}
+            >
+              <MenuItem value="">
+                <em>계열사선택</em>
+              </MenuItem>
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+            <StyledTextField variant="standard" placeholder="아이디" required="true" />
+            <StyledTextField variant="standard" type="password" placeholder="비밀번호" required="true" />
+          </FormControl>
+          <Buttons variant="login">로그인</Buttons>
+          <Box sx={{ mt: 6 }}>
+            <FormControlLabel sx={{ color: "#fff", fontWeight: "300" }} control={<Checkbox disableRipple />} label="Remember me" />
+          </Box>
+        </Stack>
+      </Stack> */}
     </ThemeProvider>
   );
 }
